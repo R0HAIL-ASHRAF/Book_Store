@@ -1,0 +1,134 @@
+#include "SignupPanel.h"
+#include"IDs.h"
+
+SignupPanel::SignupPanel(wxWindow* parent)
+    : wxPanel(parent, wxID_ANY)
+{
+    wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
+
+    // Form title
+    wxStaticText* title = new wxStaticText(this, wxID_ANY, "Create Your Account",
+        wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER);
+    title->SetFont(wxFont(16, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
+    mainSizer->Add(title, 0, wxALL | wxEXPAND, 10);
+
+    // Grid for form elements
+    wxFlexGridSizer* formGrid = new wxFlexGridSizer(2, wxSize(10, 10));
+    formGrid->AddGrowableCol(1, 1);
+
+    // Username
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "Username:"), 0, wxALIGN_CENTER_VERTICAL);
+    getUserName = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+    formGrid->Add(getUserName, 1, wxEXPAND);
+
+    // Name fields
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "First Name:"), 0, wxALIGN_CENTER_VERTICAL);
+    getFirstName = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+    formGrid->Add(getFirstName, 1, wxEXPAND);
+
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "Last Name:"), 0, wxALIGN_CENTER_VERTICAL);
+    getLastName = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+    formGrid->Add(getLastName, 1, wxEXPAND);
+
+    // Email
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "Email:"), 0, wxALIGN_CENTER_VERTICAL);
+    getEmail = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+    formGrid->Add(getEmail, 1, wxEXPAND);
+
+    // Birth date
+    wxBoxSizer* birthDateSizer = new wxBoxSizer(wxHORIZONTAL);
+    getDay = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(40, -1));
+    getMonth = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(40, -1));
+    getYear = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(60, -1));
+    birthDateSizer->Add(getDay, 0, wxRIGHT, 5);
+    birthDateSizer->Add(new wxStaticText(this, wxID_ANY, "/"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
+    birthDateSizer->Add(getMonth, 0, wxRIGHT, 5);
+    birthDateSizer->Add(new wxStaticText(this, wxID_ANY, "/"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
+    birthDateSizer->Add(getYear, 0);
+
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "Birth Date (DD/MM/YYYY):"), 0, wxALIGN_CENTER_VERTICAL);
+    formGrid->Add(birthDateSizer, 1, wxEXPAND);
+
+    // Address fields
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "House Number:"), 0, wxALIGN_CENTER_VERTICAL);
+    getHouseNumber = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+    formGrid->Add(getHouseNumber, 1, wxEXPAND);
+
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "City:"), 0, wxALIGN_CENTER_VERTICAL);
+    getCity = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+    formGrid->Add(getCity, 1, wxEXPAND);
+
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "Province/State:"), 0, wxALIGN_CENTER_VERTICAL);
+    getProvince = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+    formGrid->Add(getProvince, 1, wxEXPAND);
+
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "Country:"), 0, wxALIGN_CENTER_VERTICAL);
+    getCountry = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize);
+    formGrid->Add(getCountry, 1, wxEXPAND);
+
+    // Password fields
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "Password:"), 0, wxALIGN_CENTER_VERTICAL);
+    getPassword = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD);
+    formGrid->Add(getPassword, 1, wxEXPAND);
+
+    formGrid->Add(new wxStaticText(this, wxID_ANY, "Confirm Password:"), 0, wxALIGN_CENTER_VERTICAL);
+    getConfirmPassword = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD);
+    formGrid->Add(getConfirmPassword, 1, wxEXPAND);
+
+    mainSizer->Add(formGrid, 1, wxALL | wxEXPAND, 10);
+
+    // Signup button
+    wxButton* signupButton = new wxButton(this, ID_SignupSubmitButton, "Sign Up");
+    mainSizer->Add(signupButton, 0, wxALIGN_CENTER | wxALL, 10);
+
+    SetSizerAndFit(mainSizer);
+}
+
+
+void SignupPanel::OnSignup() {
+    if (getUserName->GetValue().IsEmpty() ||
+        getFirstName->GetValue().IsEmpty() ||
+        getLastName->GetValue().IsEmpty() ||
+        getEmail->GetValue().IsEmpty() ||
+        getPassword->GetValue().IsEmpty())
+    {
+        wxMessageBox("Please fill in all required fields", "Error", wxOK | wxICON_ERROR);
+        return ;
+    }
+
+    if (getPassword->GetValue() != getConfirmPassword->GetValue())
+    {
+        wxMessageBox("Passwords do not match", "Error", wxOK | wxICON_ERROR);
+        return ;
+    }
+
+    // Here you would typically send the data to your backend
+    wxMessageBox("Account created successfully!", "Success", wxOK | wxICON_INFORMATION);
+
+    // Clear the form
+    getUserName->Clear();
+    getFirstName->Clear();
+    getLastName->Clear();
+    getEmail->Clear();
+    getDay->Clear();
+    getMonth->Clear();
+    getYear->Clear();
+    getHouseNumber->Clear();
+    getCity->Clear();
+    getProvince->Clear();
+    getCountry->Clear();
+    getPassword->Clear();
+    getConfirmPassword->Clear();
+    
+}
+
+bool SignupPanel::ValidateSignup(){
+    if (getUserName->GetValue().IsEmpty() ||
+        getFirstName->GetValue().IsEmpty() ||
+        getLastName->GetValue().IsEmpty() ||
+        getEmail->GetValue().IsEmpty() ||
+        getPassword->GetValue().IsEmpty()) {
+        return false;
+    }
+    return true;
+}
