@@ -16,7 +16,8 @@ Person::Person(const Person& other)
 {
 }
 
-Person::Person(const Login& _login, const MyString& _userName, const MyString& email, const Date& dob, const Name& name, const Address& addr) :
+
+Person::Person(const Login& _login,  const MyString& email, const Date& dob, const Name& name, const Address& addr) :
 	email(email), birthDate(dob),
 	fullName(name), address(addr),
 	login(_login)

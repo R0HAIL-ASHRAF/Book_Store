@@ -14,11 +14,11 @@ private:
     DashboardUser* m_dashboardUser;
     wxBoxSizer* m_mainSizer;
 
+    void OnLogout(wxCommandEvent& event);
     void OnLoginSuccess(wxCommandEvent& event);
     void OnShowSignup(wxCommandEvent& event);
     void OnSignupComplete(wxCommandEvent& event);
     void SwitchToDashboard();
-    void OnSignup(wxCommandEvent& event);
 
     void SwitchToLoginPage();
     void SwitchToSignupPage();

@@ -1,5 +1,8 @@
+
+
 #include<iostream>
 #include"MyString.h"
+
 
 int MyString::ArrLength(const char* Arr) {
 	int i = 0;
@@ -18,9 +21,18 @@ MyString::MyString() {
 MyString::MyString(const char* Arr) {
 	this->capacity = ArrLength(Arr);
 	this->length = ArrLength(Arr);
-	this->charString = new char[this->capacity];
+	this->charString = new char[this->capacity + 1];
 	for (int i = 0; i < this->length; i++) {
 		this->charString[i] = Arr[i];
+	}
+}
+MyString::MyString(const wxString& arr)
+{
+	this->capacity = ArrLength(arr);
+	this->length = ArrLength(arr);
+	this->charString = new char[this->capacity + 1];
+	for (int i = 0; i < this->length; i++) {
+		this->charString[i] = arr[i];
 	}
 }
 // Parameterized Constructor 1
@@ -644,6 +656,24 @@ MyString& MyString::operator=(const char* right) {
 	return *this;
 }
 
+void MyString::WriteToStream(ofstream& out) const {
+	int len = length;
+	out.write((char*)&len, sizeof(int));
+	out.write(charString, len);
+}
+
+void MyString::ReadFromStream(std::ifstream& in) {
+	int len;
+	in.read((char*)&len, sizeof(int));
+	if (len > 0 && in) {
+		delete[] charString;
+		charString = new char[len + 1];
+		in.read(charString, len);
+		charString[len] = '\0';
+		length = len;
+		capacity = len + 1;
+	}
+}
 
 
 

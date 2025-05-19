@@ -1,16 +1,23 @@
 #ifndef SIGNUPPANEL_H  
 #define SIGNUPPANEL_H  
 
+#include"MyVector.h"
+#include "Person.h" 
 #include <wx/wx.h>  
+#include "loginPanel.h"
 
 class SignupPanel : public wxPanel  
 {  
 public:  
-    SignupPanel(wxWindow* parent);  
+    SignupPanel(wxWindow* parent);
+    void AddFormField(wxSizer* sizer, const wxString& label, wxWindow* control);
     void OnSignup();
     bool ValidateSignup();
+    Person* getPerson();
+    void clearTextCtrls()const;
+    void IntoFile();
 private:  
-
+    
     // Declare form fields  
     wxTextCtrl* getUserName;  
     wxTextCtrl* getFirstName;  
@@ -25,8 +32,10 @@ private:
     wxTextCtrl* getCountry;  
     wxTextCtrl* getPassword;  
     wxTextCtrl* getConfirmPassword;  
-
     
+
+private://functions
+
 };  
 
 #endif

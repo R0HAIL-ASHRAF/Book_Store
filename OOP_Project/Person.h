@@ -19,7 +19,7 @@ protected:
 public:
     Person();
     Person(const Person& other);
-    Person(const Login& _login, const MyString& _userName, const MyString& email, const Date& dob, const Name& name, const Address& addr);
+    Person(const Login& _login, const MyString& email, const Date& dob, const Name& name, const Address& addr);
     Person& operator=(const Person& other);
     bool operator==(const Person& other) const;
     bool operator!=(const Person& other) const;

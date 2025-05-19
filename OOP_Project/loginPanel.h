@@ -1,24 +1,28 @@
 #pragma once
 #include <wx/wx.h>
-#include "Person.h" // Assuming you have this class
+#include"MyVector.h"
+#include "Person.h" 
+#include<fstream>
 
-class LoginPanel : public wxPanel {
+class loginPanel : public wxPanel {
 public:
-    LoginPanel(wxWindow* parent);
-    LoginPanel(wxWindow* parent, wxWindowID id);
+    loginPanel(wxWindow* parent);
     bool ValidateLogin() const;
     wxString GetUsername() const { return m_usernameField->GetValue(); }
+    void addPerson(Person*& person);
+    void clearTextCtrl();
+    void FromFile();
+
 
 private:
     void SetupUI();
-    void addPerson(Person*& person);
 
+   
+    
+    
     wxTextCtrl* m_usernameField;
     wxTextCtrl* m_passwordField;
-    wxVector<Person*> persons; // Using wxVector instead of std::vector for wxWidgets compatibility
+    MyVector<Person*> persons; 
 
-    // Event handlers
-    void OnLogin(wxCommandEvent& event);
-    void OnSignup(wxCommandEvent& event);
-
+    
 };

@@ -1,9 +1,7 @@
 #include "DashboardUser.h"
 #include "MainFrame.h"  
+#include"IDs.h"
 
-wxBEGIN_EVENT_TABLE(DashboardUser, wxPanel)
-EVT_BUTTON(wxID_ANY, DashboardUser::OnLogout)
-wxEND_EVENT_TABLE()
 
 DashboardUser::DashboardUser(wxWindow* parent)
     : wxPanel(parent, wxID_ANY)
@@ -27,7 +25,7 @@ void DashboardUser::SetupUI()
 
     // Add logout button at bottom
     mainSizer->AddStretchSpacer();
-    m_logoutButton = new wxButton(this, wxID_ANY, "Logout");
+    m_logoutButton = new wxButton(this, ID_LogoutButton, "Logout");
     mainSizer->Add(m_logoutButton, 0, wxALIGN_RIGHT | wxRIGHT | wxBOTTOM, 10);
 
     SetSizer(mainSizer);
@@ -39,12 +37,3 @@ void DashboardUser::SetWelcomeMessage(const wxString& username)
     Layout();
 }
 
-void DashboardUser::OnLogout(wxCommandEvent& event)
-{
-    // Get the parent frame and call its logout method
-    MainFrame* frame = dynamic_cast<MainFrame*>(GetParent());
-    if (frame)
-    {
-       //frame->SwitchToLoginPage();  // You would add this method to MainFrame
-    }
-}

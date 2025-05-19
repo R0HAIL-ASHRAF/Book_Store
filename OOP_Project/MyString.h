@@ -1,6 +1,8 @@
 #ifndef MYSTRING_H
 #define MYSTRING_H
 #include<iostream>
+#include <fstream>
+#include <wx/string.h>
 using namespace std;
 
 class MyString {
@@ -15,6 +17,7 @@ public:
 	MyString();
 	// coverstion Constructor
 	MyString(const char* Arr);
+	MyString(const wxString& arr);
 	// Parameterized Constructor 1
 	MyString(char* _Mystring);
 	// Parameterized Constructor 2
@@ -101,6 +104,8 @@ public:
 	void ReplaceFirst(char c);
 	const char charstring(int i);
 	MyString& operator=(const char* right);
+	void WriteToStream(std::ofstream& out) const;
+	void ReadFromStream(std::ifstream& in);
 	void convertionToChar(const int num, char arr[]);
 
 	void display() const;

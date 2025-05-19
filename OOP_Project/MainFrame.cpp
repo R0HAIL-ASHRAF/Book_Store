@@ -4,7 +4,7 @@
 MainFrame::MainFrame(const wxString& title)
     : wxFrame(nullptr, wxID_ANY, title)
 {
-    this->SetBackgroundColour("White");
+    this->SetBackgroundColour(wxColour(255, 188, 217));
     m_mainSizer = new wxBoxSizer(wxVERTICAL);
 
     // Create panels
@@ -36,7 +36,16 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_BUTTON, &MainFrame::OnLoginSuccess, this, ID_LoginButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnShowSignup, this, ID_SignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnSignupComplete, this, ID_SignupSubmitButton);
+    Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButton);
 }
+
+void MainFrame::OnLogout(wxCommandEvent& event) {
+    m_dashboardUser->Hide();
+    m_loginPanel->clearTextCtrl();
+    m_loginPanel->Show();
+}
+
+
 
 void MainFrame::OnLoginSuccess(wxCommandEvent& event)
 {
@@ -64,6 +73,10 @@ void MainFrame::OnSignupComplete(wxCommandEvent& event)
     }
     else {
         wxMessageBox("Signup successful! Please log in.", "Success", wxOK | wxICON_INFORMATION);
+        Person* tempPerson = new Person(*m_signupPanel->getPerson());
+        m_loginPanel->addPerson(tempPerson);
+        m_signupPanel->IntoFile();
+        m_signupPanel->clearTextCtrls();
         SwitchToLoginPage();
     }
 }
@@ -75,6 +88,8 @@ void MainFrame::SwitchToDashboard()
     m_dashboardUser->Show();
     Layout();
 }
+
+
 
 void MainFrame::SwitchToLoginPage()
 {
@@ -98,4 +113,6 @@ MainFrame::~MainFrame()
     Unbind(wxEVT_BUTTON, &MainFrame::OnLoginSuccess, this, ID_LoginButton);
     Unbind(wxEVT_BUTTON, &MainFrame::OnShowSignup, this, ID_SignupButton);
     Unbind(wxEVT_BUTTON, &MainFrame::OnSignupComplete, this, ID_SignupSubmitButton);
+    Unbind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButton);
+
 }

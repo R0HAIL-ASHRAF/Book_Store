@@ -17,7 +17,7 @@ private:
     void OnLogout(wxCommandEvent& event);
     void SetupUI();
 
-    wxDECLARE_EVENT_TABLE();
+    
 };
 
-#endif // DASHBOARDPANEL_H
+#endif 

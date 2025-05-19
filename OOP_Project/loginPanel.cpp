@@ -1,28 +1,28 @@
 #include "LoginPanel.h"
 #include"IDs.h"
+
 loginPanel::loginPanel(wxWindow* parent)
     : wxPanel(parent)
 {
+    
     SetupUI();
-    Person* Admin = new Person(Login("Admin", "1234"), "Admin", "admin@gmail.com", Date(12, 2, 2023), Name("Rohail", "Ashraf"),
+   /* Person* Admin = new Person(Login("Admin", "1234"), "admin@gmail.com", Date(12, 2, 2023), Name("Rohail", "Ashraf"),
         Address("53-B", "Lahore", "Punjab", "Pakistan"));
-    addPerson(Admin);
+    addPerson(Admin);*/
+   this->FromFile();
 }
 
-loginPanel::loginPanel(wxWindow* parent, wxWindowID id)
-{
-     SetupUI();
-}
 
 void loginPanel::addPerson(Person*& person)
 {
     persons.push(person);
 }
 
+
 bool loginPanel::ValidateLogin() const
 {
-    wxString username = m_usernameField->GetValue();
-    wxString password = m_passwordField->GetValue();
+    MyString username = m_usernameField->GetValue();
+    MyString password = m_passwordField->GetValue();
     for (int i = 0; i < persons.size(); i++) {
         if (username == persons.at(i)->getUserName() &&
             password == persons.at(i)->getPassword() ) {
@@ -34,72 +34,135 @@ bool loginPanel::ValidateLogin() const
 }
 
 void loginPanel::SetupUI()
-{
-    // Load the image
+{   
     wxImage::AddHandler(new wxJPEGHandler());
     wxImage::AddHandler(new wxPNGHandler());
     wxImage logoImg("assets/images/loginPage.png", wxBITMAP_TYPE_ANY);
-    if (!logoImg.IsOk() ) {
+    if (!logoImg.IsOk()) {
         wxLogError("Failed to load logo image");
         return;
     }
-    
-    wxBitmap logoBmp(logoImg.Scale(400, 400));  // Resize if needed
+
+    wxBitmap logoBmp(logoImg.Scale(400, 400));  
     wxStaticBitmap* logo = new wxStaticBitmap(this, wxID_ANY, logoBmp);
 
+    wxFont* labelFont = new wxFont(14, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
+    wxFont* headingFont = new wxFont(22, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD);
 
-    // login form sizer
-    wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
-    wxFont* staticTextFontSize = new wxFont(14, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_MEDIUM);
+    wxPanel* formPanel = new wxPanel(this);
+    formPanel->SetBackgroundColour(wxColour(255, 245, 247)); 
+    formPanel->SetWindowStyle(wxBORDER_SIMPLE);
+
     
-    // Login 
-    wxStaticText* loginLabel = new wxStaticText(this, wxID_ANY, "Please Login");
-    loginLabel->SetFont(wxFont(20, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
-    mainSizer->Add(loginLabel, 0, wxALIGN_CENTER, 10);
+    wxBoxSizer* formSizer = new wxBoxSizer(wxVERTICAL);
 
-    // Username box
+   
+    wxStaticText* loginLabel = new wxStaticText(formPanel, wxID_ANY, "Welcome Back!");
+    loginLabel->SetFont(wxFont(18, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
+    loginLabel->SetForegroundColour(wxColour(50, 100, 200));
+    formSizer->Add(loginLabel, 0, wxALIGN_CENTER | wxTOP | wxBOTTOM, 15);
+
+    // Username field
     wxBoxSizer* userSizer = new wxBoxSizer(wxHORIZONTAL);
-    wxStaticText* userNameText = new wxStaticText(this, wxID_ANY, "Username:");
-    userNameText->SetFont(*staticTextFontSize);
+    wxStaticText* userNameText = new wxStaticText(formPanel, wxID_ANY, "Username:");
+    userNameText->SetFont(*labelFont);
     userSizer->Add(userNameText, 0, wxRIGHT | wxALIGN_CENTER_VERTICAL, 5);
-    m_usernameField = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(250, -1));
+    m_usernameField = new wxTextCtrl(formPanel, wxID_ANY, "", wxDefaultPosition, wxSize(250, -1));
+    m_usernameField->SetHint("Enter your username");
     userSizer->Add(m_usernameField, 1);
-    mainSizer->Add(userSizer, 0, wxEXPAND | wxALL, 10);
+    formSizer->Add(userSizer, 0, wxEXPAND | wxALL, 10);
 
-    // Password box
+    // Password field
     wxBoxSizer* passSizer = new wxBoxSizer(wxHORIZONTAL);
-    wxStaticText* passwordText = new wxStaticText(this, wxID_ANY, "Password:");
-    passwordText->SetFont(*staticTextFontSize);
+    wxStaticText* passwordText = new wxStaticText(formPanel, wxID_ANY, "Password:");
+    passwordText->SetFont(*labelFont);
     passSizer->Add(passwordText, 0, wxRIGHT | wxALIGN_CENTER_VERTICAL, 5);
-    m_passwordField = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(250, -1), wxTE_PASSWORD);
+    m_passwordField = new wxTextCtrl(formPanel, wxID_ANY, "", wxDefaultPosition, wxSize(250, -1), wxTE_PASSWORD);
+    m_passwordField->SetHint("Enter your password");
     passSizer->Add(m_passwordField, 1);
-    mainSizer->Add(passSizer, 0, wxEXPAND | wxALL, 10);
+    formSizer->Add(passSizer, 0, wxEXPAND | wxALL, 10);
 
-    // Login button 
+    // Buttons
+    wxBoxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
+    wxButton* loginBtn = new wxButton(formPanel, ID_LoginButton, "Login");
+    wxButton* signUpBtn = new wxButton(formPanel, ID_SignupButton, "Sign Up");
+    buttonSizer->Add(loginBtn,wxRIGHT);
+    buttonSizer->Add(signUpBtn);
 
-    wxButton* loginBtn = new wxButton(this, ID_LoginButton, "Login");
-    loginBtn->SetDefault();
-    mainSizer->Add(loginBtn, 0, wxALIGN_CENTER | wxTOP | wxBOTTOM, 15);
-
-    // sign up button 
-
-	wxButton* signUpBtn = new wxButton(this, ID_SignupButton, "Sign Up");
-	signUpBtn->SetDefault();
-	mainSizer->Add(signUpBtn, 0, wxALIGN_CENTER | wxTOP | wxBOTTOM, 15);
+    formSizer->Add(buttonSizer, 0,wxALIGN_CENTER | wxTOP | wxBOTTOM, 15);
+    formPanel->SetSizer(formSizer);
 
     wxBoxSizer* contentSizer = new wxBoxSizer(wxHORIZONTAL);
     contentSizer->AddSpacer(20);
-    contentSizer->Add(logo, 0, wxALIGN_CENTER_VERTICAL | wxALL, 10);  // Image on the left
-    contentSizer->AddSpacer(30);
-    contentSizer->Add(mainSizer, 0, wxALIGN_CENTER_VERTICAL);
+    contentSizer->Add(logo, 0, wxALIGN_CENTER_VERTICAL | wxALL, 20);
+    contentSizer->AddSpacer(50);
+    contentSizer->Add(formPanel, 0, wxALIGN_CENTER_VERTICAL | wxALL, 20);
     contentSizer->AddSpacer(20);
 
-    // Add top-level sizer for vertical centering
     wxBoxSizer* outerSizer = new wxBoxSizer(wxVERTICAL);
     outerSizer->AddStretchSpacer(1);
     outerSizer->Add(contentSizer, 0, wxALIGN_CENTER);
     outerSizer->AddStretchSpacer(1);
-    
+
     SetSizerAndFit(outerSizer);
     m_usernameField->SetFocus();
+}
+
+void loginPanel::clearTextCtrl() {
+    m_usernameField->Clear();
+    m_passwordField->Clear();
+}
+
+
+void loginPanel::FromFile() {
+    MyString tempUserName;
+    MyString tempFirstName;
+    MyString tempLastName;
+    MyString tempEmail;
+    MyString tempDay;
+    MyString tempMonth;
+    MyString tempYear;
+    MyString tempHouseNumber;
+    MyString tempCity;
+    MyString tempProvince;
+    MyString tempCountry;
+    MyString tempPassword;
+
+    std::ifstream fin("Users.bin", std::ios::binary);
+    if (!fin.is_open()) {
+        wxLogError("Failed to open file(loginPanel.cpp)!");
+        return;
+    }
+
+    while (true) {
+        tempUserName.ReadFromStream(fin);
+        if (fin.eof()) 
+            break;
+
+        tempFirstName.ReadFromStream(fin);
+        tempLastName.ReadFromStream(fin);
+        tempEmail.ReadFromStream(fin);
+        tempDay.ReadFromStream(fin);
+        tempMonth.ReadFromStream(fin);
+        tempYear.ReadFromStream(fin);
+        tempHouseNumber.ReadFromStream(fin);
+        tempCity.ReadFromStream(fin);
+        tempProvince.ReadFromStream(fin);
+        tempCountry.ReadFromStream(fin);
+        tempPassword.ReadFromStream(fin);
+
+        if (!fin) break;
+
+        Person* person = new Person(
+            Login(tempUserName, tempPassword),
+            tempEmail,
+            Date(tempDay.StringToInt(), tempMonth.StringToInt(), tempYear.StringToInt()),
+            Name(tempFirstName, tempLastName),
+            Address(tempHouseNumber, tempCity, tempProvince, tempCountry)
+        );
+
+        addPerson(person);
+    }
+
+    fin.close();
 }
