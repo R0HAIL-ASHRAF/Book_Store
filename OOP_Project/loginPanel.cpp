@@ -9,7 +9,6 @@ loginPanel::loginPanel(wxWindow* parent)
    this->FromFile();
 }
 
-
 void loginPanel::addPerson(Person*& person)
 {
     persons.push(person);
@@ -108,7 +107,6 @@ void loginPanel::clearTextCtrl() {
     m_usernameField->Clear();
     m_passwordField->Clear();
 }
-
 
 void loginPanel::FromFile() {
     MyString tempUserName;

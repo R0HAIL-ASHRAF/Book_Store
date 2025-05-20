@@ -16,9 +16,7 @@ public:
     Person* getPerson();
     void clearTextCtrls()const;
     void IntoFile();
-private:  
-    
-    
+private:    
     wxTextCtrl* getUserName;  
     wxTextCtrl* getFirstName;  
     wxTextCtrl* getLastName;  
@@ -33,7 +31,6 @@ private:
     wxTextCtrl* getPassword;  
     wxTextCtrl* getConfirmPassword;  
     
-
 private://functions
 
 };  

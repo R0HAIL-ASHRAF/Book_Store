@@ -102,16 +102,16 @@ SignupPanel::SignupPanel(wxWindow* parent)
     formGrid->AddGrowableCol(1, 1);
 
     getUserName = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(250, -1));
-    AddFormField(formGrid, "Username*:", getUserName);
+    AddFormField(formGrid, "Username:", getUserName);
 
     getFirstName = new wxTextCtrl(this, wxID_ANY);
-    AddFormField(formGrid, "First Name*:", getFirstName);
+    AddFormField(formGrid, "First Name:", getFirstName);
 
     getLastName = new wxTextCtrl(this, wxID_ANY);
     AddFormField(formGrid, "Last Name:", getLastName);
 
     getEmail = new wxTextCtrl(this, wxID_ANY);
-    AddFormField(formGrid, "Email*:", getEmail);
+    AddFormField(formGrid, "Email:", getEmail);
 
     // Date of birth fields
     wxBoxSizer* dobSizer = new wxBoxSizer(wxHORIZONTAL);
@@ -143,10 +143,10 @@ SignupPanel::SignupPanel(wxWindow* parent)
 
     // Password fields
     getPassword = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD);
-    AddFormField(formGrid, "Password*:", getPassword);
+    AddFormField(formGrid, "Password:", getPassword);
 
     getConfirmPassword = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD);
-    AddFormField(formGrid, "Confirm Password*:", getConfirmPassword);
+    AddFormField(formGrid, "Confirm Password:", getConfirmPassword);
 
     // Password requirements hint
     wxStaticText* pwHint = new wxStaticText(this, wxID_ANY,
@@ -162,23 +162,16 @@ SignupPanel::SignupPanel(wxWindow* parent)
     wxCheckBox* termsCheck = new wxCheckBox(this, wxID_ANY, "I agree to the Terms and Conditions");
     formContainer->Add(termsCheck, 0, wxLEFT | wxBOTTOM, 15);
 
-
     wxBoxSizer* btnSizer = new wxBoxSizer(wxHORIZONTAL);
 
     // signup button
     wxButton* signupButton = new wxButton(this, ID_SignupSubmitButton, "Create Account");
-    /*signupButton->SetBackgroundColour(wxColour(70, 130, 200));
-     signupButton->SetForegroundColour(*wxWHITE);
-    signupButton->SetFont(wxFont(12, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));*/
     btnSizer->Add(signupButton, 0, wxALIGN_CENTRE, 20);
 
     btnSizer->AddStretchSpacer(0);
     
     // back to login button
     wxButton* loginButton = new wxButton(this, ID_LoginSignupButton, "Login");
-    /*signupButton->SetBackgroundColour(wxColour(70, 130, 200));
-    signupButton->SetForegroundColour(*wxWHITE);
-    signupButton->SetFont(wxFont(12, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD)); */
     btnSizer->Add(loginButton, 1, wxALIGN_CENTRE, 15);
 
     formContainer->Add(btnSizer, 1, wxALIGN_CENTER,20);

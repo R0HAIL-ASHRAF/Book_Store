@@ -9,5 +9,6 @@ private:
 	MyString productName;
 	MyString description;
 	int price;
+
 };
 

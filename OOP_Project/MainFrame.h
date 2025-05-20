@@ -1,8 +1,10 @@
 #pragma once
+
 #include"wx/wx.h"
 #include"loginPanel.h"
 #include"DashboardUser.h"
 #include"SignupPanel.h"
+
 class MainFrame: public wxFrame
 {
 public:
@@ -14,13 +16,15 @@ private:
     DashboardUser* m_dashboardUser;
     wxBoxSizer* m_mainSizer;
 
+    // btns event handlers
     void OnLogout(wxCommandEvent& event);
     void OnLoginSuccess(wxCommandEvent& event);
     void OnShowSignup(wxCommandEvent& event);
     void OnSignupComplete(wxCommandEvent& event);
     void SignUpLoginBtnSuccess(wxCommandEvent& event);
-    void SwitchToDashboard();
 
+    // panel changing 
+    void SwitchToDashboard();
     void SwitchToLoginPage();
     void SwitchToSignupPage();
 
