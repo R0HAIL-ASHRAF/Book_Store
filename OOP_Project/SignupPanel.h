@@ -18,7 +18,7 @@ public:
     void IntoFile();
 private:  
     
-    // Declare form fields  
+    
     wxTextCtrl* getUserName;  
     wxTextCtrl* getFirstName;  
     wxTextCtrl* getLastName;  

@@ -18,6 +18,7 @@ private:
     void OnLoginSuccess(wxCommandEvent& event);
     void OnShowSignup(wxCommandEvent& event);
     void OnSignupComplete(wxCommandEvent& event);
+    void SignUpLoginBtnSuccess(wxCommandEvent& event);
     void SwitchToDashboard();
 
     void SwitchToLoginPage();

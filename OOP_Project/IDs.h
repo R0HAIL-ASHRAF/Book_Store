@@ -6,4 +6,5 @@ enum {
     ID_SignupButton,
     ID_SignupSubmitButton,
     ID_LogoutButton,
+    ID_LoginSignupButton,
 };

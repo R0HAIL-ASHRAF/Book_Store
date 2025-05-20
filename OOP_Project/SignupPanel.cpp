@@ -87,25 +87,20 @@
 SignupPanel::SignupPanel(wxWindow* parent)
     : wxPanel(parent, wxID_ANY)
 {
-    // Main outer sizer for vertical centering
     wxBoxSizer* outerSizer = new wxBoxSizer(wxVERTICAL);
-    outerSizer->AddStretchSpacer(1); // Push content down
+    outerSizer->AddStretchSpacer(1); 
 
-    // Form container with maximum width
     wxBoxSizer* formContainer = new wxBoxSizer(wxVERTICAL);
-    formContainer->SetMinSize(wxSize(600, -1)); // Limit maximum width
+    formContainer->SetMinSize(wxSize(600, -1));
 
-    // Form title with improved styling
     wxStaticText* title = new wxStaticText(this, wxID_ANY, "Create Your Account");
     title->SetFont(wxFont(18, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
-    title->SetForegroundColour(wxColour(50, 100, 200)); // Blue color
+    title->SetForegroundColour(wxColour(50, 100, 200));
     formContainer->Add(title, 0, wxALIGN_CENTER_HORIZONTAL | wxTOP | wxBOTTOM, 15);
 
-    // Form grid with improved spacing
     wxFlexGridSizer* formGrid = new wxFlexGridSizer(2, wxSize(15, 10));
     formGrid->AddGrowableCol(1, 1);
 
-    // Add form fields using existing text controls
     getUserName = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(250, -1));
     AddFormField(formGrid, "Username*:", getUserName);
 
@@ -167,21 +162,33 @@ SignupPanel::SignupPanel(wxWindow* parent)
     wxCheckBox* termsCheck = new wxCheckBox(this, wxID_ANY, "I agree to the Terms and Conditions");
     formContainer->Add(termsCheck, 0, wxLEFT | wxBOTTOM, 15);
 
-    // Enhanced signup button with styling
-    wxButton* signupButton = new wxButton(this, ID_SignupSubmitButton, "Create Account");
-    signupButton->SetBackgroundColour(wxColour(70, 130, 200));
-    signupButton->SetForegroundColour(*wxWHITE);
-    signupButton->SetFont(wxFont(12, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
-    formContainer->Add(signupButton, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 15);
 
+    wxBoxSizer* btnSizer = new wxBoxSizer(wxHORIZONTAL);
+
+    // signup button
+    wxButton* signupButton = new wxButton(this, ID_SignupSubmitButton, "Create Account");
+    /*signupButton->SetBackgroundColour(wxColour(70, 130, 200));
+     signupButton->SetForegroundColour(*wxWHITE);
+    signupButton->SetFont(wxFont(12, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));*/
+    btnSizer->Add(signupButton, 0, wxALIGN_CENTRE, 20);
+
+    btnSizer->AddStretchSpacer(0);
+    
+    // back to login button
+    wxButton* loginButton = new wxButton(this, ID_LoginSignupButton, "Login");
+    /*signupButton->SetBackgroundColour(wxColour(70, 130, 200));
+    signupButton->SetForegroundColour(*wxWHITE);
+    signupButton->SetFont(wxFont(12, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD)); */
+    btnSizer->Add(loginButton, 1, wxALIGN_CENTRE, 15);
+
+    formContainer->Add(btnSizer, 1, wxALIGN_CENTER,20);
    
-    // Add form container to outer sizer
     outerSizer->Add(formContainer, 0, wxALIGN_CENTER | wxLEFT | wxRIGHT, 20);
-    outerSizer->AddStretchSpacer(1); // Push content up
+    outerSizer->AddStretchSpacer(1);
 
     SetSizer(outerSizer);
 
-    // setting up user here
+
     
     
     
@@ -192,7 +199,6 @@ SignupPanel::SignupPanel(wxWindow* parent)
 
 }
 
-// Helper function to add form fields consistently
 void SignupPanel::AddFormField(wxSizer* sizer, const wxString& label, wxWindow* control)
 {
     wxStaticText* labelCtrl = new wxStaticText(this, wxID_ANY, label);
@@ -202,11 +208,7 @@ void SignupPanel::AddFormField(wxSizer* sizer, const wxString& label, wxWindow* 
 }
 
 void SignupPanel::OnSignup() {
-    if (getUserName->GetValue().IsEmpty() ||
-        getFirstName->GetValue().IsEmpty() ||
-        getLastName->GetValue().IsEmpty() ||
-        getEmail->GetValue().IsEmpty() ||
-        getPassword->GetValue().IsEmpty())
+    if (!ValidateSignup())
     {
         wxMessageBox("Please fill in all required fields", "Error", wxOK | wxICON_ERROR);
         return ;
@@ -218,23 +220,9 @@ void SignupPanel::OnSignup() {
         return ;
     }
 
-    // Here you would typically send the data to your backend
     wxMessageBox("Account created successfully!", "Success", wxOK | wxICON_INFORMATION);
 
-    // Clear the form
-    getUserName->Clear();
-    getFirstName->Clear();
-    getLastName->Clear();
-    getEmail->Clear();
-    getDay->Clear();
-    getMonth->Clear();
-    getYear->Clear();
-    getHouseNumber->Clear();
-    getCity->Clear();
-    getProvince->Clear();
-    getCountry->Clear();
-    getPassword->Clear();
-    getConfirmPassword->Clear();
+    clearTextCtrls();
     
 }
 

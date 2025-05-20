@@ -7,21 +7,20 @@ MainFrame::MainFrame(const wxString& title)
     this->SetBackgroundColour(wxColour(255, 188, 217));
     m_mainSizer = new wxBoxSizer(wxVERTICAL);
 
-    // Create panels
+    //  panels
     m_loginPanel = new loginPanel(this);
     m_dashboardUser = new DashboardUser(this);
     m_signupPanel = new SignupPanel(this);
 
-    // Hide non-login panels initially
     m_signupPanel->Hide();
 	m_loginPanel->Show();
     m_dashboardUser->Hide();
 
-    // Add panels to sizer
+    
     m_mainSizer->Add(m_loginPanel, 1, wxEXPAND);
     m_mainSizer->Add(m_dashboardUser, 1, wxEXPAND);
     m_mainSizer->Add(m_signupPanel, 1, wxEXPAND);
-
+    
     // Use stack-allocated size to avoid memory leak
     wxSize sizeFrame(1250, 700);
     m_loginPanel->SetMinSize(sizeFrame);
@@ -32,20 +31,30 @@ MainFrame::MainFrame(const wxString& title)
     SetMinSize(sizeFrame);
 
         
-	// binding events
+	// binding events 
     Bind(wxEVT_BUTTON, &MainFrame::OnLoginSuccess, this, ID_LoginButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnShowSignup, this, ID_SignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnSignupComplete, this, ID_SignupSubmitButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButton);
+    Bind(wxEVT_BUTTON, &MainFrame::SignUpLoginBtnSuccess, this, ID_LoginSignupButton);
 }
+MainFrame::~MainFrame()
+{
+    Unbind(wxEVT_BUTTON, &MainFrame::OnLoginSuccess, this, ID_LoginButton);
+    Unbind(wxEVT_BUTTON, &MainFrame::OnShowSignup, this, ID_SignupButton);
+    Unbind(wxEVT_BUTTON, &MainFrame::OnSignupComplete, this, ID_SignupSubmitButton);
+    Unbind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButton);
+    Unbind(wxEVT_BUTTON, &MainFrame::SignUpLoginBtnSuccess, this, ID_LoginSignupButton);
+
+
+}
+
 
 void MainFrame::OnLogout(wxCommandEvent& event) {
     m_dashboardUser->Hide();
     m_loginPanel->clearTextCtrl();
     m_loginPanel->Show();
 }
-
-
 
 void MainFrame::OnLoginSuccess(wxCommandEvent& event)
 {
@@ -81,6 +90,14 @@ void MainFrame::OnSignupComplete(wxCommandEvent& event)
     }
 }
 
+void MainFrame::SignUpLoginBtnSuccess(wxCommandEvent& event) {
+    m_loginPanel->Show();
+    m_signupPanel->Hide();
+    m_dashboardUser->Hide();
+    Layout();
+
+}
+
 void MainFrame::SwitchToDashboard()
 {
     m_loginPanel->Hide();
@@ -88,8 +105,6 @@ void MainFrame::SwitchToDashboard()
     m_dashboardUser->Show();
     Layout();
 }
-
-
 
 void MainFrame::SwitchToLoginPage()
 {
@@ -108,11 +123,3 @@ void MainFrame::SwitchToSignupPage()
 }
 
 
-MainFrame::~MainFrame()
-{
-    Unbind(wxEVT_BUTTON, &MainFrame::OnLoginSuccess, this, ID_LoginButton);
-    Unbind(wxEVT_BUTTON, &MainFrame::OnShowSignup, this, ID_SignupButton);
-    Unbind(wxEVT_BUTTON, &MainFrame::OnSignupComplete, this, ID_SignupSubmitButton);
-    Unbind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButton);
-
-}

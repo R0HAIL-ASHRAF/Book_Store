@@ -6,9 +6,6 @@ loginPanel::loginPanel(wxWindow* parent)
 {
     
     SetupUI();
-   /* Person* Admin = new Person(Login("Admin", "1234"), "admin@gmail.com", Date(12, 2, 2023), Name("Rohail", "Ashraf"),
-        Address("53-B", "Lahore", "Punjab", "Pakistan"));
-    addPerson(Admin);*/
    this->FromFile();
 }
 
@@ -17,7 +14,6 @@ void loginPanel::addPerson(Person*& person)
 {
     persons.push(person);
 }
-
 
 bool loginPanel::ValidateLogin() const
 {
@@ -43,7 +39,7 @@ void loginPanel::SetupUI()
         return;
     }
 
-    wxBitmap logoBmp(logoImg.Scale(400, 400));  
+    wxBitmap logoBmp(logoImg.Scale(700, 700));  
     wxStaticBitmap* logo = new wxStaticBitmap(this, wxID_ANY, logoBmp);
 
     wxFont* labelFont = new wxFont(14, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
@@ -95,7 +91,7 @@ void loginPanel::SetupUI()
     wxBoxSizer* contentSizer = new wxBoxSizer(wxHORIZONTAL);
     contentSizer->AddSpacer(20);
     contentSizer->Add(logo, 0, wxALIGN_CENTER_VERTICAL | wxALL, 20);
-    contentSizer->AddSpacer(50);
+    contentSizer->AddSpacer(20);
     contentSizer->Add(formPanel, 0, wxALIGN_CENTER_VERTICAL | wxALL, 20);
     contentSizer->AddSpacer(20);
 
