@@ -1,4 +1,5 @@
 #include "Store.h"
+#include "StoreManager.h"
 
 Store::Store()
 	:storeId{MyString()}, storeName{MyString()},
@@ -27,7 +28,9 @@ Store::Store(const MyString& _storeId, const MyString& _storeName, const Address
 	products{ MyVector<Product*>() },
 	customers{ MyVector<Customer*>() }
 {
+	
 }
+
 
 Store& Store::operator=(const Store& other)
 {
@@ -46,7 +49,17 @@ Store& Store::operator=(const Store& other)
 	}
 }
 
-void Store::AddCustomer(Customer*& customer)
+void Store::AddCustomer(Classic*& customer)
 {
 	customers.push(customer);
+}
+
+MyVector<Product*> Store::GetProducts() const
+{
+	return MyVector<Product*>(products);
+}
+
+MyVector<Customer*> Store::GetCustomers() const
+{
+	return customers;
 }

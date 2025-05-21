@@ -2,7 +2,7 @@
 #include "IDs.h"
 
 MainFrame::MainFrame(const wxString& title)
-    : wxFrame(nullptr, wxID_ANY, title)
+    : wxFrame(nullptr, wxID_ANY, title)    
 {
     this->SetBackgroundColour(wxColour(255, 188, 217));
     m_mainSizer = new wxBoxSizer(wxVERTICAL);
@@ -29,7 +29,6 @@ MainFrame::MainFrame(const wxString& title)
 
     SetSizer(m_mainSizer);
     SetMinSize(sizeFrame);
-
         
 	// binding events 
     Bind(wxEVT_BUTTON, &MainFrame::OnLoginSuccess, this, ID_LoginButton);

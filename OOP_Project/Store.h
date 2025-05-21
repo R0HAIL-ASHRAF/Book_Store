@@ -3,7 +3,7 @@
 #include "MyString.h"
 #include "MyVector.h"
 #include "Product.h"
-#include "Customer.h"
+#include "Classic.h"
 
 class Store
 {
@@ -21,6 +21,11 @@ public:
 		const Address& _address);
 	Store& operator = (const Store& other);
 
-	void AddCustomer(Customer*& customer);
+	//adders
+	void AddCustomer(Classic*& customer);
+
+	//getters
+	MyVector<Product*> GetProducts() const;
+	MyVector<Customer*> GetCustomers() const;
 
 };

@@ -2,6 +2,7 @@
 #define MYSTRING_H
 #include<iostream>
 #include <fstream>
+#include <wx/wx.h>
 #include <wx/string.h>
 using namespace std;
 
@@ -17,8 +18,11 @@ public:
 	MyString();
 	// coverstion Constructor
 	MyString(const char* Arr);
+
 	MyString(const wxString& arr);
-	// Parameterized Constructor 1
+    // MyString to wxString
+	operator wxString() const;
+	// Parameterized Constructor 1;
 	MyString(char* _Mystring);
 	// Parameterized Constructor 2
 	MyString(int size, int _capacity);

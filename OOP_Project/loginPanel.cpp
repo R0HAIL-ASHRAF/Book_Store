@@ -9,6 +9,11 @@ loginPanel::loginPanel(wxWindow* parent)
    this->FromFile();
 }
 
+MyVector<Classic*>* loginPanel::GetCustomers() const
+{
+    return new MyVector<Classic*>(*customers);
+}
+
 void loginPanel::AddCustomer(Classic *& customer)
 {
     customers->push(customer);

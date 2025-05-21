@@ -675,7 +675,9 @@ void MyString::ReadFromStream(std::ifstream& in) {
 	}
 }
 
-
+MyString::operator wxString() const {
+	return wxString(charString);
+}
 
 
 

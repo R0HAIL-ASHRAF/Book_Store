@@ -20,6 +20,6 @@ public:
     void AddCustomer(Classic *& person);
     void clearTextCtrl();
     void FromFile();
-
+	MyVector<Classic*>* GetCustomers() const;
     ~loginPanel();
 };

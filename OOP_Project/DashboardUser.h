@@ -2,6 +2,7 @@
 #define DASHBOARDPANEL_H
 
 #include <wx/wx.h>
+#include"StoreManager.h"
 
 class DashboardUser : public wxPanel
 {
@@ -13,6 +14,7 @@ public:
 private:
     wxStaticText* m_welcomeLabel;
     wxButton* m_logoutButton;
+    Store* store;
 
     void OnLogout(wxCommandEvent& event);
     void SetupUI();

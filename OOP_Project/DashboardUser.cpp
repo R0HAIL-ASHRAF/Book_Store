@@ -12,6 +12,14 @@ DashboardUser::DashboardUser(wxWindow* parent)
 void DashboardUser::SetupUI()
 {
     wxBoxSizer* mainSizer = new wxBoxSizer(wxVERTICAL);
+    
+    store = new Store();
+    wxArrayString list;
+    MyVector<Customer*> customerList = store->GetCustomers();
+    for (int i = 0; i < customerList.size(); i++) {
+        list.Add(customerList.at(i)->getUserName());
+    }
+    wxListBox* listBox = new wxListBox(this, wxID_ANY, wxPoint(300, 300), wxSize(200, 200), list);
 
     // Welcome label
     m_welcomeLabel = new wxStaticText(this, wxID_ANY, "Welcome to the Dashboard!");
@@ -30,6 +38,7 @@ void DashboardUser::SetupUI()
 
     SetSizer(mainSizer);
 }
+
 
 void DashboardUser::SetWelcomeMessage(const wxString& username)
 {

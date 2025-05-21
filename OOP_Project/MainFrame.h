@@ -12,11 +12,13 @@ public:
     MainFrame(const wxString& title);
 
 private:
+    //Panels
     SignupPanel* m_signupPanel;
     loginPanel* m_loginPanel;
     DashboardUser* m_dashboardUser;
     wxBoxSizer* m_mainSizer;
 
+    
     // btns event handlers
     void OnLogout(wxCommandEvent& event);
     void OnLoginSuccess(wxCommandEvent& event);
