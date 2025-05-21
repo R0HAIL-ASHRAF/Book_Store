@@ -4,23 +4,23 @@
 loginPanel::loginPanel(wxWindow* parent)
     : wxPanel(parent)
 {
-    
+    customers = new MyVector<Classic*>();
     SetupUI();
    this->FromFile();
 }
 
-void loginPanel::addPerson(Person*& person)
+void loginPanel::AddCustomer(Classic *& customer)
 {
-    persons.push(person);
+    customers->push(customer);
 }
 
 bool loginPanel::ValidateLogin() const
 {
     MyString username = m_usernameField->GetValue();
     MyString password = m_passwordField->GetValue();
-    for (int i = 0; i < persons.size(); i++) {
-        if (username == persons.at(i)->getUserName() &&
-            password == persons.at(i)->getPassword() ) {
+    for (int i = 0; i < customers->size(); i++) {
+        if (username == customers->at(i)->getUserName() &&
+            password == customers->at(i)->getPassword() ) {
             return true;
         }
     }
@@ -147,7 +147,7 @@ void loginPanel::FromFile() {
 
         if (!fin) break;
 
-        Person* person = new Person(
+        Classic* customer = new Classic(
             Login(tempUserName, tempPassword),
             tempEmail,
             Date(tempDay.StringToInt(), tempMonth.StringToInt(), tempYear.StringToInt()),
@@ -155,8 +155,13 @@ void loginPanel::FromFile() {
             Address(tempHouseNumber, tempCity, tempProvince, tempCountry)
         );
 
-        addPerson(person);
+        AddCustomer(customer);
     }
 
     fin.close();
+}
+
+loginPanel::~loginPanel()
+{
+    delete customers;
 }

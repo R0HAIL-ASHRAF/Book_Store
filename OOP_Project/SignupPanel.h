@@ -2,7 +2,7 @@
 #define SIGNUPPANEL_H  
 
 #include"MyVector.h"
-#include "Person.h" 
+#include "Classic.h" 
 #include <wx/wx.h>  
 #include "loginPanel.h"
 
@@ -13,7 +13,7 @@ public:
     void AddFormField(wxSizer* sizer, const wxString& label, wxWindow* control);
     void OnSignup();
     bool ValidateSignup();
-    Person* getPerson();
+    Classic* getPerson() const;
     void clearTextCtrls()const;
     void IntoFile();
 private:    

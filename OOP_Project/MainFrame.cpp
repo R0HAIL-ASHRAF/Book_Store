@@ -82,8 +82,8 @@ void MainFrame::OnSignupComplete(wxCommandEvent& event)
     }
     else {
         wxMessageBox("Signup successful! Please log in.", "Success", wxOK | wxICON_INFORMATION);
-        Person* tempPerson = new Person(*m_signupPanel->getPerson());
-        m_loginPanel->addPerson(tempPerson);
+        Classic* tempPerson = new Classic(*m_signupPanel->getPerson());
+        m_loginPanel->AddCustomer(tempPerson);
         m_signupPanel->IntoFile();
         m_signupPanel->clearTextCtrls();
         SwitchToLoginPage();

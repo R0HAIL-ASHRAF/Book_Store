@@ -230,7 +230,7 @@ bool SignupPanel::ValidateSignup(){
     return true;
 }
 
-Person* SignupPanel::getPerson()
+Classic* SignupPanel::getPerson() const
 {
     MyString tempUserName = getUserName->GetValue();
     MyString tempFirstName = getFirstName->GetValue();
@@ -246,7 +246,7 @@ Person* SignupPanel::getPerson()
     MyString tempPassword = getPassword->GetValue();
 
 
-    Person* persons = new Person(Login(tempUserName, tempPassword),
+    Classic* persons = new Classic(Login(tempUserName, tempPassword),
         tempEmail, Date(tempDay.StringToInt(), tempMonth.StringToInt(), tempYear.StringToInt()),
         Name(tempFirstName, tempLastName),
         Address(tempHouseNumber, tempCity, tempProvince, tempCountry));

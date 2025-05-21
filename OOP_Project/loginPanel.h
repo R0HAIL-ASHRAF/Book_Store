@@ -2,24 +2,24 @@
 
 #include <wx/wx.h>
 #include"MyVector.h"
-#include "Person.h" 
 #include<fstream>
+#include "Classic.h"
 
 class loginPanel : public wxPanel 
 {
 private:
     wxTextCtrl* m_usernameField;
     wxTextCtrl* m_passwordField;
-    MyVector<Person*> persons;
+    MyVector<Classic*>* customers;
 
     void SetupUI();
 
 public:
     loginPanel(wxWindow* parent);
     bool ValidateLogin() const;
-    void addPerson(Person*& person);
+    void AddCustomer(Classic *& person);
     void clearTextCtrl();
     void FromFile();
 
-    
+    ~loginPanel();
 };

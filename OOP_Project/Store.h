@@ -13,5 +13,14 @@ private:
 	Address storeAddress;
 	MyVector<Product*> products;
 	MyVector<Customer*> customers;
-};
 
+public:
+	Store();
+	Store(const Store& other);
+	Store(const MyString& _storeId, const MyString& _storeName,
+		const Address& _address);
+	Store& operator = (const Store& other);
+
+	void AddCustomer(Customer*& customer);
+
+};

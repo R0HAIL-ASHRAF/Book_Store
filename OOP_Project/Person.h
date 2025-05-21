@@ -19,12 +19,15 @@ protected:
 public:
     Person();
     Person(const Person& other);
-    Person(const Login& _login, const MyString& email, const Date& dob, const Name& name, const Address& addr);
+    Person(const Login& _login, 
+        const MyString& email, const Date& dob, 
+        const Name& name, const Address& addr);
     Person& operator=(const Person& other);
     bool operator==(const Person& other) const;
     bool operator!=(const Person& other) const;
-    MyString getUserName() const;
-    MyString getPassword() const;
+    virtual MyString GetPersonType() const = 0;
+    virtual MyString getUserName() const;
+    virtual MyString getPassword() const;
 
 };
 

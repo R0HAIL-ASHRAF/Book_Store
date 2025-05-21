@@ -4,6 +4,7 @@
 #include"loginPanel.h"
 #include"DashboardUser.h"
 #include"SignupPanel.h"
+#include"Classic.h"
 
 class MainFrame: public wxFrame
 {
