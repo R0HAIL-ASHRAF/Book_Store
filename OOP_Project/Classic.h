@@ -13,6 +13,24 @@ public:
 		const Name& name, const Address& addr);
 	Classic& operator=(const Classic& other);
 
-	MyString GetPersonType() const override;
-};
+	void writeToFile(fstream& fout) const override;
+	void readFromFile(fstream& fin) const override;
 
+	//setters
+	void AddOrder(Order*& order) override;
+	void SetLogin(const Login& _login) override;
+	void SetName(const Name& _name) override;
+	void SetEmail(const MyString& _email) override;
+	void SetAddress(const Address& addr) override;
+	void SetPerson(const Person& _person) override;
+
+	//getters
+	MyString GetPersonType() const override;
+	MyString getUserName() const override;
+	MyString getPassword() const override;
+	Name GetName() const override;
+
+	//dipslay
+	void DisplayCustomer() const override;
+	
+};

@@ -10,6 +10,28 @@ private:
 	MyVector<Product**> products;
 	int totalPrice;
 public:
+	Cart();
+	Cart(const Cart& other);
+	Cart& operator=(const Cart& other);
+	
+	void writeToFile(fstream& fout) const;
+	void readFromFile(fstream& fin) const;
+	
+	//setters
+	void SetPayment(Payment* payment);
+	void AddProductToCart(Product* product);
+	void ClearCart();
+	void RemoveProduct(Product* product);
+
+	//getters
+	MyVector<Product**> GetPoducts() const;
+	int GetProductCount() const;
+	MyString GetPrductList() const;
+	Payment* GetPaymentInfo() const;
+	int GetTotalPrice() const;
+
+	// display
+	void DisplayProducts()const;
 
 };
 

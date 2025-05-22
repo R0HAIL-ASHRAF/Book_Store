@@ -27,5 +27,16 @@ public:
 	//getters
 	MyVector<Product*> GetProducts() const;
 	MyVector<Customer*> GetCustomers() const;
+	void GetStoreInfo() const;
+
+	// displays
+	void DisplayStore() const;
+	void DisplayProducts() const;
+	void DisplayCustomers() const;
+	void DisplayProduct(const MyString& productId) const;
+	void DisplayCustomer(const MyString& customerId) const;
+	void DisplayProductByCategory(const MyString& category) const;
+
+
 
 };

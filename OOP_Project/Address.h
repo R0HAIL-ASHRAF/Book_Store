@@ -20,6 +20,9 @@ public:
 	bool operator==(const Address& other) const;
 	bool operator!=(const Address& other) const;
    
+    void writeToFile(fstream& fout) const;
+    void readFromFile(fstream& fin) const;
+
 };
 
 #endif
