@@ -13,11 +13,12 @@ A desktop application built in **C++** using the **wxWidgets GUI Framework**. Th
 It showcases a comprehensive understanding of C++ programming, GUI development using wxWidgets. Hence, it is designed to function as **proof-of-concept desktop development application** suitable for learning, academic representations, and future development into a full-fledge commercial product.
 
 # UML & Activity Diagrams
-![UML](WorkFlow/UML_Diagram.pdf)
-![LOGIN/SIGUP](WorkFlow/AD-Login_Signup.pdf)
-![AddBook](WorkFlow/AD-addBook.pdf)
-![EditProfile](WorkFlow/AD-EditProfile.pdf)
-![AddCart](WorkFLow/AD-add-to-cart.pdf)
+Click to view:
+- [UML](WorkFlow/UML_Diagram.pdf)
+- [LOGIN/SIGUP](WorkFlow/AD-Login_Signup.pdf)
+- [AddBook](WorkFlow/AD-addBook.pdf)
+- [EditProfile](WorkFlow/AD-EditProfile.pdf)
+- [AddCart](WorkFLow/AD-add-to-cart.pdf)
 
 # Tech Stack
 | Layer         | Technology                    |
@@ -38,9 +39,4 @@ This is an ongoing project with active development, as a part of the semester pr
 ``` bash 
 # install from
 https://www.wxwidgets.org/downloads/
-
-
-
-
-
-
+```
