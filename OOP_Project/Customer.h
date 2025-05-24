@@ -34,7 +34,6 @@ public:
 	MyString GetPersonType() const override;
 	MyString getUserName() const override;
 	MyString getPassword() const override;
-	MyString getPassword() const override;
 	Name GetName() const override;
 
 	// display

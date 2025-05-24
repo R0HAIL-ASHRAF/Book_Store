@@ -146,11 +146,12 @@ void loginPanel::FromFile() {
         tempYear.ReadFromStream(fin);
         tempHouseNumber.ReadFromStream(fin);
         tempCity.ReadFromStream(fin);
-        tempProvince.ReadFromStream(fin);
-        tempCountry.ReadFromStream(fin);
-        tempPassword.ReadFromStream(fin);
+        ;
+        tempPasstempProvince.ReadFromStream(fin);
+        tempCountry.ReadFromStream(fin)word.ReadFromStream(fin);
 
-        if (!fin) break;
+        if (!fin) 
+            break;
 
         Classic* customer = new Classic(
             Login(tempUserName, tempPassword),
