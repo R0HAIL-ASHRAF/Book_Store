@@ -10,7 +10,7 @@ A desktop application built in **C++** using the **wxWidgets GUI Framework**. Th
 -Logging
 -Exception Handlings
 
-#Tech Stack
+# Tech Stack
 | Layer         | Technology                    |
 |---------------|-------------------------------|
 | Language      | C++                           |
