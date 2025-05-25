@@ -14,7 +14,7 @@ It showcases a comprehensive understanding of C++ programming, GUI development u
 
 # UML & Activity Diagrams
 Click to view:
-- [UML](WorkFlow/UML_Diagram.pdf)
+- [UML](WorkFlow/UML_Diagram.pdf/)
 - [LOGIN/SIGUP](WorkFlow/AD-Login_Signup.pdf)
 - [AddBook](WorkFlow/AD-addBook.pdf)
 - [EditProfile](WorkFlow/AD-EditProfile.pdf)
@@ -31,9 +31,8 @@ Click to view:
 
 ## Project Status
 This is an ongoing project with active development, as a part of the semester project for **Object Oriented Programming(OOP)**.
-# How to Run
 
-### PreRequisites
+# PreRequisites
 - C++ Complier(GCC/Clang/MSVC)
 - wxWidgets (1998) 
 ``` bash 
