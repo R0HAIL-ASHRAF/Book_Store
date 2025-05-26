@@ -12,6 +12,25 @@ A desktop application built in **C++** using the **wxWidgets GUI Framework**. Th
 
 It showcases a comprehensive understanding of C++ programming, GUI development using wxWidgets. Hence, it is designed to function as **proof-of-concept desktop development application** suitable for learning, academic representations, and future development into a full-fledge commercial product.
 
+
+## Architecture & Design
+
+### Object-Oriented Structure
+- Polymorphic and modular:
+  - Base classes: `Person`, `Product`
+  - Derived: `Book`, `Stationery`, `Customer`, `Admin`, etc.
+- Custom collections using `MyVector`.
+- File handling via overridden `writeToFile()` and `readFromFile()` methods.
+
+### GUI Framework: wxWidgets
+- Panels include:
+  - `LoginPanel`, `SignupPanel`, `DashboardPanel`, `CartPanel`, etc.
+- Interactivity via `wxTextCtrl`, `wxButton`, `wxListBox`.
+- View switches handled with `MainFrame` routing functions like:
+  ```cpp
+  void MainFrame::SwitchToDashboard() const;
+  void MainFrame::SwitchToBookPanel() const;
+
 # UML & Activity Diagrams
 Click to view:
 - [UML](WorkFlow/UML_Diagram.pdf/)
