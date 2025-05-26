@@ -30,6 +30,21 @@ It showcases a comprehensive understanding of C++ programming, GUI development u
   ```cpp
   void MainFrame::SwitchToDashboard() const;
   void MainFrame::SwitchToBookPanel() const;
+``` 
+
+
+## Features at a Glance
+
+|  Module          |  Features                                                                 |
+|------------------|------------------------------------------------------------------------------|
+| **Authentication** | Login, signup, file-based credential validation                            |
+| **Product System** | Add, edit, remove books/stationery, view by category                       |
+| **Shopping Cart** | Add/remove products, calculate totals, store in temporary cart files        |
+| **Payment System**| Card validation, payment info binding, shipping & taxes                     |
+| **Admin Panel**   | Manage multiple stores, assign store managers, view/edit customers/products |
+| **Dashboard UX**  | Clean navigation using wxWidgets, dynamic panel switching                   |
+
+---
 
 # UML & Activity Diagrams
 Click to view:
