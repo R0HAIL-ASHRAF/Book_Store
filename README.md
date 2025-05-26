@@ -69,6 +69,9 @@ This is an ongoing project with active development, as a part of the semester pr
 - C++ Complier(GCC/Clang/MSVC)
 - wxWidgets (1998) 
 ``` bash 
+# Linux (Debian-based)
+sudo apt install libwxgtk3.0-gtk3-dev
+
 # install from
 https://www.wxwidgets.org/downloads/
 ```
