@@ -30,7 +30,6 @@ It showcases a comprehensive understanding of C++ programming, GUI development u
   ```cpp
   void MainFrame::SwitchToDashboard() const;
   void MainFrame::SwitchToBookPanel() const;
-``` 
 
 
 ## Features at a Glance
