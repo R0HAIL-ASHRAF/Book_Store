@@ -47,8 +47,8 @@ It showcases a comprehensive understanding of C++ programming, GUI development u
 
 # UML & Activity Diagrams
 Click to view:
-- [UML](WorkFlow/UML_Diagram.pdf/)
-- [LOGIN/SIGUP](WorkFlow/AD-Login_Signup.pdf)
+- [UML](WorkFLow/UML_Diagram.pdf/)
+- [LOGIN/SIGUP](WorkFLow/AD-Login_Signup.pdf)
 - [AddBook](WorkFlow/AD-addBook.pdf)
 - [EditProfile](WorkFlow/AD-EditProfile.pdf)
 - [AddCart](WorkFLow/AD-add-to-cart.pdf)
