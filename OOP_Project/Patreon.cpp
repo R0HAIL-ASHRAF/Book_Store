@@ -73,7 +73,7 @@ void Patreon::RemovePatreonMember()
 
 MyString Patreon::GetPersonType() const
 {
-	std::cout << "Patreon" << std::endl;
+	return "Patreon";
 }
 MyString Patreon::getUserName() const
 {

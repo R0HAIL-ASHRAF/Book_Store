@@ -59,7 +59,7 @@ void Classic::SetPerson(const Person& _person)
 
 MyString Classic::GetPersonType() const
 {
-	std::cout << "Classic" << std::endl;
+	return "Classic";
 }
 MyString Classic::getUserName() const
 {

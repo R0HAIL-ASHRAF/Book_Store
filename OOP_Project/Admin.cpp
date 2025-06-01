@@ -52,13 +52,6 @@ Name Admin::GetName() const
 	return fullName;
 }
 
-MyString Admin::GetPersonType() const
-{
-	return "Customer";
-}
-
-
-
 MyString Admin::getUserName() const
 {
 	return login.getUsername();

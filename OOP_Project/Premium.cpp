@@ -72,7 +72,7 @@ void Premium::RemovePremiumMember()
 
 MyString Premium::GetPersonType() const
 {
-	std::cout << "Premium" << std::endl;
+	return "Premium";
 }
 MyString Premium::getUserName() const
 {

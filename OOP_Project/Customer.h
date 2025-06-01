@@ -38,7 +38,7 @@ public:
 
 	// display
 	virtual void DisplayOrders() const;
-	virtual void DisplayCustomer() const;
+	
 
 };
 

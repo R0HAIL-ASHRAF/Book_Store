@@ -44,7 +44,7 @@ public:
 	//MyString GetProductListByStore(Store* store) const;
 	MyString GetPersonType() const override;
 	Name GetName() const override;
-	MyString GetPersonType() const override;
+	
 	MyString getUserName() const override;
 	MyString getPassword() const override;
 
