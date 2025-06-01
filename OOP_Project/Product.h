@@ -5,7 +5,7 @@
 
 class Product
 {
-private:
+protected:
 	wxImage productImage;
 	MyString productId;
 	MyString productName;
@@ -35,7 +35,7 @@ public:
 	
 
 	//display not defoined yet
-	virtual void DisplayBook() const;
+	virtual void Display() const;
 
 };
 

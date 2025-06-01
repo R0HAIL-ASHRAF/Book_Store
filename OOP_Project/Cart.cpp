@@ -1,4 +1,5 @@
 #include "Cart.h"
+#include "Store.h"
 
 Cart::Cart()
 	:payment(nullptr),totalPrice(0),
@@ -77,6 +78,26 @@ int Cart::GetTotalPrice()
 	return totalPrice;
 }
 
+void Store::DisplayStore() const
+{
+}
+
 void Cart::DisplayProducts() const
+{
+}
+
+void Store::DisplayCustomers() const
+{
+}
+
+void Store::DisplayProduct(const MyString& productId) const
+{
+}
+
+void Store::DisplayCustomer(const MyString& customerId) const
+{
+}
+
+void Store::DisplayProductByCategory(const MyString& category) const
 {
 }

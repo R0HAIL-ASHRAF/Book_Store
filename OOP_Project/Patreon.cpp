@@ -93,3 +93,11 @@ bool Patreon::IsActivePatreon() const
 {
 	return isActivePatreon;
 }
+Name Patreon::GetName() const
+{
+	return fullName;
+}
+
+void Patreon::DisplayCustomer() const
+{
+}

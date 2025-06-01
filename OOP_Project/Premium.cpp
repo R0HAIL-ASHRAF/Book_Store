@@ -82,9 +82,17 @@ MyString Premium::getPassword() const
 {
 	return login.getPassword();
 }
+Name Premium::GetName() const
+{
+	return fullName;
+}
+
 
 bool Premium::IsActivePremiumMember() const
 {
 	return isActivePremiumMember;
 }
 
+void Premium::DisplayCustomer() const
+{
+}

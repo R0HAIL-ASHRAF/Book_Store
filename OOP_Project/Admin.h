@@ -2,51 +2,59 @@
 
 #include "Person.h"
 #include"MyVector.h"
-#include "Store.h"
+#include "StoreManager.h"
 
 class Admin : public Person
 {
 private:
 	static int AdminCount;
-	MyVector<Store*>* stores;
+	MyVector<StoreManager*> stores;
 
-	Admin(const Admin& other) = delete;
+	/*Admin(const Admin& other) = delete;
 	Admin& operator=(const Admin& other) = delete;
-	Admin(const Login& _login,
-		const MyString& email, const Date& dob,
-		const Name& name, const Address& addr);
+	*/
 
 public:
 	Admin();
-	static Admin* GetInstance();
+	Admin* GetInstance();
 
-	void writeToFile(fstream& fout) const;
-	void readFromFile(fstream& fin) const;
+	// void writeToFile(fstream& fout) const;
+	//// void readFromFile(fstream& fin) const;
 
-	//setters
-	void AddStore(Store* store);
-	void RemoveStore(Store* store);
-	void ChangeStoreManager(Person* person, Store* store);
-	void AddProductToStore(Product* product, Store* store);
-	void RemoveProductFromStore(Product* product, Store* store);
-	void AddCustomerToStore(Customer* customer, Store* store);
-	void RemoveCustomerFromStore(Customer* customer, Store* store);
+	////setters
+	//void AddStoreManager(StoreManager* store);
+	//void RemoveStoreManager(StoreManager* store);
+	//void ChangeStoreManager(StoreManager *storeManager, Store* store);
+	//void AddProductToStore(Product* product, StoreManager* store);
+	//void RemoveProductFromStore(Product* product, StoreManager* store);
+	//void AddCustomerToStore(Customer* customer, StoreManager* store);
+	//void RemoveCustomerFromStore(Customer* customer, StoreManager* store);
+	void SetLogin(const Login& _login) override;
+	void SetName(const Name& _name) override;
+	void SetEmail(const MyString& _email) override;
+	void SetAddress(const Address& addr) override;
+	void SetPerson(const Person& _person) override;
 
-	//getters
-	MyString GetStoresData() const;
-	MyString GetProductDetails() const;
-	MyString GetCustomerList() const;
-	MyString GetCustomerListByStore(Store* store) const;
-	MyString GetStoreManagerList() const;
-	MyString GetProductListByStore(Store* store) const;
+	////getters
+	//MyString GetStoresData() const;
+	//MyString GetProductDetails() const;
+	//MyString GetCustomerList() const;
+	//MyString GetCustomerListByStore(Store* store) const;
+	//MyString GetStoreManagerList() const;
+	//MyString GetProductListByStore(Store* store) const;
+	MyString GetPersonType() const override;
+	Name GetName() const override;
+	MyString GetPersonType() const override;
+	MyString getUserName() const override;
+	MyString getPassword() const override;
 
-
-	// display
+	// display not defined yet
 	void DisplayProducts() const;
 	void DisplayStores() const;
 	void DisplayStoreManagers() const;
 	void DisplayCustomers() const;
-
+	void DisplayStoreManager(StoreManager* storeManager) const;
+	void DisplayAllStoreManagers() const;
 
 	
 };

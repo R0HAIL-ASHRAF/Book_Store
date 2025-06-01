@@ -7,8 +7,6 @@
 class Book :public Product
 {
 private:
-	MyString bookId;
-	MyString bookName;
 	MyString authorName;
 	MyString publisherName;
 	MyString bookType;
@@ -20,6 +18,8 @@ public:
 	Book();
 	Book(const Book& other);
 	Book(const MyString& id, const MyString& name,
+		const MyString& desc, int price,
+		wxImage image,
 		const MyString& author,
 		const MyString& publisher, 
 		const MyString& type,
@@ -27,8 +27,8 @@ public:
 		const MyString& edition, int pages);
 	Book& operator=(const Book& other);
 
-	void writeToFile(fstream& fout) const override;
-	void readFromFile(fstream& fin) const override;
+	// void writeToFile(fstream& fout) const override;
+	// void readFromFile(fstream& fin) const override;
 
 	//setter
 	void SetPrice(int price) override;
@@ -39,15 +39,15 @@ public:
 	MyString getProductCategory() const override;
 	MyString getDescription() const override;
 	int getPrice() const override;
-	MyString GetBookId() const;
-	MyString GetbookName() const;
+	
+	
 	MyString GetAuthorName() const;
 	MyString GetPublisherName() const;
 	MyString GetBookType() const;
 	
 
-	//display book
-	void DisplayBook() const override;
+	//display book not defined tyet 
+	void Display() const override;
 	
 	
 };

@@ -73,3 +73,7 @@ Name Classic::GetName() const
 {
 	return fullName;
 }
+
+void Classic::DisplayCustomer() const
+{
+}

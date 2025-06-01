@@ -26,23 +26,23 @@ public:
     bool operator==(const Person& other) const;
     bool operator!=(const Person& other) const;
 
-    virtual void writeToFile(fstream& fout) const;
-    virtual void readFromFile(fstream& fin) const;
+    // virtual void writeToFile(fstream& fout) const;
+    // virtual void readFromFile(fstream& fin) const;
 
 
     //getter
     virtual MyString GetPersonType() const = 0;
-    virtual MyString getUserName() const;
-    virtual MyString getPassword() const;
-	virtual Name GetName() const;
+    virtual MyString getUserName() const = 0;
+    virtual MyString getPassword() const = 0;
+	virtual Name GetName() const = 0;
    
 
     //setter
-	virtual void SetLogin(const Login& _login);
-    virtual void SetName(const Name& _name);
-    virtual void SetEmail(const MyString& _email);
-    virtual void SetAddress(const Address& addr);
-    virtual void SetPerson(const Person& _person);
+	virtual void SetLogin(const Login& _login) = 0;
+    virtual void SetName(const Name& _name) = 0;
+    virtual void SetEmail(const MyString& _email) = 0;
+    virtual void SetAddress(const Address& addr) =0;
+    virtual void SetPerson(const Person& _person)= 0;
 };
 
 #endif 

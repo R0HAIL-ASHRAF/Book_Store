@@ -49,6 +49,10 @@ MyString Customer::getPassword() const
 {
 	return login.getPassword();
 }
+Name Customer::GetName() const
+{
+	return fullName;
+}
 
 void Customer::DisplayOrders() const
 {
@@ -82,4 +86,9 @@ void Customer::SetAddress(const Address& addr)
 void Customer::SetPerson(const Person& _person)
 {
 	Person::operator=(_person);
+}
+
+void Customer::DisplayCustomer() const
+{
+
 }

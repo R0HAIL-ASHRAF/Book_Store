@@ -6,11 +6,42 @@
 class Stationary : public Product
 {
 private:
-	MyString StationaryId;
-	MyString StationaryName;
-	MyString StationaryType;
-	MyString StationaryBrand;
-	MyString StationaryColor;
+	MyString stationaryType;
+	MyString stationaryBrand;
+	MyString stationaryColor;
+
+public:
+	Stationary();
+	Stationary(const Stationary& other);
+	Stationary& operator=(const Stationary& other);
+	Stationary(const MyString& id, const MyString& name,
+		const MyString& desc, int price,
+		wxImage image, const MyString& type,
+		const MyString brand, const MyString& color);
+
+	// void writeToFile(fstream& fout) const override;
+	// void readFromFile(fstream& fin) const override;
+
+	//setter
+	void SetPrice(int price) override;
+	void SetProductDescription(const MyString& desc) override;
+	void SetStationaryType(const MyString& type);
+	void SetStationaryBrand(const MyString& brand);
+	void SetStationaryColor(const MyString& color);
+
+	//getter
+	MyString getProductID() const  override;
+	MyString getProductName() const override;
+	MyString getProductCategory() const override;
+	MyString getDescription() const override;
+	int getPrice() const override;
+
+	MyString getStationaryType() const;
+	MyString getStationaryBrand() const;
+	MyString getStationaryColor() const;
+
+	// display not defined yet
+	void Display() const override;
 
 };
 

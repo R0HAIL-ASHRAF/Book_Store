@@ -1,14 +1,14 @@
 #include "StoreManager.h"
 
 StoreManager::StoreManager()
-	:Person(),store(new Store())
+	:Person(),store(Store())
 {
 }
 
 StoreManager::StoreManager(const StoreManager& other)
 	:Person(other)
 {
-	store = new Store(*other.store);
+	store = other.store;
 }
 StoreManager& StoreManager::operator=(const StoreManager& other) 
 {
@@ -16,29 +16,27 @@ StoreManager& StoreManager::operator=(const StoreManager& other)
 		return *this;
 
 	static_cast<Person&>(*this) = other;
-	delete store;
-	store = new Store(*other.store);
+	store = other.store;
 	return *this;
 }
 Store* StoreManager::GetStore() const
 {
-	return new Store(*store);
+	return new Store(store);
 }
 
 wxArrayString StoreManager::DisplayCustomer() const
 {
 	wxArrayString list;
-	MyVector<Customer*> customerList = store->GetCustomers();
+	MyVector<Customer*> customerList = store.GetCustomers();
 	for (int i = 0; i < customerList.size(); i++) {
 		list.Add(customerList.at(i)->getUserName());
 	}
 	return list;
 }
 
-void StoreManager::SetStore(Store* store)
+void StoreManager::SetStore(Store store)
 {
-	delete store;
-	store = new Store(*store);
+	this->store = store;
 }
 
 MyString StoreManager::getUserName() const
@@ -53,4 +51,35 @@ MyString StoreManager::getPassword() const
 MyString StoreManager::GetPersonType() const
 {
 	return "StoreManager";
+}
+
+
+Name StoreManager::GetName() const
+{
+	return fullName;
+}
+
+void StoreManager::SetLogin(const Login& _login)
+{
+	login = _login;
+}
+
+void StoreManager::SetName(const Name& _name)
+{
+	fullName = _name;
+}
+
+void StoreManager::SetEmail(const MyString& _email)
+{
+	email = _email;
+}
+
+void StoreManager::SetAddress(const Address& addr)
+{
+	address = addr;
+}
+
+void StoreManager::SetPerson(const Person& _person)
+{
+	Person::operator=(_person);
 }

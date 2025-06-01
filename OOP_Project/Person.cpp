@@ -53,13 +53,3 @@ bool Person::operator!=(const Person& other) const
 		return false;
 	return true;
 }
-
-MyString Person::getUserName() const
-{
-	return login.getUsername();
-}
-MyString Person::getPassword() const
-{
-	return login.getPassword();
-}
-

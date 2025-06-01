@@ -31,7 +31,6 @@ Store::Store(const MyString& _storeId, const MyString& _storeName, const Address
 	
 }
 
-
 Store& Store::operator=(const Store& other)
 {
 	if (this == &other)
@@ -62,4 +61,10 @@ MyVector<Product> Store::GetProducts() const
 MyVector<Customer*> Store::GetCustomers() const
 {
 	return customers;
+}
+
+
+Store Store::GetStoreInfo() const
+{
+	return *this;
 }
