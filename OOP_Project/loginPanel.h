@@ -8,14 +8,15 @@
 class loginPanel : public wxPanel 
 {
 private:
+    static loginPanel* instance;
     wxTextCtrl* m_usernameField;
     wxTextCtrl* m_passwordField;
     MyVector<Classic*>* customers;
 
     void SetupUI();
-
-public:
     loginPanel(wxWindow* parent);
+public:
+    static loginPanel* GetInstance(wxWindow* parent);
     bool ValidateLogin() const;
     void AddCustomer(Classic *& person);
     void clearTextCtrl();

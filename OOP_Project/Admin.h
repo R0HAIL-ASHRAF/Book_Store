@@ -1,14 +1,19 @@
 #pragma once
 
+#include<wx\wx.h>		
 #include "Person.h"
 #include"MyVector.h"
 #include "StoreManager.h"
+#include "LoginPanel.h"
 
 class Admin : public Person
 {
 private:
-	static int AdminCount;
+	static Admin* instance;
 	MyVector<StoreManager*> stores;
+	MyVector<Customer*> customers;
+	loginPanel* loginPanelInstance;
+	wxWindow* mainWindowPointer;
 
 	/*Admin(const Admin& other) = delete;
 	Admin& operator=(const Admin& other) = delete;
@@ -16,7 +21,7 @@ private:
 
 public:
 	Admin();
-	Admin* GetInstance();
+	static Admin* GetInstance();
 
 	// void writeToFile(fstream& fout) const;
 	//// void readFromFile(fstream& fin) const;
@@ -34,8 +39,9 @@ public:
 	void SetEmail(const MyString& _email) override;
 	void SetAddress(const Address& addr) override;
 	void SetPerson(const Person& _person) override;
-
-	////getters
+	void SetCustomers(const MyVector<Classic*>& _customers);
+	//getters
+	
 	//MyString GetStoresData() const;
 	//MyString GetProductDetails() const;
 	//MyString GetCustomerList() const;
@@ -44,7 +50,6 @@ public:
 	//MyString GetProductListByStore(Store* store) const;
 	MyString GetPersonType() const override;
 	Name GetName() const override;
-	
 	MyString getUserName() const override;
 	MyString getPassword() const override;
 

@@ -1,19 +1,16 @@
 #include "Admin.h"
 
-int Admin::AdminCount = 0;
+Admin* Admin::instance = new Admin();
 
 Admin::Admin()
 	:Person(), stores(MyVector<StoreManager*>())
 {
-	AdminCount++;
+	loginPanelInstance = loginPanel::GetInstance(mainWindowPointer);
+	SetCustomers(*loginPanelInstance->GetCustomers());
 }
 Admin* Admin::GetInstance()
 {
-	if (AdminCount == 0) {
-		AdminCount++;
-		return new Admin();
-	}
-	return this;
+	return instance;
 }
 MyString Admin::GetPersonType() const
 {
@@ -84,4 +81,12 @@ void Admin::SetAddress(const Address& addr)
 void Admin::SetPerson(const Person& _person)
 {
 	Person::operator=(_person);
+}
+
+void Admin::SetCustomers(const MyVector<Classic*>& _customers)
+{
+	for(int i = 0; i< _customers.size(); i++)
+	{
+		customers.push(_customers[i]);
+	}
 }

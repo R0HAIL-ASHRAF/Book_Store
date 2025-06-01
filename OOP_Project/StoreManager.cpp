@@ -26,12 +26,7 @@ Store* StoreManager::GetStore() const
 
 wxArrayString StoreManager::DisplayCustomer() const
 {
-	wxArrayString list;
-	MyVector<Customer*> customerList = store.GetCustomers();
-	for (int i = 0; i < customerList.size(); i++) {
-		list.Add(customerList.at(i)->getUserName());
-	}
-	return list;
+	
 }
 
 void StoreManager::SetStore(Store store)

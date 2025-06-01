@@ -12,7 +12,7 @@ private:
 	MyString storeName;
 	Address storeAddress;
 	MyVector<Product> products;
-	MyVector<Customer*> customers;
+	
 
 public:
 	Store();
@@ -22,11 +22,10 @@ public:
 	Store& operator = (const Store& other);
 
 	//adders
-	void AddCustomer(Classic*& customer);
+	
 
 	//getters
 	MyVector<Product> GetProducts() const;
-	MyVector<Customer*> GetCustomers() const;
 	Store GetStoreInfo() const;
 
 	// displays   not defined yet 

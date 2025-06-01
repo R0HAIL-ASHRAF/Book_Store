@@ -2,13 +2,13 @@
 #include "IDs.h"
 
 MainFrame::MainFrame(const wxString& title)
-    : wxFrame(nullptr, wxID_ANY, title)    
+    : wxFrame(nullptr, wxID_ANY, title)   
 {
     this->SetBackgroundColour(wxColour(255, 188, 217));
     m_mainSizer = new wxBoxSizer(wxVERTICAL);
 
     //  panels
-    m_loginPanel = new loginPanel(this);
+    m_loginPanel = loginPanel::GetInstance(this);
     m_dashboardUser = new DashboardUser(this);
     m_signupPanel = new SignupPanel(this);
 

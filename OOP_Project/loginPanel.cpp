@@ -1,12 +1,22 @@
 #include "LoginPanel.h"
 #include"IDs.h"
 
+loginPanel* loginPanel::instance = nullptr;
 loginPanel::loginPanel(wxWindow* parent)
     : wxPanel(parent)
 {
+	
     customers = new MyVector<Classic*>();
     SetupUI();
    this->FromFile();
+}
+loginPanel* loginPanel::GetInstance(wxWindow* parent)
+{
+    if (instance == nullptr) {
+		instance = new loginPanel(parent);
+    }
+    return instance;
+
 }
 
 MyVector<Classic*>* loginPanel::GetCustomers() const

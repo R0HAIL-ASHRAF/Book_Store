@@ -6,13 +6,16 @@
 #include"SignupPanel.h"
 #include"Classic.h"
 
+
 class MainFrame: public wxFrame
 {
 public:
     MainFrame(const wxString& title);
 
 private:
+   
     //Panels
+
     SignupPanel* m_signupPanel;
     loginPanel* m_loginPanel;
     DashboardUser* m_dashboardUser;

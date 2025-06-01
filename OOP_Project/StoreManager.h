@@ -19,6 +19,7 @@ public:
 	
 	// getters
 	Store* GetStore() const;
+	// MyVector<Customer*> GetCustomers() const;
 	
 
 	// setters
@@ -28,6 +29,7 @@ public:
 	void SetEmail(const MyString& _email) override;
 	void SetAddress(const Address& addr) override;
 	void SetPerson(const Person& _person) override;
+	// void SetCustomers(const MyVector<Customer*>& customers);
 
 	// virtual
 	MyString getUserName() const override;
