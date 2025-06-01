@@ -2,12 +2,13 @@
 
 #include "MyString.h"
 #include"date.h"
+
 class Payment
 {
 private:
 	MyString cardNumber;
 	MyString cardHolderName;
-	Date expirationDate;
+	Date expiryDate;
 	MyString cvv;
 
 public:
@@ -19,16 +20,13 @@ public:
 	Payment& operator=(const Payment& other);
 
 	//setters
-	void setCardNumber(const MyString& cardNumber);
-	void setCardHolderName(const MyString& holderName);
-	void setExpirationDate(const Date& date);
-	void setCvv(const MyString& cvv);
+	void setCard(const Payment& card);
 
 	//validators
 	bool ValidateCvv(const MyString& cvv) const;
 	bool ValidateCardNumber(const MyString& cardNumber) const;
 	bool ValidateCardHolderName(const MyString& cardHolderName) const;
 	bool ValidateExpirationDate(const Date& date) const;
-
+	bool ValidateCard(const Payment& card);
 };
 

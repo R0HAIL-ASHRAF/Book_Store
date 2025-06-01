@@ -146,9 +146,9 @@ void loginPanel::FromFile() {
         tempYear.ReadFromStream(fin);
         tempHouseNumber.ReadFromStream(fin);
         tempCity.ReadFromStream(fin);
-        ;
-        tempPasstempProvince.ReadFromStream(fin);
-        tempCountry.ReadFromStream(fin)word.ReadFromStream(fin);
+        tempProvince.ReadFromStream(fin);
+        tempCountry.ReadFromStream(fin);
+        tempPassword.ReadFromStream(fin);
 
         if (!fin) 
             break;

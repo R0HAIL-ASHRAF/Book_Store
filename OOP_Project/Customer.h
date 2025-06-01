@@ -17,8 +17,8 @@ public:
 		const Name& name, const Address& addr);
 	Customer& operator=(const Customer& other);
 
-	void writeToFile(fstream& fout) const override;
-	void readFromFile(fstream& fin) const override;
+	// void writeToFile(fstream& fout) const override;
+	// void readFromFile(fstream& fin) const override;
 
 
 	//setters

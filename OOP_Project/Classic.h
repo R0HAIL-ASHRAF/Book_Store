@@ -13,8 +13,8 @@ public:
 		const Name& name, const Address& addr);
 	Classic& operator=(const Classic& other);
 
-	void writeToFile(fstream& fout) const override;
-	void readFromFile(fstream& fin) const override;
+	// void writeToFile(fstream& fout) const override;
+	// void readFromFile(fstream& fin) const override;
 
 	//setters
 	void AddOrder(Order*& order) override;
@@ -31,6 +31,6 @@ public:
 	Name GetName() const override;
 
 	//dipslay
-	void DisplayCustomer() const override;
+	void DisplayCustomer() const override; // not defined yet
 	
 };

@@ -26,7 +26,50 @@ Classic& Classic::operator=(const Classic& other)
 	return *this;
 }
 
+void Classic::AddOrder(Order*& order)
+{
+	orders.push(order);
+}
+
+
+void Classic::SetLogin(const Login& _login)
+{
+	login = _login;
+}
+
+void Classic::SetName(const Name& _name)
+{
+	fullName = _name;
+}
+
+void Classic::SetEmail(const MyString& _email)
+{
+	email = _email;
+}
+
+void Classic::SetAddress(const Address& addr)
+{
+	address = addr;
+}
+
+void Classic::SetPerson(const Person& _person)
+{
+	Person::operator=(_person);
+}
+
 MyString Classic::GetPersonType() const
 {
-	return "Classic";
+	std::cout << "Classic" << std::endl;
+}
+MyString Classic::getUserName() const
+{
+	return login.getUsername();
+}
+MyString Classic::getPassword() const
+{
+	return login.getPassword();
+}
+Name Classic::GetName() const
+{
+	return fullName;
 }

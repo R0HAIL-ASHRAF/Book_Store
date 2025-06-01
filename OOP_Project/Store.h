@@ -11,7 +11,7 @@ private:
 	MyString storeId;
 	MyString storeName;
 	Address storeAddress;
-	MyVector<Product*> products;
+	MyVector<Product> products;
 	MyVector<Customer*> customers;
 
 public:
@@ -25,11 +25,11 @@ public:
 	void AddCustomer(Classic*& customer);
 
 	//getters
-	MyVector<Product*> GetProducts() const;
+	MyVector<Product> GetProducts() const;
 	MyVector<Customer*> GetCustomers() const;
-	void GetStoreInfo() const;
+	Store GetStoreInfo() const;
 
-	// displays
+	// displays   not defined yet 
 	void DisplayStore() const;
 	void DisplayProducts() const;
 	void DisplayCustomers() const;

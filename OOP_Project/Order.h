@@ -15,7 +15,7 @@ private:
 public:
 	Order();
 	Order(const Order& other);
-	Order(const Address& addr, const MyString& shipAddr,
+	Order(const Address& addr, const MyString& shipStat,
 		const Date& orderDate, const int& price);
 	Order& operator=(const Order& other);
 
@@ -29,14 +29,14 @@ public:
 	//getters
 	MyString GetOrderStatus() const;
 	Date GetOrderDate() const;
-	int GetTotalPrice() const;
+	int GetTotalPrice();
 	Date GetDeliveryDate() const;
 	Address GetShippingAddress() const;
 
-	//display
+	//display (not defined yet (all 3))
 	void DisplayCartProduct() const;
 	void CartInfo() const;
-
+	void DisplayOrder() const;
 
 };
 

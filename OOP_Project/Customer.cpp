@@ -1,4 +1,5 @@
 #include "Customer.h"
+#include "Patreon.h"
 
 Customer::Customer()
 	:Person(), orders{MyVector<Order*>()}
@@ -47,4 +48,38 @@ MyString Customer::getUserName() const
 MyString Customer::getPassword() const
 {
 	return login.getPassword();
+}
+
+void Customer::DisplayOrders() const
+{
+	for (int i = 0; i < orders.size(); i++) {
+		if (orders.at(i) != nullptr) {
+			orders.at(i)->DisplayOrder();
+		}
+	}
+}
+
+void Customer::SetLogin(const Login& _login)
+{
+	login = _login;
+}
+
+void Customer::SetName(const Name& _name)
+{
+	fullName = _name;
+}
+
+void Customer::SetEmail(const MyString& _email)
+{
+	email = _email;
+}
+
+void Customer::SetAddress(const Address& addr)
+{
+	address = addr;
+}
+
+void Customer::SetPerson(const Person& _person)
+{
+	Person::operator=(_person);
 }

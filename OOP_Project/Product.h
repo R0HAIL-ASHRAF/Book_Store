@@ -7,7 +7,7 @@ class Product
 {
 private:
 	wxImage productImage;
-	MyString productID;
+	MyString productId;
 	MyString productName;
 	MyString productCategory;
 	MyString description;
@@ -20,8 +20,8 @@ public:
 		int price, const wxImage& image);
 	Product& operator=(const Product& other);
 
-	virtual void writeToFile(fstream& fout) const;
-	virtual void readFromFile(fstream& fin) const;
+	// virtual void writeToFile(fstream& fout) const;
+	// virtual void readFromFile(fstream& fin) const;
 
 	//setter
 	virtual void SetPrice(int price);
@@ -34,7 +34,7 @@ public:
 	virtual int getPrice() const;
 	
 
-	//display
+	//display not defoined yet
 	virtual void DisplayBook() const;
 
 };

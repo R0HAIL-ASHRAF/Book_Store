@@ -7,30 +7,30 @@ class Cart
 {
 private:
 	Payment* payment;
-	MyVector<Product**> products;
+	MyVector<Product*> products;
 	int totalPrice;
 public:
 	Cart();
 	Cart(const Cart& other);
 	Cart& operator=(const Cart& other);
 	
-	void writeToFile(fstream& fout) const;
-	void readFromFile(fstream& fin) const;
+	// void writeToFile(fstream& fout) const;
+	// void readFromFile(fstream& fin) const;
 	
 	//setters
-	void SetPayment(Payment* payment);
+	void SetPayment(Payment payment);
 	void AddProductToCart(Product* product);
 	void ClearCart();
 	void RemoveProduct(Product* product);
 
 	//getters
-	MyVector<Product**> GetPoducts() const;
+	MyVector<Product*> GetPoducts() const;
 	int GetProductCount() const;
-	MyString GetPrductList() const;
+	MyString GetPrductList() const; // need to define 
 	Payment* GetPaymentInfo() const;
-	int GetTotalPrice() const;
+	int GetTotalPrice();
 
-	// display
+	// display nor defined yet
 	void DisplayProducts()const;
 
 };

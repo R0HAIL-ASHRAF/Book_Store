@@ -10,14 +10,20 @@ private:
     int len;
     int cap;
 
-    void double_capacity() {
-        this->cap = this->cap * 2 + 1;
-        type* newArr = new type[this->cap];
-        for (int i = 0; i < this->len; i++) {
-            newArr[i] = this->arr[i];
-        }
-        delete[] this->arr;
-        this->arr = newArr;
+    void double_capacity() {  
+        this->cap = this->cap * 2 + 1;  
+        type* newArr = new type[this->cap];  
+        if (!newArr) {  
+            throw bad_alloc(); // Handle memory allocation failure  
+        }  
+        for (int i = 0; i < this->len; i++) {  
+            if (i >= this->cap) {  
+                throw out_of_range("Buffer overrun detected while copying elements.");  
+            }  
+            newArr[i] = this->arr[i];  
+        }  
+        delete[] this->arr;  
+        this->arr = newArr;  
     }
 
 

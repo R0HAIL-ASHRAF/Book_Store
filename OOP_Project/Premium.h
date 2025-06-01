@@ -16,8 +16,8 @@ public:
 		const Name& name, const Address& addr);
 	Premium& operator=(const Premium& other);
 
-	void writeToFile(fstream& fout) const override;
-	void readFromFile(fstream& fin) const override;
+	// void writeToFile(fstream& fout) const override;
+	// void readFromFile(fstream& fin) const override;
 
 	//setters
 	void AddOrder(Order*& order) override;
@@ -31,14 +31,13 @@ public:
 
 	//getters
 	MyString GetPersonType() const override;
-	MyString GetPersonType() const override;
+	
 	MyString getUserName() const override;
 	MyString getPassword() const override;
-	MyString getPassword() const override;
 	Name GetName() const override;
-	bool isActivePremiumMember()const;
+	bool IsActivePremiumMember() const;
 
 	//dipslay
-	void DisplayCustomer() const override;
+	void DisplayCustomer() const override; //not defined yet
 };
 

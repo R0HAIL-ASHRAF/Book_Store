@@ -1,7 +1,6 @@
 #pragma once
 #include "Customer.h"
-class Patreon :
-    public Customer
+class Patreon : public Customer
 {
 private:
     static int discountRate;
@@ -9,14 +8,14 @@ private:
     bool isActivePatreon;
 public:
 	Patreon();
-	Patreon(constPatreon& other);
+	Patreon(const Patreon& other);
 	Patreon(const Login& _login,
 		const MyString& email, const Date& dob,
 		const Name& name, const Address& addr);
 	Patreon& operator=(const Patreon& other);
 
-	void writeToFile(fstream& fout) const override;
-	void readFromFile(fstream& fin) const override;
+	// void writeToFile(fstream& fout) const override;
+	// void readFromFile(fstream& fin) const override;
 
 	//setters
 	void AddOrder(Order*& order) override;
@@ -31,15 +30,13 @@ public:
 
 	//getters
 	MyString GetPersonType() const override;
-	MyString GetPersonType() const override;
 	MyString getUserName() const override;
-	MyString getPassword() const override;
 	MyString getPassword() const override;
 	Name GetName() const override;
 	MyString GetPatreonId() const;
-	bool isActivePatreon() const;
+	bool IsActivePatreon() const;
 
 	//dipslay
-	void DisplayCustomer() const override;
+	void DisplayCustomer() const override; // not defined yet
 };
 

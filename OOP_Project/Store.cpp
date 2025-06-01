@@ -4,7 +4,7 @@
 Store::Store()
 	:storeId{MyString()}, storeName{MyString()},
 	storeAddress{Address()},
-	products{MyVector<Product*>()}, 
+	products{MyVector<Product>()}, 
 	customers{MyVector<Customer*>()}
 {
 }
@@ -25,7 +25,7 @@ Store::Store(const Store& other)
 Store::Store(const MyString& _storeId, const MyString& _storeName, const Address& _address)
 	:storeId{_storeId}, storeName{_storeName},
 	storeAddress{_address}, 
-	products{ MyVector<Product*>() },
+	products{ MyVector<Product>() },
 	customers{ MyVector<Customer*>() }
 {
 	
@@ -54,9 +54,9 @@ void Store::AddCustomer(Classic*& customer)
 	customers.push(customer);
 }
 
-MyVector<Product*> Store::GetProducts() const
+MyVector<Product> Store::GetProducts() const
 {
-	return MyVector<Product*>(products);
+	return products;
 }
 
 MyVector<Customer*> Store::GetCustomers() const
