@@ -26,7 +26,7 @@ Store* StoreManager::GetStore() const
 
 wxArrayString StoreManager::DisplayCustomer() const
 {
-	
+	return wxArrayString();
 }
 
 void StoreManager::SetStore(Store store)

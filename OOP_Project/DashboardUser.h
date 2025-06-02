@@ -2,7 +2,8 @@
 #define DASHBOARDPANEL_H
 
 #include <wx/wx.h>
-#include"StoreManager.h"
+#include"Admin.h"
+#include "CustomerListView.h"
 
 class DashboardUser : public wxPanel
 {
@@ -14,6 +15,7 @@ public:
 private:
     wxStaticText* m_welcomeLabel;
     wxButton* m_logoutButton;
+    CustomerListView* m_customerListView;
     Store* store;
 
     void OnLogout(wxCommandEvent& event);

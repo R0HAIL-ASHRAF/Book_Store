@@ -8,7 +8,8 @@ wxIMPLEMENT_APP(MyApp);
 bool MyApp::OnInit()
 {
     MainFrame* frame = new MainFrame("BOOK CONNECT");
-	admin = Admin::GetInstance();
+    Admin::GetInstance()->SetMainWindow(frame);
+    admin = Admin::GetInstance();
     frame->SetClientSize(800, 600);
     frame->Center();
     frame->Show();

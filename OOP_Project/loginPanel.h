@@ -15,6 +15,7 @@ private:
 
     void SetupUI();
     loginPanel(wxWindow* parent);
+    
 public:
     static loginPanel* GetInstance(wxWindow* parent);
     bool ValidateLogin() const;
@@ -22,5 +23,8 @@ public:
     void clearTextCtrl();
     void FromFile();
 	MyVector<Classic*>* GetCustomers() const;
+   
+
+
     ~loginPanel();
 };

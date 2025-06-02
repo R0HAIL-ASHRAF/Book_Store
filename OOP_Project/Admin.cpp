@@ -5,13 +5,24 @@ Admin* Admin::instance = new Admin();
 Admin::Admin()
 	:Person(), stores(MyVector<StoreManager*>())
 {
-	loginPanelInstance = loginPanel::GetInstance(mainWindowPointer);
-	SetCustomers(*loginPanelInstance->GetCustomers());
+	
+	
 }
 Admin* Admin::GetInstance()
 {
 	return instance;
 }
+void Admin::SetMainWindow(wxWindow* window) {
+	if (window == nullptr) {
+		wxLogError("SetMainWindow: received null wxWindow pointer!");
+		return;
+	}
+
+	mainWindowPointer = window;
+	loginPanelInstance = loginPanel::GetInstance(mainWindowPointer);
+	SetCustomers(*loginPanelInstance->GetCustomers());
+}
+
 MyString Admin::GetPersonType() const
 {
 	return "Admin";
@@ -89,4 +100,8 @@ void Admin::SetCustomers(const MyVector<Classic*>& _customers)
 	{
 		customers.push(_customers[i]);
 	}
+}
+MyVector <Customer*> Admin::GetCustomers() const
+{
+	return customers;
 }

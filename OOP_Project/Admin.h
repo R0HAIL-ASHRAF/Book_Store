@@ -22,7 +22,7 @@ private:
 public:
 	Admin();
 	static Admin* GetInstance();
-
+	void SetMainWindow(wxWindow* window);
 	// void writeToFile(fstream& fout) const;
 	//// void readFromFile(fstream& fin) const;
 
@@ -52,7 +52,7 @@ public:
 	Name GetName() const override;
 	MyString getUserName() const override;
 	MyString getPassword() const override;
-
+	MyVector<Customer*> GetCustomers() const;
 	// display not defined yet
 	void DisplayProducts() const;
 	void DisplayStores() const;
