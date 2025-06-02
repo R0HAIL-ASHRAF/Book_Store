@@ -26,6 +26,10 @@ public:
 	//setter
 	virtual void SetPrice(int price);
 	virtual void SetProductDescription(const MyString& desc);
+	virtual void SetProductCategory(const MyString& category);
+	virtual void SetProductName(const MyString& name);
+	virtual void SetProductID(const MyString& id);
+	virtual void SetProductImage(const wxImage& image);
 	//getter
 	virtual MyString getProductID() const;
 	virtual MyString getProductName() const;

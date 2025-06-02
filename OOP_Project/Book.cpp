@@ -97,3 +97,54 @@ void Book::Display() const
 {
 
 }
+
+
+void Book::SetProductCategory(const MyString& category)
+{
+	productCategory = category;
+}
+
+void Book::SetProductName(const MyString& name)
+{
+	productName = name;
+}
+
+void Book::SetProductID(const MyString& id)
+{
+	productId = id;
+}
+
+void Book::SetProductImage(const wxImage& image)
+{
+	productImage = image;
+}
+
+void Book::SetAuthorName(const MyString& author)
+{
+	authorName = author;
+}
+
+void Book::SetPublisherName(const MyString& publisher)
+{
+	publisherName = publisher;
+}
+
+void Book::SetBookType(const MyString& type)
+{
+	bookType = type;
+}
+
+void Book::SetBookLanguage(const MyString& language)
+{
+	bookLanguage = language;
+}
+
+void Book::SetBookEdition(const MyString& edition)
+{
+	bookEdition = edition;
+}
+
+void Book::SetPages(int pages)
+{
+	this->pages = pages;
+}

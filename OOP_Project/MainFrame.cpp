@@ -12,17 +12,20 @@ MainFrame::MainFrame(const wxString& title)
     m_dashboardUser = new DashboardUser(this);
     m_signupPanel = new SignupPanel(this);
     m_adminPanel = new DashboardAdmin(this);
+	m_addBookPanel = new AddBook(this);
 
     m_adminPanel->Hide();
     m_signupPanel->Hide();
 	m_loginPanel->Show();
     m_dashboardUser->Hide();
+	m_addBookPanel->Hide();
 
     
     m_mainSizer->Add(m_loginPanel, 1, wxEXPAND);
     m_mainSizer->Add(m_dashboardUser, 1, wxEXPAND);
     m_mainSizer->Add(m_signupPanel, 1, wxEXPAND);
     m_mainSizer->Add(m_adminPanel, 1, wxEXPAND);
+	m_mainSizer->Add(m_addBookPanel, 1, wxEXPAND);
     
     // Use stack-allocated size to avoid memory leak
     wxSize sizeFrame(1250, 700);
@@ -30,6 +33,7 @@ MainFrame::MainFrame(const wxString& title)
     m_dashboardUser->SetMinSize(sizeFrame);
     m_signupPanel->SetMinSize(sizeFrame);
     m_adminPanel->SetMinSize(sizeFrame);
+	m_addBookPanel->SetMinSize(sizeFrame);
 
     SetSizer(m_mainSizer);
     SetMinSize(sizeFrame);
@@ -41,6 +45,7 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButton);
     Bind(wxEVT_BUTTON, &MainFrame::SignUpLoginBtnSuccess, this, ID_LoginSignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButtonAdmin);
+    Bind(wxEVT_BUTTON, &MainFrame::OnAddBook, this, ID_AddBook);
 
 }
 MainFrame::~MainFrame()
@@ -110,6 +115,8 @@ void MainFrame::SwitchToDashboard()
     m_signupPanel->Hide();
     m_dashboardUser->Show();
     m_adminPanel->Hide();
+    m_addBookPanel->Hide();
+
     Layout();
 }
 
@@ -119,6 +126,8 @@ void MainFrame::SwitchToLoginPage()
     m_signupPanel->Hide();
     m_loginPanel->Show();
     m_adminPanel->Hide();
+    m_addBookPanel->Hide();
+
     Layout();
 }
 
@@ -128,6 +137,8 @@ void MainFrame::SwitchToSignupPage()
     m_dashboardUser->Hide();
     m_signupPanel->Show();
     m_adminPanel->Hide();
+    m_addBookPanel->Hide();
+
 
     Layout();
 }
@@ -138,6 +149,8 @@ void MainFrame::SwitchToAdminDashboard()
     m_signupPanel->Hide();
     m_dashboardUser->Hide();
     m_adminPanel->Show();
+    m_addBookPanel->Hide();
+
 	Layout();
 }
 
@@ -146,7 +159,15 @@ void MainFrame::OnLogout(wxCommandEvent& event) {
     m_loginPanel->clearTextCtrl();
     m_signupPanel->Hide();
     m_adminPanel->Hide();
+    m_addBookPanel->Hide();
     m_loginPanel->Show();
 }
 
-
+void MainFrame::OnAddBook(wxCommandEvent& event) {
+    m_addBookPanel->Show();
+    m_loginPanel->Hide();
+    m_dashboardUser->Hide();
+    m_signupPanel->Hide();
+    m_adminPanel->Hide();
+    Layout();
+}

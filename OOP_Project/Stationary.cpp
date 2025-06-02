@@ -109,3 +109,24 @@ void Stationary::Display() const
 {
 
 }
+
+
+void Stationary::SetProductCategory(const MyString& category)
+{
+	productCategory = category;
+}
+
+void Stationary::SetProductName(const MyString& name)
+{
+	productName = name;
+}
+
+void Stationary::SetProductID(const MyString& id)
+{
+	productId = id;
+}
+
+void Stationary::SetProductImage(const wxImage& image)
+{
+	productImage = image;
+}

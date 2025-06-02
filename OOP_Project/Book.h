@@ -33,6 +33,17 @@ public:
 	//setter
 	void SetPrice(int price) override;
 	void SetProductDescription(const MyString& desc) override;
+	void SetProductCategory(const MyString& category) override;
+	void SetProductName(const MyString& name)override;
+	void SetProductID(const MyString& id) override;
+	void SetProductImage(const wxImage& image)override;
+
+	void SetAuthorName(const MyString& author);
+	void SetPublisherName(const MyString& publisher);
+	void SetBookType(const MyString& type);
+	void SetBookLanguage(const MyString& language);
+	void SetBookEdition(const MyString& edition);
+	void SetPages(int pages);
 	//getter
 	MyString getProductID() const  override;
 	MyString getProductName() const override;

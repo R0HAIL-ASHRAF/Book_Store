@@ -152,6 +152,13 @@ void DashboardAdmin::CreateButtonPanel(wxBoxSizer* mainSizer)
     buttonSizer->Add(customersBtn, 0, wxALL, 5);
 
     buttonSizer->AddStretchSpacer();
+    // add book
+    wxButton* addBookBtn = new wxButton(buttonPanel, ID_AddBook, "Add Book");
+    // customersBtn->SetBackgroundColour(wxColour(180, 80, 50));
+    // customersBtn->SetForegroundColour(*wxWHITE);
+    buttonSizer->Add(addBookBtn, 0, wxALL, 5);
+
+    buttonSizer->AddStretchSpacer();
 
     // Logout Button
     wxButton* logoutBtn = new wxButton(buttonPanel, ID_LogoutButtonAdmin, "Logout");

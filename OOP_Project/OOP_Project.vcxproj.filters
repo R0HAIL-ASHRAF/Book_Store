@@ -114,7 +114,7 @@
     <ClCompile Include="DashboardAdmin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProductAddPanel.cpp">
+    <ClCompile Include="AddBook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -215,7 +215,7 @@
     <ClInclude Include="DashboardAdmin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProductAddPanel.h">
+    <ClInclude Include="AddBook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

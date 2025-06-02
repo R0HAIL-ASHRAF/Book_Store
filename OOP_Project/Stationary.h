@@ -28,6 +28,10 @@ public:
 	void SetStationaryType(const MyString& type);
 	void SetStationaryBrand(const MyString& brand);
 	void SetStationaryColor(const MyString& color);
+	void SetProductCategory(const MyString& category) override;
+	void SetProductName(const MyString& name)override;
+	void SetProductID(const MyString& id) override;
+	void SetProductImage(const wxImage& image)override;
 
 	//getter
 	MyString getProductID() const  override;

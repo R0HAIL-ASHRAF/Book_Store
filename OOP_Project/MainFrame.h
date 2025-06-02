@@ -6,6 +6,7 @@
 #include"SignupPanel.h"
 #include"Classic.h"
 #include"DashboardAdmin.h"
+#include "AddBook.h"
 
 
 
@@ -13,8 +14,7 @@ class MainFrame: public wxFrame
 {
 public:
     MainFrame(const wxString& title);
-    void OnLogout(wxCommandEvent& event);
-
+    
 private:
    
     //Panels
@@ -24,6 +24,7 @@ private:
     wxBoxSizer* m_mainSizer;
     DashboardAdmin* m_adminPanel;
     SignupPanel* m_signupPanel;
+	AddBook* m_addBookPanel;
 
     
     // btns event handlers
@@ -31,6 +32,8 @@ private:
     void OnShowSignup(wxCommandEvent& event);
     void OnSignupComplete(wxCommandEvent& event);
     void SignUpLoginBtnSuccess(wxCommandEvent& event);
+    void OnLogout(wxCommandEvent& event);
+    void OnAddBook(wxCommandEvent& event);
 
     // panel changing 
     void SwitchToDashboard();

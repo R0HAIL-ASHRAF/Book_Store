@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddBook.cpp" />
     <ClCompile Include="Address.cpp" />
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AdminCVpanel.cpp" />
@@ -156,7 +157,6 @@
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Premium.cpp" />
     <ClCompile Include="Product.cpp" />
-    <ClCompile Include="ProductAddPanel.cpp" />
     <ClCompile Include="SignupPanel.cpp" />
     <ClCompile Include="SoftCopy.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -165,6 +165,7 @@
     <ClCompile Include="StoreManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddBook.h" />
     <ClInclude Include="Address.h" />
     <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminCVpanel.h" />
@@ -192,7 +193,6 @@
     <ClInclude Include="Person.h" />
     <ClInclude Include="Premium.h" />
     <ClInclude Include="Product.h" />
-    <ClInclude Include="ProductAddPanel.h" />
     <ClInclude Include="SignupPanel.h" />
     <ClInclude Include="SoftCopy.h" />
     <ClInclude Include="Stationary.h" />

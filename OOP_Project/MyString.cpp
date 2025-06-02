@@ -680,4 +680,8 @@ MyString::operator wxString() const {
 }
 
 
-
+bool MyString::IsEmpty() const {
+	if (length == 0)
+		return true;
+	return false;
+}

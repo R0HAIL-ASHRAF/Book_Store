@@ -11,5 +11,6 @@ enum {
     ID_ViewStore,
     ID_ViewCustomers,
     ID_LogoutButtonAdmin,
+    ID_AddBook,
 
 };

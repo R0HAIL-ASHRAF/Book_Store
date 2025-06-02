@@ -111,10 +111,11 @@ public:
 	void WriteToStream(std::ofstream& out) const;
 	void ReadFromStream(std::ifstream& in);
 	void convertionToChar(const int num, char arr[]);
-
+	bool IsEmpty() const;
 	void display() const;
 	// Destructor
 	~MyString();
+	
 };
 
 
