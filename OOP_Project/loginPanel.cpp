@@ -25,6 +25,16 @@ MyVector<Classic*>* loginPanel::GetCustomers() const
     return new MyVector<Classic*>(*customers);
 }
 
+MyString loginPanel::GetUsername() const
+{
+    return m_usernameField->GetValue();
+}
+
+MyString loginPanel::GetPassword() const
+{
+    return m_passwordField->GetValue();
+}
+
 
 void loginPanel::AddCustomer(Classic *& customer)
 {

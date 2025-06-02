@@ -8,6 +8,7 @@
 #include "Store.h"
 #include"IDs.h"
 
+
 class DashboardAdmin : public wxPanel 
 {
 
@@ -23,9 +24,10 @@ private:
     void CreateStoreList(wxPanel* parent);
     void CreateDetailsPanel(wxPanel* parent);
     void CreateButtonPanel(wxBoxSizer* mainSizer);
-
+    
+    //getters
     int GetTotalProducts() const;
-
+   
     void OnStoreSelected(wxListEvent& event);
 
     void OnViewProducts(wxCommandEvent& event);
@@ -35,5 +37,7 @@ private:
 
 public:
     DashboardAdmin(wxWindow* parent);
+    MyString GetAdminUserName() const;
+    MyString GetAdminPassword() const;
 
 };

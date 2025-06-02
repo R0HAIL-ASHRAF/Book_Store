@@ -40,6 +40,8 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_BUTTON, &MainFrame::OnSignupComplete, this, ID_SignupSubmitButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButton);
     Bind(wxEVT_BUTTON, &MainFrame::SignUpLoginBtnSuccess, this, ID_LoginSignupButton);
+    Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButtonAdmin);
+
 }
 MainFrame::~MainFrame()
 {
@@ -53,18 +55,18 @@ MainFrame::~MainFrame()
 }
 
 
-void MainFrame::OnLogout(wxCommandEvent& event) {
-    m_dashboardUser->Hide();
-    m_loginPanel->clearTextCtrl();
-    m_loginPanel->Show();
-}
 
 void MainFrame::OnLoginSuccess(wxCommandEvent& event)
 {
     if (m_loginPanel->ValidateLogin())
     {
-       // adding the dashboard here
+       
         SwitchToDashboard();
+    }
+    else if (m_loginPanel->GetUsername() == m_adminPanel->GetAdminUserName() &&
+             m_loginPanel->GetPassword() == m_adminPanel->GetAdminPassword())
+    {
+		SwitchToAdminDashboard();
     }
     else
     {
@@ -107,6 +109,7 @@ void MainFrame::SwitchToDashboard()
     m_loginPanel->Hide();
     m_signupPanel->Hide();
     m_dashboardUser->Show();
+    m_adminPanel->Hide();
     Layout();
 }
 
@@ -115,6 +118,7 @@ void MainFrame::SwitchToLoginPage()
     m_dashboardUser->Hide();
     m_signupPanel->Hide();
     m_loginPanel->Show();
+    m_adminPanel->Hide();
     Layout();
 }
 
@@ -123,7 +127,26 @@ void MainFrame::SwitchToSignupPage()
     m_loginPanel->Hide();
     m_dashboardUser->Hide();
     m_signupPanel->Show();
+    m_adminPanel->Hide();
+
     Layout();
+}
+
+void MainFrame::SwitchToAdminDashboard()
+{
+    m_loginPanel->Hide();
+    m_signupPanel->Hide();
+    m_dashboardUser->Hide();
+    m_adminPanel->Show();
+	Layout();
+}
+
+void MainFrame::OnLogout(wxCommandEvent& event) {
+    m_dashboardUser->Hide();
+    m_loginPanel->clearTextCtrl();
+    m_signupPanel->Hide();
+    m_adminPanel->Hide();
+    m_loginPanel->Show();
 }
 
 

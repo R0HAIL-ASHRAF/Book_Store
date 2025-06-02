@@ -13,6 +13,7 @@ class MainFrame: public wxFrame
 {
 public:
     MainFrame(const wxString& title);
+    void OnLogout(wxCommandEvent& event);
 
 private:
    
@@ -26,7 +27,6 @@ private:
 
     
     // btns event handlers
-    void OnLogout(wxCommandEvent& event);
     void OnLoginSuccess(wxCommandEvent& event);
     void OnShowSignup(wxCommandEvent& event);
     void OnSignupComplete(wxCommandEvent& event);
@@ -36,6 +36,7 @@ private:
     void SwitchToDashboard();
     void SwitchToLoginPage();
     void SwitchToSignupPage();
+	void SwitchToAdminDashboard();
 
     ~MainFrame();
 

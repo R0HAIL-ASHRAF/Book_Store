@@ -26,7 +26,9 @@ public:
     void clearTextCtrl();
     void FromFile();
 	MyVector<Classic*>* GetCustomers() const;
-   
+    
+    MyString GetUsername() const;
+	MyString GetPassword() const;
 
 
     ~loginPanel();

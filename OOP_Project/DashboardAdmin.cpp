@@ -135,35 +135,34 @@ void DashboardAdmin::CreateButtonPanel(wxBoxSizer* mainSizer)
 
     // View Products Button
     wxButton* productsBtn = new wxButton(buttonPanel, ID_ViewProducts, "View Products");
-    productsBtn->SetBackgroundColour(wxColour(70, 160, 70));
-    productsBtn->SetForegroundColour(*wxWHITE);
+    // productsBtn->SetBackgroundColour(wxColour(70, 160, 70));
+    // productsBtn->SetForegroundColour(*wxWHITE);
     buttonSizer->Add(productsBtn, 0, wxALL, 5);
 
     // View Store Button
     wxButton* storeBtn = new wxButton(buttonPanel, ID_ViewStore, "View Store");
-    storeBtn->SetBackgroundColour(wxColour(60, 120, 200));
-    storeBtn->SetForegroundColour(*wxWHITE);
+   // storeBtn->SetBackgroundColour(wxColour(60, 120, 200));
+   // storeBtn->SetForegroundColour(*wxWHITE);
     buttonSizer->Add(storeBtn, 0, wxALL, 5);
 
     // View Customers Button
     wxButton* customersBtn = new wxButton(buttonPanel, ID_ViewCustomers, "View Customers");
-    customersBtn->SetBackgroundColour(wxColour(180, 80, 50));
-    customersBtn->SetForegroundColour(*wxWHITE);
+   // customersBtn->SetBackgroundColour(wxColour(180, 80, 50));
+   // customersBtn->SetForegroundColour(*wxWHITE);
     buttonSizer->Add(customersBtn, 0, wxALL, 5);
 
     buttonSizer->AddStretchSpacer();
 
     // Logout Button
-    wxButton* logoutBtn = new wxButton(buttonPanel, ID_LogoutButton, "Logout");
-    logoutBtn->SetBackgroundColour(wxColour(200, 60, 60));
-    logoutBtn->SetForegroundColour(*wxWHITE);
+    wxButton* logoutBtn = new wxButton(buttonPanel, ID_LogoutButtonAdmin, "Logout");
+   // logoutBtn->SetBackgroundColour(wxColour(200, 60, 60));
+   // logoutBtn->SetForegroundColour(*wxWHITE);
     buttonSizer->Add(logoutBtn, 0, wxALL, 5);
 
     // Bind button events
-    productsBtn->Bind(wxEVT_BUTTON, &DashboardAdmin::OnViewProducts, this);
+    /*productsBtn->Bind(wxEVT_BUTTON, &DashboardAdmin::OnViewProducts, this);
     storeBtn->Bind(wxEVT_BUTTON, &DashboardAdmin::OnViewStore, this);
-    customersBtn->Bind(wxEVT_BUTTON, &DashboardAdmin::OnViewCustomers, this);
-    logoutBtn->Bind(wxEVT_BUTTON, &DashboardAdmin::OnLogout, this);
+    customersBtn->Bind(wxEVT_BUTTON, &DashboardAdmin::OnViewCustomers, this);*/
 
     buttonPanel->SetSizer(buttonSizer);
     mainSizer->Add(buttonPanel, 0, wxEXPAND);
@@ -176,6 +175,16 @@ int DashboardAdmin::GetTotalProducts() const
         total += stores.at(i)->GetProductSize();
     }
     return total;
+}
+
+MyString DashboardAdmin::GetAdminUserName() const
+{
+    return admin->getUserName();
+}
+
+MyString DashboardAdmin::GetAdminPassword() const
+{
+    return admin->getPassword();
 }
 
 void DashboardAdmin::OnStoreSelected(wxListEvent& event)
