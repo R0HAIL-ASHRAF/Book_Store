@@ -41,6 +41,20 @@ bool Address::operator!=(const Address& other) const
 	return true;
 }
 
+MyString Address::ToString() const
+{
+	MyString add;
+	add.AppendArray(houseNumber);
+	add.AppendArray(", ");
+	add.AppendArray(city);
+	add.AppendArray(", ");
+	add.AppendArray(province);
+	add.AppendArray(", ");
+	add.AppendArray(country);
+	add.AppendArray(".");
+	return add;
+}
+
 
 
 ostream& operator<<(ostream& os, const Address& a)

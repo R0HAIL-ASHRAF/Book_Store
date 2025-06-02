@@ -6,6 +6,8 @@
 #include "StoreManager.h"
 #include "LoginPanel.h"
 
+
+
 class Admin : public Person
 {
 private:
@@ -20,8 +22,8 @@ private:
 	*/
 
 public:
-	Admin();
-	static Admin* GetInstance();
+	Admin(wxWindow* window);
+	static Admin* GetInstance(wxWindow* window);
 	void SetMainWindow(wxWindow* window);
 	// void writeToFile(fstream& fout) const;
 	//// void readFromFile(fstream& fin) const;
@@ -53,6 +55,9 @@ public:
 	MyString getUserName() const override;
 	MyString getPassword() const override;
 	MyVector<Customer*> GetCustomers() const;
+	MyVector<StoreManager*> GetStores() const;
+
+
 	// display not defined yet
 	void DisplayProducts() const;
 	void DisplayStores() const;

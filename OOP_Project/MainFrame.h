@@ -5,6 +5,8 @@
 #include"DashboardUser.h"
 #include"SignupPanel.h"
 #include"Classic.h"
+#include"DashboardAdmin.h"
+
 
 
 class MainFrame: public wxFrame
@@ -15,11 +17,12 @@ public:
 private:
    
     //Panels
-
-    SignupPanel* m_signupPanel;
+    
     loginPanel* m_loginPanel;
     DashboardUser* m_dashboardUser;
     wxBoxSizer* m_mainSizer;
+    DashboardAdmin* m_adminPanel;
+    SignupPanel* m_signupPanel;
 
     
     // btns event handlers

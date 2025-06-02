@@ -41,3 +41,11 @@ ostream& operator<<(ostream& os, const Name& n)
 	os << n.firstName << " " << n.lastName;
 	return os;
 }
+
+MyString Name::ToString() const 
+{
+	MyString name = firstName;
+	name.AppendArray(" ");
+	name.AppendArray(lastName);
+	return name;
+}

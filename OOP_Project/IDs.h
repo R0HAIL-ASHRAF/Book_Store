@@ -7,4 +7,8 @@ enum {
     ID_SignupSubmitButton,
     ID_LogoutButton,
     ID_LoginSignupButton,
+    ID_ViewProducts,
+    ID_ViewStore,
+    ID_ViewCustomers,
+
 };

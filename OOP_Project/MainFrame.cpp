@@ -11,7 +11,9 @@ MainFrame::MainFrame(const wxString& title)
     m_loginPanel = loginPanel::GetInstance(this);
     m_dashboardUser = new DashboardUser(this);
     m_signupPanel = new SignupPanel(this);
+    m_adminPanel = new DashboardAdmin(this);
 
+    m_adminPanel->Hide();
     m_signupPanel->Hide();
 	m_loginPanel->Show();
     m_dashboardUser->Hide();
@@ -20,12 +22,14 @@ MainFrame::MainFrame(const wxString& title)
     m_mainSizer->Add(m_loginPanel, 1, wxEXPAND);
     m_mainSizer->Add(m_dashboardUser, 1, wxEXPAND);
     m_mainSizer->Add(m_signupPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_adminPanel, 1, wxEXPAND);
     
     // Use stack-allocated size to avoid memory leak
     wxSize sizeFrame(1250, 700);
     m_loginPanel->SetMinSize(sizeFrame);
     m_dashboardUser->SetMinSize(sizeFrame);
     m_signupPanel->SetMinSize(sizeFrame);
+    m_adminPanel->SetMinSize(sizeFrame);
 
     SetSizer(m_mainSizer);
     SetMinSize(sizeFrame);
@@ -59,6 +63,7 @@ void MainFrame::OnLoginSuccess(wxCommandEvent& event)
 {
     if (m_loginPanel->ValidateLogin())
     {
+       // adding the dashboard here
         SwitchToDashboard();
     }
     else

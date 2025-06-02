@@ -108,6 +108,12 @@
     <ClCompile Include="CustomerListView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AdminCVpanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DashboardAdmin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyString.h">
@@ -198,6 +204,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CustomerListView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdminCVpanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DashboardAdmin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

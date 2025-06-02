@@ -5,6 +5,9 @@
 #include<fstream>
 #include "Classic.h"
 
+
+
+
 class loginPanel : public wxPanel 
 {
 private:

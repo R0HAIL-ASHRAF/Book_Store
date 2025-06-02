@@ -15,7 +15,7 @@ public:
     Name& operator=(const Name& other);
     bool operator==(const Name& other) const;
     bool operator!=(const Name& other) const;
-
+    MyString ToString() const;
     friend ostream& operator<<(ostream& os, const Name& n);
 };
 

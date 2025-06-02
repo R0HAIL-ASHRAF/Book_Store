@@ -131,12 +131,14 @@
   <ItemGroup>
     <ClCompile Include="Address.cpp" />
     <ClCompile Include="Admin.cpp" />
+    <ClCompile Include="AdminCVpanel.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Cart.cpp" />
     <ClCompile Include="CartPanel.cpp" />
     <ClCompile Include="Classic.cpp" />
     <ClCompile Include="Customer.cpp" />
     <ClCompile Include="CustomerListView.cpp" />
+    <ClCompile Include="DashboardAdmin.cpp" />
     <ClCompile Include="DashboardUser.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="HardCopy.cpp" />
@@ -164,12 +166,14 @@
   <ItemGroup>
     <ClInclude Include="Address.h" />
     <ClInclude Include="Admin.h" />
+    <ClInclude Include="AdminCVpanel.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Cart.h" />
     <ClInclude Include="CartPanel.h" />
     <ClInclude Include="Classic.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="CustomerListView.h" />
+    <ClInclude Include="DashboardAdmin.h" />
     <ClInclude Include="DashboardUser.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="HardCopy.h" />

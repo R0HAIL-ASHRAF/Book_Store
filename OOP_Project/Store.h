@@ -27,6 +27,10 @@ public:
 	//getters
 	MyVector<Product> GetProducts() const;
 	Store GetStoreInfo() const;
+	MyString GetStoreId() const;
+	MyString GetStoreName() const;
+	MyString GetStoreAddress() const;
+	int GetProductSize() const;
 
 	// displays   not defined yet 
 	void DisplayStore() const;

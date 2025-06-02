@@ -9,6 +9,7 @@ loginPanel::loginPanel(wxWindow* parent)
     customers = new MyVector<Classic*>();
     SetupUI();
    this->FromFile();
+   
 }
 loginPanel* loginPanel::GetInstance(wxWindow* parent)
 {
@@ -174,6 +175,7 @@ void loginPanel::FromFile() {
 
         AddCustomer(customer);
     }
+    
 
     fin.close();
 }

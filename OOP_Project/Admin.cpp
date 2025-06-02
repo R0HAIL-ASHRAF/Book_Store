@@ -1,15 +1,22 @@
 #include "Admin.h"
 
-Admin* Admin::instance = new Admin();
+Admin* Admin::instance = nullptr;
 
-Admin::Admin()
+Admin::Admin(wxWindow* window)
 	:Person(), stores(MyVector<StoreManager*>())
 {
+	SetMainWindow(window);
 	
 	
 }
-Admin* Admin::GetInstance()
+Admin* Admin::GetInstance(wxWindow* window)
 {
+	if (instance == nullptr) {
+		instance = new Admin(window);
+		
+		
+
+	}
 	return instance;
 }
 void Admin::SetMainWindow(wxWindow* window) {
@@ -21,6 +28,12 @@ void Admin::SetMainWindow(wxWindow* window) {
 	mainWindowPointer = window;
 	loginPanelInstance = loginPanel::GetInstance(mainWindowPointer);
 	SetCustomers(*loginPanelInstance->GetCustomers());
+	SetLogin(Login("admin", "admin123"));
+	SetName(Name("Rohail ", "Ashraf"));
+	SetEmail("rohailashraf087@gmail.com");
+	SetAddress(Address("House # 123", "Lahore", "Punjab", "Pakistan"));
+
+	// setting date of the admin is missing
 }
 
 MyString Admin::GetPersonType() const
@@ -103,5 +116,11 @@ void Admin::SetCustomers(const MyVector<Classic*>& _customers)
 }
 MyVector <Customer*> Admin::GetCustomers() const
 {
+	// wxLogMessage("Customer count in Admin: %d", customers.size());
 	return customers;
+}
+
+MyVector<StoreManager*> Admin::GetStores() const
+{
+	return stores;
 }

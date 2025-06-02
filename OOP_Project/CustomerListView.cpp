@@ -23,7 +23,7 @@ void CustomerListView::RefreshList()
         SetItem(index, 1, m_customers.at(i)->getPassword());
         SetItem(index, 2, m_customers.at(i)->GetPersonType());
         SetItem(index, 3, m_customers.at(i)->getUserName());
-        SetItem(index, 4, m_customers.at(i)->getPassword());
+        // SetItem(index, 4, m_customers.at(i)->getPassword());
 
         // Store pointer to customer in item data
         SetItemPtrData(index, reinterpret_cast<wxUIntPtr>(m_customers.at(i)));

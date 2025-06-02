@@ -78,3 +78,8 @@ void StoreManager::SetPerson(const Person& _person)
 {
 	Person::operator=(_person);
 }
+MyString StoreManager::GetStoreName() const
+{
+	return fullName.ToString();
+
+}

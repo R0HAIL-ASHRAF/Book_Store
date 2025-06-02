@@ -19,9 +19,9 @@ public:
     friend ostream& operator<<(ostream& os, const Address& a);
 	bool operator==(const Address& other) const;
 	bool operator!=(const Address& other) const;
-   
-    void writeToFile(fstream& fout) const;
-    void readFromFile(fstream& fin) const;
+    MyString ToString() const;
+    // void writeToFile(fstream& fout) const;
+    // void readFromFile(fstream& fin) const;
 
 };
 

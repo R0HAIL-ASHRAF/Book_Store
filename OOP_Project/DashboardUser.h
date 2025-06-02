@@ -19,7 +19,7 @@ private:
     Store* store;
 
     void OnLogout(wxCommandEvent& event);
-    void SetupUI();
+    void SetupUI(wxWindow* parent);
 
     
 };

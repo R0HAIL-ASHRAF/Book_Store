@@ -53,3 +53,23 @@ Store Store::GetStoreInfo() const
 {
 	return *this;
 }
+
+MyString Store::GetStoreId() const
+{
+	return storeId;
+}
+
+MyString Store::GetStoreName() const
+{
+	return storeName;
+}
+
+MyString Store::GetStoreAddress() const
+{
+	return storeAddress.ToString();
+}
+
+int Store::GetProductSize() const
+{
+	return products.size();
+}
