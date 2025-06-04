@@ -117,6 +117,9 @@
     <ClCompile Include="AddBook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BookDisplayPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyString.h">
@@ -218,9 +221,15 @@
     <ClInclude Include="AddBook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BookDisplayPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Users.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Products.bin">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

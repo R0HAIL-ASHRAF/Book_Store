@@ -13,10 +13,23 @@ MainFrame::MainFrame(const wxString& title)
     m_signupPanel = new SignupPanel(this);
     m_adminPanel = new DashboardAdmin(this);
 	m_addBookPanel = new AddBook(this);
+	m_bookDisplayPanel = new BookDisplayPanel(this);
 
+	m_bookDisplayPanel->SetBackgroundColour(wxColour(255, 188, 217));
+    Book book;
+    /*book = m_addBookPanel->ReadSingleBook();*/
+    wxImage logoImg("assets/login.jpg", wxBITMAP_TYPE_ANY);
+
+    m_bookDisplayPanel->SetBookInfo(
+        Book("Bk12", "Peer-e-Kamil", 
+            "hehehhehehhehehehe", 
+            2000, logoImg, "Ameera Ahmad", "Rohail Ashraf",
+            "Romance", "Urdu", "2024",1233)
+    ); // error here
+    m_bookDisplayPanel->Show();
     m_adminPanel->Hide();
     m_signupPanel->Hide();
-	m_loginPanel->Show();
+	m_loginPanel->Hide(); // Hide login panel initially
     m_dashboardUser->Hide();
 	m_addBookPanel->Hide();
 
@@ -26,7 +39,8 @@ MainFrame::MainFrame(const wxString& title)
     m_mainSizer->Add(m_signupPanel, 1, wxEXPAND);
     m_mainSizer->Add(m_adminPanel, 1, wxEXPAND);
 	m_mainSizer->Add(m_addBookPanel, 1, wxEXPAND);
-    
+    m_mainSizer->Add(m_bookDisplayPanel, 1, wxEXPAND);
+
     // Use stack-allocated size to avoid memory leak
     wxSize sizeFrame(1250, 700);
     m_loginPanel->SetMinSize(sizeFrame);
@@ -34,6 +48,7 @@ MainFrame::MainFrame(const wxString& title)
     m_signupPanel->SetMinSize(sizeFrame);
     m_adminPanel->SetMinSize(sizeFrame);
 	m_addBookPanel->SetMinSize(sizeFrame);
+    m_bookDisplayPanel->SetMinSize(sizeFrame);
 
     SetSizer(m_mainSizer);
     SetMinSize(sizeFrame);
@@ -46,6 +61,7 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_BUTTON, &MainFrame::SignUpLoginBtnSuccess, this, ID_LoginSignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButtonAdmin);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBook, this, ID_AddBook);
+	Bind(wxEVT_BUTTON, &MainFrame::OnSaveProduct, this, ID_SaveProductButton);
 
 }
 MainFrame::~MainFrame()
@@ -107,6 +123,21 @@ void MainFrame::SignUpLoginBtnSuccess(wxCommandEvent& event) {
     m_dashboardUser->Hide();
     Layout();
 
+}
+
+void MainFrame::OnSaveProduct(wxCommandEvent& event)
+{
+    if(!m_addBookPanel->ValidateBook())
+    {
+        return;
+    }
+    m_addBookPanel->IntoFile();
+    // TODO: Save book to database or storage
+    wxMessageBox("Book saved successfully!", "Success", wxOK | wxICON_INFORMATION);
+
+    // Clear form
+    m_addBookPanel->ClearForm();
+    SwitchToAdminDashboard();
 }
 
 void MainFrame::SwitchToDashboard()

@@ -39,6 +39,8 @@ public:
 	MyString getProductCategory() const override;
 	MyString getDescription() const override;
 	int getPrice() const override;
+	wxImage GetProductImage() const override;
+
 
 	MyString getStationaryType() const;
 	MyString getStationaryBrand() const;

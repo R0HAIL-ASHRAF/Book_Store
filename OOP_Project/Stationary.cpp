@@ -110,7 +110,10 @@ void Stationary::Display() const
 
 }
 
-
+wxImage Stationary::GetProductImage() const
+{
+	return productImage;
+}
 void Stationary::SetProductCategory(const MyString& category)
 {
 	productCategory = category;

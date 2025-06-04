@@ -12,5 +12,7 @@ enum {
     ID_ViewCustomers,
     ID_LogoutButtonAdmin,
     ID_AddBook,
+    ID_SaveProductButton,
+    ID_CANCEL,
 
 };

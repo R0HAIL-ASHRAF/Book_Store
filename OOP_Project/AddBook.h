@@ -5,6 +5,10 @@
 #include <wx/statline.h>
 #include <filesystem>
 #include "Book.h"
+#include"IDs.h"
+#include<fstream>
+#include <wx/mstream.h> 
+#include "MyVector.h"
 
 
 class AddBook : public wxPanel
@@ -35,6 +39,9 @@ private:
 public:
 	AddBook(wxWindow* parent);
 	void ClearForm();
+	void IntoFile();
+	bool ValidateBook();
+	Book ReadSingleBook();
 	void OnSaveProduct(wxCommandEvent& event);
 
 };

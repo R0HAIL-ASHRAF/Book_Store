@@ -7,6 +7,7 @@
 #include"Classic.h"
 #include"DashboardAdmin.h"
 #include "AddBook.h"
+#include "BookDisplayPanel.h"
 
 
 
@@ -25,7 +26,7 @@ private:
     DashboardAdmin* m_adminPanel;
     SignupPanel* m_signupPanel;
 	AddBook* m_addBookPanel;
-
+	BookDisplayPanel* m_bookDisplayPanel;
     
     // btns event handlers
     void OnLoginSuccess(wxCommandEvent& event);
@@ -34,7 +35,7 @@ private:
     void SignUpLoginBtnSuccess(wxCommandEvent& event);
     void OnLogout(wxCommandEvent& event);
     void OnAddBook(wxCommandEvent& event);
-
+	void OnSaveProduct(wxCommandEvent& event);
     // panel changing 
     void SwitchToDashboard();
     void SwitchToLoginPage();

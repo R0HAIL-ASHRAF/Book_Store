@@ -16,129 +16,121 @@ void AddBook::InitUI()
     title->SetFont(wxFont(16, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
     mainSizer->Add(title, 0, wxALIGN_CENTER | wxTOP | wxBOTTOM, 15);
 
-    // Create form sizer
-    wxFlexGridSizer* formSizer = new wxFlexGridSizer(2, wxSize(10, 10));
-    formSizer->AddGrowableCol(1, 1);
-    formSizer->SetFlexibleDirection(wxBOTH);
+    wxBoxSizer* formSizer = new wxBoxSizer(wxVERTICAL);
 
-    // Product ID
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Book ID:"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-    m_productIdCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(200, -1));
-    formSizer->Add(m_productIdCtrl, 1, wxEXPAND | wxRIGHT, 5);
+   // id + price
+    {
+        wxBoxSizer* row = new wxBoxSizer(wxHORIZONTAL);
+        row->Add(new wxStaticText(this, wxID_ANY, "Book ID:"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
+        m_productIdCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(100, -1));
+        row->Add(m_productIdCtrl, 0, wxRIGHT, 20);
 
-    // Book Title (Product Name)
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Title:"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-    m_productNameCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(200, -1));
-    formSizer->Add(m_productNameCtrl, 1, wxEXPAND | wxRIGHT, 5);
+        row->Add(new wxStaticText(this, wxID_ANY, "Price (Rs):"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
+        m_priceCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(100, -1));
+        row->Add(m_priceCtrl, 0);
 
-    // Author (replaces Category)
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Author:"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-    m_authorCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(200, -1));
-    formSizer->Add(m_authorCtrl, 1, wxEXPAND | wxRIGHT, 5);
+        formSizer->Add(row, 0, wxEXPAND | wxBOTTOM, 10);
+    }
 
-    // Genre (additional book attribute)
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Genre:"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-    wxArrayString genres;
-    genres.Add("Fiction");
-    genres.Add("Non-Fiction");
-    genres.Add("Science Fiction");
-    genres.Add("Fantasy");
-    genres.Add("Mystery");
-    genres.Add("Romance");
-    genres.Add("Biography");
-    m_genreCtrl = new wxComboBox(this, wxID_ANY, "", wxDefaultPosition, wxSize(200, -1), genres, wxCB_DROPDOWN);
-    formSizer->Add(m_genreCtrl, 1, wxEXPAND | wxRIGHT, 5);
+    // Title (long field)
+    formSizer->Add(new wxStaticText(this, wxID_ANY, "Title: "), 0, wxLEFT | wxBOTTOM, 2);
+    m_productNameCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(150, -1));
+    
+    formSizer->Add(m_productNameCtrl, 0, wxEXPAND | wxBOTTOM, 10);
 
-   
-    // Publisher (additional book attribute)
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Publisher:"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-    m_publisherCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(200, -1));
-    formSizer->Add(m_publisherCtrl, 1, wxEXPAND | wxRIGHT, 5);
+    // Author (long field)
+    formSizer->Add(new wxStaticText(this, wxID_ANY, "Author: "), 0, wxLEFT | wxBOTTOM, 2);
+    m_authorCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(300, -1));
+    formSizer->Add(m_authorCtrl, 0, wxEXPAND | wxBOTTOM, 10);
 
-    // Publication Year (additional book attribute)
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Publication Year:"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-    m_yearCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(100, -1));
-    formSizer->Add(m_yearCtrl, 0, wxALIGN_LEFT | wxRIGHT, 5);
+    // Row: Genre + Publication Year
+    {
+        wxBoxSizer* row = new wxBoxSizer(wxHORIZONTAL);
+        row->Add(new wxStaticText(this, wxID_ANY, "Genre: "), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
+        wxArrayString genres;
+        genres.Add("Fiction");
+        genres.Add("Non-Fiction");
+        genres.Add("Science Fiction");
+        genres.Add("Fantasy");
+        genres.Add("Mystery");
+        genres.Add("Romance");
+        genres.Add("Biography");
+        m_genreCtrl = new wxComboBox(this, wxID_ANY, "", wxDefaultPosition, wxSize(150, -1), genres, wxCB_DROPDOWN);
+        row->Add(m_genreCtrl, 0, wxRIGHT, 20);
 
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Language:"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-    m_languageCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(200, -1));
-    formSizer->Add(m_languageCtrl, 1, wxEXPAND | wxRIGHT, 5);
+        row->Add(new wxStaticText(this, wxID_ANY, "Publication Year/Edition:"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
+        m_yearCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(100, -1));
+        row->Add(m_yearCtrl, 0);
 
+        formSizer->Add(row, 0, wxEXPAND | wxBOTTOM, 10);
+    }
 
-    // Pages (additional book attribute)
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Pages:"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-    m_pagesCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(100, -1));
-    formSizer->Add(m_pagesCtrl, 0, wxALIGN_LEFT | wxRIGHT, 5);
+    // Publisher (long field)
+    formSizer->Add(new wxStaticText(this, wxID_ANY, "Publisher:"), 0, wxLEFT | wxBOTTOM, 2);
+    m_publisherCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(300, -1));
+    formSizer->Add(m_publisherCtrl, 0, wxEXPAND | wxBOTTOM, 10);
 
-    // Description
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Synopsis:"),
-        0, wxALIGN_TOP | wxLEFT, 5);
-    m_descriptionCtrl = new wxTextCtrl(this, wxID_ANY, "",
-        wxDefaultPosition, wxSize(200, 100),
-        wxTE_MULTILINE);
-    formSizer->Add(m_descriptionCtrl, 1, wxEXPAND | wxRIGHT, 5);
+    // Row: Language + Pages
+    {
+        wxBoxSizer* row = new wxBoxSizer(wxHORIZONTAL);
+        row->Add(new wxStaticText(this, wxID_ANY, "Language:"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
+        m_languageCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(150, -1));
+        row->Add(m_languageCtrl, 0, wxRIGHT, 20);
 
-    // Price
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Price (Rs):"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-    m_priceCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(100, -1));
-    formSizer->Add(m_priceCtrl, 0, wxALIGN_LEFT | wxRIGHT, 5);
+        row->Add(new wxStaticText(this, wxID_ANY, "Pages:"), 0, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
+        m_pagesCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(100, -1));
+        row->Add(m_pagesCtrl, 0);
 
-    // Image Upload
-    formSizer->Add(new wxStaticText(this, wxID_ANY, "Book Cover:"),
-        0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
+        formSizer->Add(row, 0, wxEXPAND | wxBOTTOM, 10);
+    }
 
-    wxBoxSizer* imageSizer = new wxBoxSizer(wxHORIZONTAL);
-    m_imagePicker = new wxFilePickerCtrl(this, wxID_ANY,
-        wxEmptyString,
-        "Select book cover image",
-        "Image files (*.jpg;*.png)|*.jpg;*.png",
-        wxDefaultPosition, wxDefaultSize,
-        wxFLP_OPEN | wxFLP_FILE_MUST_EXIST);
-    m_imagePicker->Bind(wxEVT_FILEPICKER_CHANGED, &AddBook::OnImageSelected, this);
+    // Description (long multiline field)
+    formSizer->Add(new wxStaticText(this, wxID_ANY, "Description:"), 0, wxLEFT | wxBOTTOM, 2);
+    m_descriptionCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(300, 100), wxTE_MULTILINE);
+    formSizer->Add(m_descriptionCtrl, 0, wxEXPAND | wxBOTTOM, 10);
 
-    m_imagePreview = new wxStaticBitmap(this, wxID_ANY,
-        wxNullBitmap,
-        wxDefaultPosition, wxSize(150, 200)); // Larger size for book covers
-    m_imagePreview->SetBackgroundColour(wxColour(240, 240, 240));
+    // Book Cover (File Picker + Preview)
+    {
+        wxBoxSizer* coverAndButtonsSizer = new wxBoxSizer(wxHORIZONTAL);
 
-    imageSizer->Add(m_imagePicker, 1, wxEXPAND | wxRIGHT, 10);
-    imageSizer->Add(m_imagePreview, 0, wxALIGN_CENTER_VERTICAL);
-    formSizer->Add(imageSizer, 1, wxEXPAND | wxRIGHT, 5);
+        // Image picker + preview
+        wxBoxSizer* imageSizer = new wxBoxSizer(wxHORIZONTAL);
+        imageSizer->Add(new wxStaticText(this, wxID_ANY, "Book Cover:   "), 0, wxLEFT | wxBOTTOM, 2);
 
+        m_imagePicker = new wxFilePickerCtrl(this, wxID_ANY, wxEmptyString, "Select book cover image",
+            "Image files (*.jpg;*.png)|*.jpg;*.png", wxDefaultPosition, wxSize(180, -1),
+            wxFLP_OPEN | wxFLP_FILE_MUST_EXIST);
+        m_imagePicker->Bind(wxEVT_FILEPICKER_CHANGED, &AddBook::OnImageSelected, this);
+
+        m_imagePreview = new wxStaticBitmap(this, wxID_ANY, wxNullBitmap, wxDefaultPosition, wxSize(100, 150));
+        m_imagePreview->SetBackgroundColour(wxColour(255, 188, 217));
+
+        imageSizer->Add(m_imagePicker, 0, wxRIGHT, 10);
+        imageSizer->Add(m_imagePreview, 0, wxALIGN_CENTER_VERTICAL);
+
+        wxBoxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
+        wxButton* cancelBtn = new wxButton(this, ID_CANCEL, "Cancel", wxDefaultPosition, wxSize(80, 30));
+        wxButton* saveBtn = new wxButton(this, ID_SaveProductButton, "Save", wxDefaultPosition, wxSize(80, 30));
+        wxButton* clearBtn = new wxButton(this, wxID_ANY, "Clear", wxDefaultPosition, wxSize(80, 30));
+
+        buttonSizer->Add(cancelBtn, 0, wxALL, 5);
+        buttonSizer->Add(saveBtn, 0, wxALL, 5);
+        buttonSizer->Add(clearBtn, 0, wxALL, 5);
+
+        coverAndButtonsSizer->AddSpacer(10);
+        coverAndButtonsSizer->Add(imageSizer, 1, wxEXPAND | wxRIGHT, 20);
+        coverAndButtonsSizer->Add(buttonSizer, 0, wxALIGN_CENTER_VERTICAL);
+        coverAndButtonsSizer->AddSpacer(40);
+
+        formSizer->Add(coverAndButtonsSizer, 0, wxEXPAND | wxBOTTOM, 10);
+
+        
+    }
     mainSizer->Add(formSizer, 0, wxEXPAND | wxALL, 15);
-
-    // Add separator
-    mainSizer->Add(new wxStaticLine(this), 0, wxEXPAND | wxLEFT | wxRIGHT, 15);
-
-    // Add buttons
-    wxBoxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
-
-    wxButton* cancelBtn = new wxButton(this, wxID_CANCEL, "Cancel");
-    wxButton* saveBtn = new wxButton(this, wxID_OK, "Save Book");
-    saveBtn->SetBackgroundColour(wxColour(70, 160, 70));
-    saveBtn->SetForegroundColour(*wxWHITE);
-
-    buttonSizer->AddStretchSpacer();
-    buttonSizer->Add(cancelBtn, 0, wxALL, 5);
-    buttonSizer->Add(saveBtn, 0, wxALL, 5);
-
-    mainSizer->Add(buttonSizer, 0, wxEXPAND | wxALL, 10);
 
     SetSizer(mainSizer);
 
-    // Bind save button event
-    saveBtn->Bind(wxEVT_BUTTON, &AddBook::OnSaveProduct, this);
 }
-
 void AddBook::OnImageSelected(wxFileDirPickerEvent& event)
 {
     wxString path = event.GetPath();
@@ -147,17 +139,35 @@ void AddBook::OnImageSelected(wxFileDirPickerEvent& event)
     }
 
     if (m_productImage.LoadFile(path)) {
-        // Scale image for preview while maintaining aspect ratio
+
+        //Check image size (PNG compressed)
+        wxMemoryOutputStream memStream;
+        if (!m_productImage.SaveFile(memStream, wxBITMAP_TYPE_PNG)) {
+            wxMessageBox("Failed to process image!", "Error", wxOK | wxICON_ERROR);
+            return;
+        }
+
+        size_t imageSize = memStream.GetSize();
+        if (imageSize > 10 * 1024) { // 10 KB
+            wxMessageBox("Selected image must be smaller than 10 KB.", "Image Too Large", wxOK | wxICON_WARNING);
+            m_productImage.Destroy(); // Reset image
+            m_imagePreview->SetBitmap(wxNullBitmap);
+            m_imagePath.clear();
+            Refresh();
+            return;
+        }
+
+        //Image is valid — scale for preview
         wxImage scaledImage = m_productImage;
         wxSize previewSize = m_imagePreview->GetSize();
         double aspectRatio = static_cast<double>(m_productImage.GetWidth()) / m_productImage.GetHeight();
 
-        if (aspectRatio > 0.75) { // Wider than standard book aspect
+        if (aspectRatio > 0.75) {
             scaledImage.Rescale(previewSize.GetWidth(),
                 previewSize.GetWidth() / aspectRatio,
                 wxIMAGE_QUALITY_HIGH);
         }
-        else { // Taller than standard book aspect
+        else {
             scaledImage.Rescale(previewSize.GetHeight() * aspectRatio,
                 previewSize.GetHeight(),
                 wxIMAGE_QUALITY_HIGH);
@@ -183,7 +193,7 @@ void AddBook::OnSaveProduct(wxCommandEvent& event)
         wxMessageBox("Please fill in all required fields", "Error", wxOK | wxICON_ERROR);
         return;
     }
-
+    
     // Validate price
     long price;
     if (!m_priceCtrl->GetValue().ToLong(&price)) {
@@ -205,27 +215,28 @@ void AddBook::OnSaveProduct(wxCommandEvent& event)
         return;
     }
 
-    // Create book object (replace with your actual Book class)
-    Book newBook;
-    newBook.SetProductID(MyString(m_productIdCtrl->GetValue()));
-    newBook.SetProductName(MyString(m_productNameCtrl->GetValue()));
-    newBook.SetAuthorName(MyString(m_authorCtrl->GetValue()));
-    newBook.SetBookType(MyString(m_genreCtrl->GetValue()));
-    newBook.SetPublisherName(MyString(m_publisherCtrl->GetValue()));
-	newBook.SetBookLanguage(MyString(m_languageCtrl->GetValue()));
-    if (!m_yearCtrl->GetValue().IsEmpty()) {
-        newBook.SetBookEdition(MyString(m_yearCtrl->GetValue()).StringToInt());
-    }
-    if (!m_pagesCtrl->GetValue().IsEmpty()) {
-        newBook.SetPages(MyString(m_pagesCtrl->GetValue()).StringToInt());
-    }
-    newBook.SetProductDescription(MyString(m_descriptionCtrl->GetValue()));
-    newBook.SetPrice(price);
+ //   // Create book object (replace with your actual Book class)
+ //   Book newBook;
+ //   newBook.SetProductID(MyString(m_productIdCtrl->GetValue()));
+ //   newBook.SetProductName(MyString(m_productNameCtrl->GetValue()));
+ //   newBook.SetAuthorName(MyString(m_authorCtrl->GetValue()));
+ //   newBook.SetBookType(MyString(m_genreCtrl->GetValue()));
+ //   newBook.SetPublisherName(MyString(m_publisherCtrl->GetValue()));
+	//newBook.SetBookLanguage(MyString(m_languageCtrl->GetValue()));
+ //   if (!m_yearCtrl->GetValue().IsEmpty()) {
+ //       newBook.SetBookEdition(MyString(m_yearCtrl->GetValue()).StringToInt());
+ //   }
+ //   if (!m_pagesCtrl->GetValue().IsEmpty()) {
+ //       newBook.SetPages(MyString(m_pagesCtrl->GetValue()).StringToInt());
+ //   }
+ //   newBook.SetProductDescription(MyString(m_descriptionCtrl->GetValue()));
+ //   newBook.SetPrice(price);
 
-    if (!m_imagePath.IsEmpty()) {
-        newBook.SetProductImage(m_productImage);
-    }
+ //   if (!m_imagePath.IsEmpty()) {
+ //       newBook.SetProductImage(m_productImage);
+ //   }
 
+    IntoFile();
     // TODO: Save book to database or storage
     wxMessageBox("Book saved successfully!", "Success", wxOK | wxICON_INFORMATION);
 
@@ -248,4 +259,167 @@ void AddBook::ClearForm()
     m_imagePreview->SetBitmap(wxNullBitmap);
     m_productImage.Destroy();
     m_imagePath.clear();
+}
+
+void AddBook::IntoFile()
+{
+    MyString productId = m_productIdCtrl->GetValue();
+    MyString productName = m_productNameCtrl->GetValue();
+    MyString authorName = m_authorCtrl->GetValue();
+    MyString bookType = m_genreCtrl->GetValue();
+    MyString publisherName = m_publisherCtrl->GetValue();
+    MyString bookEdition = m_yearCtrl->GetValue();
+    MyString pages = m_pagesCtrl->GetValue();
+    MyString description = m_descriptionCtrl->GetValue();
+    MyString price = m_priceCtrl->GetValue();
+    MyString language = m_languageCtrl->GetValue();
+    wxImage productImage = m_productImage; // Your wxImage
+
+    std::ofstream fout("Products.bin", std::ios::binary | std::ios::app);
+    if (!fout.is_open()) {
+        wxLogError("Failed to open Products.bin(AddBook.cpp)");
+        return;
+    }
+
+    productId.WriteToStream(fout);
+    productName.WriteToStream(fout);
+    authorName.WriteToStream(fout);
+    bookType.WriteToStream(fout);
+    publisherName.WriteToStream(fout);
+    bookEdition.WriteToStream(fout);
+    pages.WriteToStream(fout);
+    description.WriteToStream(fout);
+    price.WriteToStream(fout);
+    language.WriteToStream(fout);
+
+    wxMemoryOutputStream memStream;
+    if (productImage.IsOk()) {
+        if (productImage.SaveFile(memStream, wxBITMAP_TYPE_PNG)) {
+            size_t imgSize = memStream.GetSize();
+            std::vector<char> imgBuffer(imgSize);
+            memStream.CopyTo(imgBuffer.data(), imgSize);
+            fout.write(reinterpret_cast<const char*>(&imgSize), sizeof(imgSize));
+            fout.write(imgBuffer.data(), imgSize);
+        }
+        else {
+           
+            size_t imgSize = 0;
+            fout.write(reinterpret_cast<const char*>(&imgSize), sizeof(imgSize));
+        }
+    }
+    else {
+        
+        size_t imgSize = 0;
+        fout.write(reinterpret_cast<const char*>(&imgSize), sizeof(imgSize));
+    }
+
+
+    fout.close();
+}
+bool AddBook::ValidateBook()
+{    
+    if (m_productIdCtrl->GetValue().IsEmpty() ||
+        m_productNameCtrl->GetValue().IsEmpty() ||
+        m_authorCtrl->GetValue().IsEmpty() ||
+        m_languageCtrl->GetValue().IsEmpty() ||
+        m_priceCtrl->GetValue().IsEmpty()) {
+        wxMessageBox("Please fill in all required fields", "Error", wxOK | wxICON_ERROR);
+        return false;
+    }
+    long price;
+    if (!m_priceCtrl->GetValue().ToLong(&price) || price < 0) {
+        wxMessageBox("Please enter a valid (non-negative) price", "Error", wxOK | wxICON_ERROR);
+        return false;
+    }
+    long year;
+    if (!m_yearCtrl->GetValue().IsEmpty()) {
+        if (!m_yearCtrl->GetValue().ToLong(&year) || year < 0 || year > 9999) {
+            wxMessageBox("Please enter a valid publication year (4-digit)", "Error", wxOK | wxICON_ERROR);
+            return false;
+        }
+    }
+    long pages;
+    if (m_pagesCtrl->GetValue().IsEmpty() || !m_pagesCtrl->GetValue().ToLong(&pages) || pages <= 0) {
+        wxMessageBox("Please enter a valid page count", "Error", wxOK | wxICON_ERROR);
+        return false;
+    }
+    return true;
+}
+
+Book AddBook::ReadSingleBook()
+{
+    MyString productId;
+    MyString productName;
+    MyString author;
+    MyString genre;
+    MyString publisher;
+    MyString year;
+    MyString pages;
+    MyString description;
+    MyString price;
+    MyString language;
+    wxImage productImage;
+
+    std::ifstream fin("Products.bin", std::ios::binary);
+    if (!fin.is_open()) {
+        wxLogError("Failed to open Products.bin(AddBook.cpp)");
+        return Book();  // Return default constructed Book
+    }
+
+    Book book;
+
+    productId.ReadFromStream(fin);
+    book.SetProductID(productId);
+
+    productName.ReadFromStream(fin);
+    book.SetProductName(productName);
+
+    author.ReadFromStream(fin);
+    book.SetAuthorName(author);
+
+    genre.ReadFromStream(fin);
+    book.SetBookType(genre);
+
+    publisher.ReadFromStream(fin);
+    book.SetPublisherName(publisher);
+
+    year.ReadFromStream(fin);
+    book.SetBookEdition(year.StringToInt());
+
+    pages.ReadFromStream(fin);
+    book.SetPages(pages.StringToInt());
+
+    description.ReadFromStream(fin);
+    book.SetProductDescription(description);
+
+    price.ReadFromStream(fin);
+    book.SetPrice(price.StringToInt());
+
+    language.ReadFromStream(fin);
+    book.SetBookLanguage(language);
+
+    size_t imgSize = 0;
+    fin.read(reinterpret_cast<char*>(&imgSize), sizeof(imgSize));
+    if (!fin.good() || fin.eof()) {
+        return book;  // No image data or file ended early
+    }
+
+    if (imgSize > 0) {
+        std::vector<unsigned char> buffer(imgSize);
+        fin.read(reinterpret_cast<char*>(buffer.data()), imgSize);
+        if (!fin.good()) {
+            wxLogError("Failed to read image data from Products.bin(AddBook.cpp)");
+            return book;
+        }
+
+        wxMemoryInputStream memStream(buffer.data(), imgSize);
+        if (productImage.LoadFile(memStream, wxBITMAP_TYPE_PNG)) {
+            book.SetProductImage(productImage);
+        }
+    }
+    else {
+        book.SetProductImage(wxNullImage);
+    }
+
+    return book;
 }

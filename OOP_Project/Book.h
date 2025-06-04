@@ -50,12 +50,13 @@ public:
 	MyString getProductCategory() const override;
 	MyString getDescription() const override;
 	int getPrice() const override;
-	
-	
+	wxImage GetProductImage() const override;
+	MyString GetBookEdition() const;
+	MyString GetBookLanguage() const;
 	MyString GetAuthorName() const;
 	MyString GetPublisherName() const;
 	MyString GetBookType() const;
-	
+	int GetPages() const;
 
 	//display book not defined tyet 
 	void Display() const override;

@@ -134,6 +134,7 @@
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AdminCVpanel.cpp" />
     <ClCompile Include="Book.cpp" />
+    <ClCompile Include="BookDisplayPanel.cpp" />
     <ClCompile Include="Cart.cpp" />
     <ClCompile Include="CartPanel.cpp" />
     <ClCompile Include="Classic.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminCVpanel.h" />
     <ClInclude Include="Book.h" />
+    <ClInclude Include="BookDisplayPanel.h" />
     <ClInclude Include="Cart.h" />
     <ClInclude Include="CartPanel.h" />
     <ClInclude Include="Classic.h" />
@@ -200,6 +202,7 @@
     <ClInclude Include="StoreManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Products.bin" />
     <None Include="Users.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -36,7 +36,7 @@ public:
 	virtual MyString getProductCategory() const;
 	virtual MyString getDescription() const;
 	virtual int getPrice() const;
-	
+	virtual wxImage GetProductImage() const;
 
 	//display not defoined yet
 	virtual void Display() const;

@@ -93,6 +93,10 @@ MyString Book::GetBookType() const
 {
 	return bookType;
 }
+int Book::GetPages() const
+{
+	return pages;
+}
 void Book::Display() const 
 {
 
@@ -147,4 +151,20 @@ void Book::SetBookEdition(const MyString& edition)
 void Book::SetPages(int pages)
 {
 	this->pages = pages;
+}
+
+
+wxImage Book::GetProductImage() const
+{
+	return productImage;
+}
+
+MyString Book::GetBookEdition() const
+{
+	return bookEdition;
+}
+
+MyString Book::GetBookLanguage() const
+{
+	return bookLanguage;
 }

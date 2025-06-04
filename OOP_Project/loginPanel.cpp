@@ -59,6 +59,7 @@ void loginPanel::SetupUI()
 {   
     wxImage::AddHandler(new wxJPEGHandler());
     wxImage::AddHandler(new wxPNGHandler());
+   
     wxImage logoImg("assets/images/loginPage.png", wxBITMAP_TYPE_ANY);
     if (!logoImg.IsOk()) {
         wxLogError("Failed to load logo image");

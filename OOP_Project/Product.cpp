@@ -99,6 +99,11 @@ int Product::getPrice() const
 	return price;
 }
 
+wxImage Product::GetProductImage() const
+{
+	return productImage;
+}
+
 void Product::Display() const
 {
 }
