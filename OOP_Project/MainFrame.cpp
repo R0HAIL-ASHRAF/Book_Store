@@ -16,16 +16,18 @@ MainFrame::MainFrame(const wxString& title)
 	m_bookDisplayPanel = new BookDisplayPanel(this);
 
 	m_bookDisplayPanel->SetBackgroundColour(wxColour(255, 188, 217));
-    Book book;
-    /*book = m_addBookPanel->ReadSingleBook();*/
+
+    Book book =  m_addBookPanel->ReadSingleBook();
+	m_bookDisplayPanel->SetBookInfo(book);
+
     wxImage logoImg("assets/login.jpg", wxBITMAP_TYPE_ANY);
 
-    m_bookDisplayPanel->SetBookInfo(
-        Book("Bk12", "Peer-e-Kamil", 
-            "hehehhehehhehehehe", 
-            2000, logoImg, "Ameera Ahmad", "Rohail Ashraf",
-            "Romance", "Urdu", "2024",1233)
-    ); // error here
+    //m_bookDisplayPanel->SetBookInfo(
+    //    Book("Bk12", "Peer-e-Kamil", 
+    //        "hehehhehehhehehehe", 
+    //        2000, logoImg, "Ameera Ahmad", "Rohail Ashraf",
+    //        "Romance", "Urdu", "2024",1233)
+    //); // error here
     m_bookDisplayPanel->Show();
     m_adminPanel->Hide();
     m_signupPanel->Hide();

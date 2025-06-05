@@ -359,49 +359,36 @@ Book AddBook::ReadSingleBook()
     MyString price;
     MyString language;
     wxImage productImage;
-
+    
     std::ifstream fin("Products.bin", std::ios::binary);
     if (!fin.is_open()) {
         wxLogError("Failed to open Products.bin(AddBook.cpp)");
-        return Book();  // Return default constructed Book
+        return Book(); 
     }
 
-    Book book;
+    
 
     productId.ReadFromStream(fin);
-    book.SetProductID(productId);
-
     productName.ReadFromStream(fin);
-    book.SetProductName(productName);
-
     author.ReadFromStream(fin);
-    book.SetAuthorName(author);
-
     genre.ReadFromStream(fin);
-    book.SetBookType(genre);
-
     publisher.ReadFromStream(fin);
-    book.SetPublisherName(publisher);
-
     year.ReadFromStream(fin);
-    book.SetBookEdition(year.StringToInt());
-
     pages.ReadFromStream(fin);
-    book.SetPages(pages.StringToInt());
-
     description.ReadFromStream(fin);
-    book.SetProductDescription(description);
-
     price.ReadFromStream(fin);
-    book.SetPrice(price.StringToInt());
-
     language.ReadFromStream(fin);
-    book.SetBookLanguage(language);
 
+   Book book(productId, productName, description,
+       price.StringToInt(), productImage, author,
+       publisher, genre, language, year,
+       pages.StringToInt());
+    
     size_t imgSize = 0;
     fin.read(reinterpret_cast<char*>(&imgSize), sizeof(imgSize));
     if (!fin.good() || fin.eof()) {
-        return book;  // No image data or file ended early
+        wxLogError("Returned Early");
+        return book;
     }
 
     if (imgSize > 0) {
@@ -411,7 +398,6 @@ Book AddBook::ReadSingleBook()
             wxLogError("Failed to read image data from Products.bin(AddBook.cpp)");
             return book;
         }
-
         wxMemoryInputStream memStream(buffer.data(), imgSize);
         if (productImage.LoadFile(memStream, wxBITMAP_TYPE_PNG)) {
             book.SetProductImage(productImage);

@@ -66,7 +66,7 @@ MyString Book::getProductName() const
 
 MyString Book::getProductCategory() const
 {
-	return productCategory;
+	return "book";
 }
 
 MyString Book::getDescription() const
@@ -103,10 +103,6 @@ void Book::Display() const
 }
 
 
-void Book::SetProductCategory(const MyString& category)
-{
-	productCategory = category;
-}
 
 void Book::SetProductName(const MyString& name)
 {

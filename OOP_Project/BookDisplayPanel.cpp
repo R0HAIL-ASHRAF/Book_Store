@@ -127,8 +127,8 @@ void BookDisplayPanel::SetBookInfo(const Book& book)
     m_genreText->SetLabel(book.GetBookType());
     m_publisherText->SetLabel(book.GetPublisherName());
     m_yearText->SetLabel(book.GetBookEdition());
-    m_pagesText->SetLabel(wxString::Format("%d pages", book.GetPages()));
-    m_priceText->SetLabel(wxString::Format("Rs %.2f", book.getPrice()));
+    m_pagesText->SetLabel(MyString(book.GetPages()));
+    m_priceText->SetLabel(MyString(book.getPrice()));
     m_languageText->SetLabel(book.GetBookLanguage());
     
     m_descriptionText->SetLabel(book.getDescription());
