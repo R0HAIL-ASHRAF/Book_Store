@@ -124,3 +124,9 @@ MyVector<StoreManager*> Admin::GetStores() const
 {
 	return stores;
 }
+
+
+MyString Admin::GetEmail() const
+{
+	return email;
+}

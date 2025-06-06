@@ -120,6 +120,15 @@
     <ClCompile Include="BookDisplayPanel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AddStorePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProductListView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewStorePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyString.h">
@@ -224,12 +233,24 @@
     <ClInclude Include="BookDisplayPanel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AddStorePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductListView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewStorePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Users.bin">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Products.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Books.bin">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="AddBook.cpp" />
     <ClCompile Include="Address.cpp" />
+    <ClCompile Include="AddStorePanel.cpp" />
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AdminCVpanel.cpp" />
     <ClCompile Include="Book.cpp" />
@@ -158,16 +159,19 @@
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Premium.cpp" />
     <ClCompile Include="Product.cpp" />
+    <ClCompile Include="ProductListView.cpp" />
     <ClCompile Include="SignupPanel.cpp" />
     <ClCompile Include="SoftCopy.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Stationary.cpp" />
     <ClCompile Include="Store.cpp" />
     <ClCompile Include="StoreManager.cpp" />
+    <ClCompile Include="ViewStorePanel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddBook.h" />
     <ClInclude Include="Address.h" />
+    <ClInclude Include="AddStorePanel.h" />
     <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminCVpanel.h" />
     <ClInclude Include="Book.h" />
@@ -195,13 +199,16 @@
     <ClInclude Include="Person.h" />
     <ClInclude Include="Premium.h" />
     <ClInclude Include="Product.h" />
+    <ClInclude Include="ProductListView.h" />
     <ClInclude Include="SignupPanel.h" />
     <ClInclude Include="SoftCopy.h" />
     <ClInclude Include="Stationary.h" />
     <ClInclude Include="Store.h" />
     <ClInclude Include="StoreManager.h" />
+    <ClInclude Include="ViewStorePanel.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Books.bin" />
     <None Include="Products.bin" />
     <None Include="Users.bin" />
   </ItemGroup>

@@ -101,3 +101,8 @@ Name Patreon::GetName() const
 void Patreon::DisplayCustomer() const
 {
 }
+
+MyString Patreon::GetEmail() const
+{
+	return email;
+}

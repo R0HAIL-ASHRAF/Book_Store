@@ -5,6 +5,11 @@ StoreManager::StoreManager()
 {
 }
 
+StoreManager::StoreManager(const Login& _login, const MyString& email, const Date& dob, const Name& name, const Address& addr, Store store)
+	:Person(_login, email, dob, name, addr), store{Store()}
+{
+}
+
 StoreManager::StoreManager(const StoreManager& other)
 	:Person(other)
 {
@@ -82,4 +87,9 @@ MyString StoreManager::GetStoreName() const
 {
 	return fullName.ToString();
 
+}
+
+MyString StoreManager::GetEmail() const
+{
+	return email;
 }

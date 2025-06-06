@@ -92,3 +92,8 @@ void Customer::DisplayCustomer() const
 {
 
 }
+
+MyString Customer::GetEmail() const
+{
+	return email;
+}

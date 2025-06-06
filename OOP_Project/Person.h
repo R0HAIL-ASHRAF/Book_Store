@@ -35,6 +35,7 @@ public:
     virtual MyString getUserName() const = 0;
     virtual MyString getPassword() const = 0;
 	virtual Name GetName() const = 0;
+    virtual MyString GetEmail() const = 0;
    
 
     //setter

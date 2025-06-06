@@ -35,7 +35,7 @@ public:
 	MyString getUserName() const override;
 	MyString getPassword() const override;
 	Name GetName() const override;
-
+	MyString GetEmail() const override;
 	// display
 	virtual void DisplayOrders() const;
 	

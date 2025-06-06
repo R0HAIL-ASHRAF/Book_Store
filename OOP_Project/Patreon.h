@@ -33,6 +33,7 @@ public:
 	MyString getUserName() const override;
 	MyString getPassword() const override;
 	Name GetName() const override;
+	MyString GetEmail() const override;
 	MyString GetPatreonId() const;
 	bool IsActivePatreon() const;
 

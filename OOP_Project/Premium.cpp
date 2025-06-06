@@ -96,3 +96,8 @@ bool Premium::IsActivePremiumMember() const
 void Premium::DisplayCustomer() const
 {
 }
+
+MyString Premium::GetEmail() const
+{
+	return email;
+}

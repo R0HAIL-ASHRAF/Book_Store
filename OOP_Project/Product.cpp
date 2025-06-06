@@ -58,10 +58,6 @@ void Product::SetProductDescription(const MyString& desc)
 	description = desc;
 }
 
-void Product::SetProductCategory(const MyString& category)
-{
-}
-
 void Product::SetProductName(const MyString& name)
 {
 }

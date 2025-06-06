@@ -4,6 +4,11 @@
 #include "MyVector.h"
 #include "Product.h"
 #include "Classic.h"
+#include<fstream>
+#include <wx/mstream.h>
+#include"Book.h"
+#include"Stationary.h"
+
 
 class Store
 {
@@ -11,7 +16,7 @@ private:
 	MyString storeId;
 	MyString storeName;
 	Address storeAddress;
-	MyVector<Product> products;
+	MyVector<Product*> products;
 	
 
 public:
@@ -22,10 +27,17 @@ public:
 	Store& operator = (const Store& other);
 
 	//adders
-	
+	void LoadAllProductsFromFile();
+	void LoadAllBooks();
+	void LoadAllStationary();
+
+	void WriteIntoFile();
+	void WriteAllBooks(Book* product);
+	void WriteAllStationary(Product* product) ;
+
 
 	//getters
-	MyVector<Product> GetProducts() const;
+	MyVector<Product*> GetProducts() const;
 	Store GetStoreInfo() const;
 	MyString GetStoreId() const;
 	MyString GetStoreName() const;
@@ -39,7 +51,6 @@ public:
 	void DisplayProduct(const MyString& productId) const;
 	void DisplayCustomer(const MyString& customerId) const;
 	void DisplayProductByCategory(const MyString& category) const;
-
-
+	~Store();
 
 };

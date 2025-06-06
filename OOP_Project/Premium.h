@@ -2,8 +2,7 @@
 
 #include "Customer.h"
 
-class Premium
-	:public Customer
+class Premium :public Customer
 {
 private:
 	static int discountRate;
@@ -35,6 +34,7 @@ public:
 	MyString getUserName() const override;
 	MyString getPassword() const override;
 	Name GetName() const override;
+	MyString GetEmail() const override;
 	bool IsActivePremiumMember() const;
 
 	//dipslay

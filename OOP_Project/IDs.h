@@ -14,5 +14,11 @@ enum {
     ID_AddBook,
     ID_SaveProductButton,
     ID_CANCEL,
+    ID_SubmitStore,
+    ID_AddStationery,
+    ID_AddBookInStore,
+    ID_RefreshBtnStoreView,
+    ID_EditBtnStoreView,
+    ID_AddProductBtnStoreView,
 
 };

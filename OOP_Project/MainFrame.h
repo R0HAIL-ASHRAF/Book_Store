@@ -8,7 +8,8 @@
 #include"DashboardAdmin.h"
 #include "AddBook.h"
 #include "BookDisplayPanel.h"
-
+#include"AddStorePanel.h"
+#include"ViewStorePanel.h"
 
 
 class MainFrame: public wxFrame
@@ -27,7 +28,9 @@ private:
     SignupPanel* m_signupPanel;
 	AddBook* m_addBookPanel;
 	BookDisplayPanel* m_bookDisplayPanel;
-    
+    AddStorePanel* m_addStorePanel;
+    ViewStorePanel* m_viewStorePanel;
+
     // btns event handlers
     void OnLoginSuccess(wxCommandEvent& event);
     void OnShowSignup(wxCommandEvent& event);

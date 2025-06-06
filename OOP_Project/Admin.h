@@ -56,6 +56,7 @@ public:
 	MyString getPassword() const override;
 	MyVector<Customer*> GetCustomers() const;
 	MyVector<StoreManager*> GetStores() const;
+	MyString GetEmail() const override;
 
 
 	// display not defined yet

@@ -77,3 +77,8 @@ Name Classic::GetName() const
 void Classic::DisplayCustomer() const
 {
 }
+
+MyString Classic::GetEmail() const
+{
+	return email;
+}

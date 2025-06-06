@@ -8,8 +8,13 @@ class StoreManager : public Person
 {
 private:
 	Store store;
+	
 public:
 	StoreManager();
+	StoreManager(const Login& _login,
+		const MyString& email, const Date& dob,
+		const Name& name, const Address& addr,
+		Store store);
 	StoreManager(const StoreManager& other);
 	StoreManager& operator=(const StoreManager& other);
 	
@@ -37,5 +42,6 @@ public:
 	MyString getPassword() const override;
 	MyString GetPersonType() const override;
 	Name GetName() const override;
+	MyString GetEmail() const override;
 };
 

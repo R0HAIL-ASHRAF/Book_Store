@@ -14,27 +14,26 @@ MainFrame::MainFrame(const wxString& title)
     m_adminPanel = new DashboardAdmin(this);
 	m_addBookPanel = new AddBook(this);
 	m_bookDisplayPanel = new BookDisplayPanel(this);
+    m_addStorePanel = new AddStorePanel(this);
+    m_viewStorePanel = new ViewStorePanel(this, new StoreManager(
+        Login("Rohail", "1234"), "StoreManager@gmail.com", 
+        Date(12, 2, 2024), Name("Store", "Manager"),
+        Address("53-B", "Lahore", "Punjab", "Pakistan"),
+        Store("Store01", "HEHE STORE", Address("53-B", "Lahore", "Punjab", "Pakistan"))));
 
-	m_bookDisplayPanel->SetBackgroundColour(wxColour(255, 188, 217));
+	/*m_bookDisplayPanel->SetBackgroundColour(wxColour(255, 188, 217));
 
     Book book =  m_addBookPanel->ReadSingleBook();
-	m_bookDisplayPanel->SetBookInfo(book);
+	m_bookDisplayPanel->SetBookInfo(book);*/
 
-    wxImage logoImg("assets/login.jpg", wxBITMAP_TYPE_ANY);
-
-    //m_bookDisplayPanel->SetBookInfo(
-    //    Book("Bk12", "Peer-e-Kamil", 
-    //        "hehehhehehhehehehe", 
-    //        2000, logoImg, "Ameera Ahmad", "Rohail Ashraf",
-    //        "Romance", "Urdu", "2024",1233)
-    //); // error here
-    m_bookDisplayPanel->Show();
+    m_addStorePanel->Hide();
+    m_bookDisplayPanel->Hide();
     m_adminPanel->Hide();
     m_signupPanel->Hide();
-	m_loginPanel->Hide(); // Hide login panel initially
+	m_loginPanel->Hide();
     m_dashboardUser->Hide();
 	m_addBookPanel->Hide();
-
+    m_viewStorePanel->Show();
     
     m_mainSizer->Add(m_loginPanel, 1, wxEXPAND);
     m_mainSizer->Add(m_dashboardUser, 1, wxEXPAND);
@@ -42,6 +41,9 @@ MainFrame::MainFrame(const wxString& title)
     m_mainSizer->Add(m_adminPanel, 1, wxEXPAND);
 	m_mainSizer->Add(m_addBookPanel, 1, wxEXPAND);
     m_mainSizer->Add(m_bookDisplayPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_addStorePanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_viewStorePanel, 1, wxEXPAND);
+
 
     // Use stack-allocated size to avoid memory leak
     wxSize sizeFrame(1250, 700);
@@ -51,6 +53,8 @@ MainFrame::MainFrame(const wxString& title)
     m_adminPanel->SetMinSize(sizeFrame);
 	m_addBookPanel->SetMinSize(sizeFrame);
     m_bookDisplayPanel->SetMinSize(sizeFrame);
+    m_addStorePanel->SetMinSize(sizeFrame);
+    m_viewStorePanel->SetMinSize(sizeFrame);
 
     SetSizer(m_mainSizer);
     SetMinSize(sizeFrame);

@@ -33,7 +33,6 @@ public:
 	//setter
 	void SetPrice(int price) override;
 	void SetProductDescription(const MyString& desc) override;
-	void SetProductCategory(const MyString& category) override;
 	void SetProductName(const MyString& name)override;
 	void SetProductID(const MyString& id) override;
 	void SetProductImage(const wxImage& image)override;

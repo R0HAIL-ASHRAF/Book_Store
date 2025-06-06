@@ -77,7 +77,7 @@ MyString Stationary::getProductName() const
 
 MyString Stationary::getProductCategory() const
 {
-	return productCategory;
+	return "stationary";
 }
 
 MyString Stationary::getDescription() const
@@ -113,10 +113,6 @@ void Stationary::Display() const
 wxImage Stationary::GetProductImage() const
 {
 	return productImage;
-}
-void Stationary::SetProductCategory(const MyString& category)
-{
-	productCategory = category;
 }
 
 void Stationary::SetProductName(const MyString& name)
