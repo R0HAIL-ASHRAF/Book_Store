@@ -28,6 +28,7 @@ void DashboardUser::CreateControls() {
 }
 
 void DashboardUser::SetupButtonSizer() {
+
     wxBoxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
     wxButton* logoutBtn = new wxButton(this, ID_LogoutDU, "Logout");
@@ -69,6 +70,7 @@ void DashboardUser::LoadProducts() {
 
 
 wxPanel* DashboardUser::CreateProductPanel(wxWindow* parent, const Product& product) {
+
     wxPanel* panel = new wxPanel(parent, wxID_ANY, wxDefaultPosition, wxSize(250, 300));
     panel->SetBackgroundColour(*wxWHITE);
     panel->SetWindowStyle(wxSIMPLE_BORDER);
@@ -141,10 +143,25 @@ wxPanel* DashboardUser::CreateProductPanel(wxWindow* parent, const Product& prod
 
     wxButton* addBtn = new wxButton(panel, wxID_ANY, "Add to Cart",
         wxDefaultPosition, wxDefaultSize, wxBORDER_NONE);
-    addBtn->SetBackgroundColour(wxColour(170, 51, 106));
+
+    wxButton* viewBtn = new wxButton(panel, wxID_ANY, "View",
+        wxDefaultPosition, wxDefaultSize, wxBORDER_NONE);
+
+	viewBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    viewBtn->SetForegroundColour(*wxWHITE);
+
+    addBtn->SetBackgroundColour(wxColour(219, 0, 107));
     addBtn->SetForegroundColour(*wxWHITE);
-    sizer->Add(addBtn, 0, wxALIGN_CENTER | wxTOP | wxBOTTOM, 10);
+
+    wxBoxSizer* btnSizer = new wxBoxSizer(wxHORIZONTAL);
+
+    btnSizer->Add(addBtn, 1, wxALIGN_CENTER_VERTICAL | wxALL, 10);
+    btnSizer->Add(viewBtn, 1, wxALIGN_CENTER_VERTICAL | wxALL, 5);
+
+    
+    sizer->Add(btnSizer, 0, wxALIGN_CENTER_HORIZONTAL, 5);
     addBtn->SetClientData((void*)&product);
+	viewBtn->SetClientData((void*)&product);
 
     panel->SetSizer(sizer);
     return panel;

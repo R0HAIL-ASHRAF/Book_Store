@@ -85,6 +85,7 @@ void BookDisplayPanel::CreateControls()
     wxStaticText* descText = new wxStaticText(detailsPanel, wxID_ANY, "",
         wxDefaultPosition, wxSize(-1, 100),
         wxTE_MULTILINE | wxTE_READONLY | wxTE_WORDWRAP | wxBORDER_NONE);
+
     descText->SetBackgroundColour(wxColor(255, 209, 220));
     m_descriptionText = descText;
     descSizer->Add(descText, 1, wxEXPAND | wxALL, 5);

@@ -96,11 +96,12 @@ private:
     ~MainFrame();
 
     void OnAddToCartClicked(wxCommandEvent& event);
+    void OnViewProductPanel(wxCommandEvent& event);
     void OnPlaceOrder(wxCommandEvent& event);
     void OnBackToUser(wxCommandEvent& event);
     void OnRefreshClickedCart(wxCommandEvent& event);
     void OnBackToOrderPanel(wxCommandEvent& event);
-
+    void OnBackButtonProductUser(wxCommandEvent& event);
     void OnViewOrder(wxCommandEvent& event);
 };
 

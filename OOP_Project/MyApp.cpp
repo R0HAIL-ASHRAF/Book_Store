@@ -31,10 +31,7 @@ bool MyApp::OnInit()
     frame->SetClientSize(800, 600);
     frame->Center();
     frame->Show();
-    
 
-    //admin->WriteStoreManagersToFile();
-    
     return true;
 }
 

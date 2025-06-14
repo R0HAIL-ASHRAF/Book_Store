@@ -85,7 +85,7 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_BUTTON, &MainFrame::OnLoginSuccess, this, ID_LoginButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnShowSignup, this, ID_SignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnSignupComplete, this, ID_SignupSubmitButton);
-    Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButton);
+    
     Bind(wxEVT_BUTTON, &MainFrame::SignUpLoginBtnSuccess, this, ID_LoginSignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButtonAdmin);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBook, this, ID_AddBook);
@@ -101,9 +101,10 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_BUTTON, &MainFrame::OnAddStoreManager, this, ID_AddStore);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBook, this, ID_AddBookInStore);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddStationary, this, ID_AddStationery);
+
     Bind(wxEVT_BUTTON, &MainFrame::OnBackButton, this, ID_BackViewStore);
-    Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVS);
-    Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVB);
+
+   
    // Bind(wxEVT_BUTTON, &MainFrame::OnOrderBtnPressed, this, ID_OrderDU);
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutDU);
     Bind(wxEVT_BUTTON, &MainFrame::OnBackToOrderPanel, this, ID_BackDisplayOrder);
@@ -115,11 +116,11 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_BUTTON, &MainFrame::OnBackToUser, this, ID_BackCart);
     Bind(wxEVT_BUTTON, &MainFrame::OnViewCart, this, ID_ViewCartDU);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddToCartClicked, this);
+    Bind(wxEVT_BUTTON, &MainFrame::OnViewProductPanel, this);
     Bind(wxEVT_MENU, &MainFrame::OnRightClickDashboardAdmin, this, ID_RightClickDashboardAdmin);
     Bind(wxEVT_MENU, &MainFrame::OnRightClickViewStore, this, ID_RightClickViewStore);
     Bind(wxEVT_MENU, &MainFrame::OnRightClickViewOrder, this, ID_RightClickViewOrder);
-
-
+    
 
 
     
@@ -157,6 +158,7 @@ MainFrame::~MainFrame()
     Unbind(wxEVT_BUTTON, &MainFrame::OnBackToUser, this, ID_BackCart);
     Unbind(wxEVT_BUTTON, &MainFrame::OnViewCart, this, ID_ViewCartDU);
     Unbind(wxEVT_BUTTON, &MainFrame::OnAddToCartClicked, this);
+
     Unbind(wxEVT_MENU, &MainFrame::OnRightClickDashboardAdmin, this, ID_RightClickDashboardAdmin);
     Unbind(wxEVT_MENU, &MainFrame::OnRightClickViewStore, this, ID_RightClickViewStore);
     Unbind(wxEVT_MENU, &MainFrame::OnRightClickViewOrder, this, ID_RightClickViewOrder);
@@ -178,10 +180,42 @@ void MainFrame::OnAddToCartClicked(wxCommandEvent& event) {
     event.Skip();
 }
 
+void MainFrame::OnViewProductPanel(wxCommandEvent& event) 
+{
+    wxObject* obj = event.GetEventObject();
+    wxButton* btn = dynamic_cast<wxButton*>(obj);
+
+    if (btn && btn->GetLabel() == "View") {
+        Product* product = static_cast<Product*>(btn->GetClientData());
+        if (product->getProductCategory() == "book") {
+            Book* book = dynamic_cast<Book*>(product);
+            if (book) {
+                m_bookDisplayPanel->SetBookInfo(*book);
+                SwitchToDisplayBook();
+            }
+        }
+        else if (product->getProductCategory() == "stationary") {
+            Stationary* stat = dynamic_cast<Stationary*>(product);
+
+            if (stat) {
+                m_stationaryDisplayPanel->SetStationaryInfo(*stat);
+                SwitchToDisplayStationary();
+            }
+        }
+    }
+    event.Skip();
+
+}
+
 void MainFrame::OnBackToOrderPanel(wxCommandEvent& event)
 {
     SwitchToDashboardUser();
 
+}
+
+void MainFrame::OnBackButtonProductUser(wxCommandEvent& event)
+{
+    SwitchToDashboardUser();
 }
 
 void MainFrame::OnViewStore(wxCommandEvent& event)
@@ -390,16 +424,22 @@ void MainFrame::OnDeleteItemProduct(wxCommandEvent& event)
 
 void MainFrame::OnLoginSuccess(wxCommandEvent& event)
 {
+    Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButton);
+
     m_adminPanel->OnRefreshStoreList(event);
     
     if (m_loginPanel->ValidateLoginForCustomers())
     {
-        int k = 0;
+        //Bind(wxEVT_BUTTON, &MainFrame::OnViewProductPanel, this);
+        Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProductUser, this, ID_BackBtnVS);
+        Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProductUser, this, ID_BackBtnVB);
+
+
+        m_adminPanel->OnRefreshStoreList(event);
         prods.clear();
         for (int i = 0; i < admin->GetStores().size(); i++) {
             for (int j = 0; j < admin->GetStores().at(i)->GetStore()->GetProducts().size(); j++) {
                 prods.push(admin->GetStores().at(i)->GetStore()->GetProducts().at(j));
-                k++;
             }
         }
         m_dashboardUser->SetProducts(prods);
@@ -409,10 +449,18 @@ void MainFrame::OnLoginSuccess(wxCommandEvent& event)
     else if (m_loginPanel->GetUsername() == m_adminPanel->GetAdminUserName() &&
              m_loginPanel->GetPassword() == m_adminPanel->GetAdminPassword())
     {
+        Bind(wxEVT_BUTTON, &MainFrame::OnBackButton, this, ID_BackViewStore);
+        Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVS);
+        Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVB);
+
 		SwitchToAdminDashboard();
     }
     else if (admin->ValidateStoreManagers()) 
     {
+        Unbind(wxEVT_BUTTON, &MainFrame::OnBackButton, this, ID_BackViewStore);
+        Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVS);
+        Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVB);
+
         int index = admin->GetIndexOfUser();
         m_viewStorePanel->SetStore(
             admin->GetStores().at(index)
@@ -579,6 +627,8 @@ void MainFrame::SwitchToDisplayBook()
     m_addStorePanel->Hide();
     m_viewStorePanel->Hide();
     m_bookDisplayPanel->Show();
+    m_stationaryDisplayPanel->Hide();
+
     Layout();
 }
 void MainFrame::SwitchToViewStore()
@@ -589,6 +639,8 @@ void MainFrame::SwitchToViewStore()
     m_signupPanel->Hide();
     m_adminPanel->Hide();
     m_addStorePanel->Hide();
+    m_bookDisplayPanel->Hide();
+    m_stationaryDisplayPanel->Hide();
     m_viewStorePanel->Show();
     Layout();
 

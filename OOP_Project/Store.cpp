@@ -50,9 +50,7 @@ void Store::LoadAllProductsFromFile()
     LoadAllStationary();
 }
 void Store::LoadAllBooks() {
-   
 
-    Logger::getInstance().writeError("Starting LoadAllBooks()");
     std::ifstream fin(fileName.ToCharArray(), std::ios::binary);
     if (!fin.is_open()) {
         Logger::getInstance().writeError("Failed to open file: ");
@@ -92,11 +90,6 @@ void Store::LoadAllBooks() {
         price.ReadFromStream(fin);
         language.ReadFromStream(fin);
 
-        Logger::getInstance().writeError("Read product details:");
-        Logger::getInstance().writeError(productName);
-        Logger::getInstance().writeError(author);
-        Logger::getInstance().writeError(publisher);
-
         wxImage* productImage = new wxImage();
 
         size_t imgSize = 0;
@@ -116,7 +109,6 @@ void Store::LoadAllBooks() {
             fin.read(reinterpret_cast<char*>(buffer.data()), imgSize);
 
             if (!fin) {
-                Logger::getInstance().writeError("Failed to read image data");
                 delete productImage;
                 productImage = new wxImage(wxNullImage);
             }
@@ -126,13 +118,10 @@ void Store::LoadAllBooks() {
                     Logger::getInstance().writeError("Failed to load image from memory stream");
                     *productImage = wxNullImage;
                 }
-                else {
-                    Logger::getInstance().writeError("Loaded image successfully");
-                }
+                
             }
         }
         else {
-            Logger::getInstance().writeError("No image data found");
             delete productImage;
             productImage = new wxImage(wxNullImage);
         }
@@ -149,16 +138,12 @@ void Store::LoadAllBooks() {
     }
 
     fin.close();
-    Logger::getInstance().writeError("Finished loading books from file ");
+   
 }
 
 void Store::LoadAllStationary() {
    
-
-    Logger::getInstance().writeError("Starting LoadAllStationary()");
     std::ifstream fin(fileName2.ToCharArray(), std::ios::binary | std::ios::in);
-    Logger::getInstance().writeError("Opening file ");
-    Logger::getInstance().writeError(fileName2);
     if (!fin.is_open()) {
         Logger::getInstance().writeError("Failed to open file");
         return;
@@ -178,8 +163,6 @@ void Store::LoadAllStationary() {
             Logger::getInstance().writeError (MyString(count + 1));
             break;
         }
-        Logger::getInstance().writeError(productId);
-
         MyString productName, type, brand, color, description, price;
         productName.ReadFromStream(fin);
         type.ReadFromStream(fin);
@@ -187,11 +170,6 @@ void Store::LoadAllStationary() {
         color.ReadFromStream(fin);
         description.ReadFromStream(fin);
         price.ReadFromStream(fin);
-
-        Logger::getInstance().writeError("Read stationary product details:");
-        Logger::getInstance().writeError(productName);
-        Logger::getInstance().writeError(type);
-        Logger::getInstance().writeError(price);
 
         wxImage* productImage = new wxImage();
         size_t imgSize = 0;
@@ -217,13 +195,9 @@ void Store::LoadAllStationary() {
                     Logger::getInstance().writeError("Failed to load stationary image from memory stream");
                     *productImage = wxNullImage;
                 }
-                else {
-                    Logger::getInstance().writeError("Loaded stationary image successfully");
-                }
             }
         }
         else {
-            Logger::getInstance().writeError("No stationary image data found");
             delete productImage;
             productImage = new wxImage(wxNullImage);
         }

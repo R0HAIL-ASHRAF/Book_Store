@@ -1,545 +1,103 @@
-MyApp OnInit started  Sat Jun 14 14:56:35 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:00 2025
-Read productId  Sat Jun 14 14:57:00 2025
-BK02  Sat Jun 14 14:57:00 2025
-Read product details:  Sat Jun 14 14:57:00 2025
-Peer e Kamil  Sat Jun 14 14:57:00 2025
-Umera Ahmad  Sat Jun 14 14:57:00 2025
-Feroz Sons  Sat Jun 14 14:57:00 2025
-Loaded image successfully  Sat Jun 14 14:57:00 2025
-Reached EOF after reading books  Sat Jun 14 14:57:00 2025
-Finished loading books from file   Sat Jun 14 14:57:00 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:00 2025
-Opening file   Sat Jun 14 14:57:00 2025
-TextFiles/Stores/Stat_ST09.bin  Sat Jun 14 14:57:00 2025
-Reached EOF after reading   Sat Jun 14 14:57:00 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:00 2025
-Read productId  Sat Jun 14 14:57:00 2025
-BK09  Sat Jun 14 14:57:00 2025
-Read product details:  Sat Jun 14 14:57:00 2025
-Its Always the Husband  Sat Jun 14 14:57:00 2025
-Michele Campbell  Sat Jun 14 14:57:00 2025
-St. Martin’s Press  Sat Jun 14 14:57:00 2025
-Loaded image successfully  Sat Jun 14 14:57:00 2025
-Reached EOF after reading books  Sat Jun 14 14:57:00 2025
-Finished loading books from file   Sat Jun 14 14:57:00 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:00 2025
-Opening file   Sat Jun 14 14:57:00 2025
-TextFiles/Stores/Stat_ST05.bin  Sat Jun 14 14:57:00 2025
-Reached EOF after reading   Sat Jun 14 14:57:00 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:00 2025
-Read productId  Sat Jun 14 14:57:00 2025
-BK07  Sat Jun 14 14:57:00 2025
-Read product details:  Sat Jun 14 14:57:00 2025
-Never Marry a Woman with Big Feet  Sat Jun 14 14:57:00 2025
-Michael Joseph  Sat Jun 14 14:57:00 2025
-HarperCollins  Sat Jun 14 14:57:00 2025
-Loaded image successfully  Sat Jun 14 14:57:00 2025
-Reached EOF after reading books  Sat Jun 14 14:57:00 2025
-Finished loading books from file   Sat Jun 14 14:57:00 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:00 2025
-Opening file   Sat Jun 14 14:57:00 2025
-TextFiles/Stores/Stat_ST10.bin  Sat Jun 14 14:57:00 2025
-Reached EOF after reading   Sat Jun 14 14:57:00 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:00 2025
-Reached EOF after reading books  Sat Jun 14 14:57:00 2025
-Finished loading books from file   Sat Jun 14 14:57:00 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:00 2025
-Opening file   Sat Jun 14 14:57:00 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:00 2025
-ST009  Sat Jun 14 14:57:00 2025
-Read stationary product details:  Sat Jun 14 14:57:00 2025
-GoldFish ColorBox  Sat Jun 14 14:57:00 2025
-colors  Sat Jun 14 14:57:00 2025
-999  Sat Jun 14 14:57:00 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:00 2025
-Reached EOF after reading   Sat Jun 14 14:57:00 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:00 2025
-Reached EOF after reading books  Sat Jun 14 14:57:00 2025
-Finished loading books from file   Sat Jun 14 14:57:00 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:00 2025
-Opening file   Sat Jun 14 14:57:00 2025
-TextFiles/Stores/Stat_.bin  Sat Jun 14 14:57:00 2025
-Reached EOF after reading   Sat Jun 14 14:57:00 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:00 2025
-Read productId  Sat Jun 14 14:57:00 2025
-BK02  Sat Jun 14 14:57:00 2025
-Read product details:  Sat Jun 14 14:57:00 2025
-Peer e Kamil  Sat Jun 14 14:57:00 2025
-Umera Ahmad  Sat Jun 14 14:57:00 2025
-Feroz Sons  Sat Jun 14 14:57:00 2025
-Loaded image successfully  Sat Jun 14 14:57:00 2025
-Reached EOF after reading books  Sat Jun 14 14:57:00 2025
-Finished loading books from file   Sat Jun 14 14:57:00 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:00 2025
-Opening file   Sat Jun 14 14:57:00 2025
-TextFiles/Stores/Stat_ST09.bin  Sat Jun 14 14:57:00 2025
-Reached EOF after reading   Sat Jun 14 14:57:00 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:01 2025
-Read productId  Sat Jun 14 14:57:01 2025
-BK09  Sat Jun 14 14:57:01 2025
-Read product details:  Sat Jun 14 14:57:01 2025
-Its Always the Husband  Sat Jun 14 14:57:01 2025
-Michele Campbell  Sat Jun 14 14:57:01 2025
-St. Martin’s Press  Sat Jun 14 14:57:01 2025
-Loaded image successfully  Sat Jun 14 14:57:01 2025
-Reached EOF after reading books  Sat Jun 14 14:57:01 2025
-Finished loading books from file   Sat Jun 14 14:57:01 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:01 2025
-Opening file   Sat Jun 14 14:57:01 2025
-TextFiles/Stores/Stat_ST05.bin  Sat Jun 14 14:57:01 2025
-Reached EOF after reading   Sat Jun 14 14:57:01 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:01 2025
-Read productId  Sat Jun 14 14:57:01 2025
-BK07  Sat Jun 14 14:57:01 2025
-Read product details:  Sat Jun 14 14:57:01 2025
-Never Marry a Woman with Big Feet  Sat Jun 14 14:57:01 2025
-Michael Joseph  Sat Jun 14 14:57:01 2025
-HarperCollins  Sat Jun 14 14:57:01 2025
-Loaded image successfully  Sat Jun 14 14:57:01 2025
-Reached EOF after reading books  Sat Jun 14 14:57:01 2025
-Finished loading books from file   Sat Jun 14 14:57:01 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:01 2025
-Opening file   Sat Jun 14 14:57:01 2025
-TextFiles/Stores/Stat_ST10.bin  Sat Jun 14 14:57:01 2025
-Reached EOF after reading   Sat Jun 14 14:57:01 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:01 2025
-Reached EOF after reading books  Sat Jun 14 14:57:01 2025
-Finished loading books from file   Sat Jun 14 14:57:01 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:01 2025
-Opening file   Sat Jun 14 14:57:01 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:01 2025
-ST009  Sat Jun 14 14:57:01 2025
-Read stationary product details:  Sat Jun 14 14:57:01 2025
-GoldFish ColorBox  Sat Jun 14 14:57:01 2025
-colors  Sat Jun 14 14:57:01 2025
-999  Sat Jun 14 14:57:01 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:01 2025
-Reached EOF after reading   Sat Jun 14 14:57:01 2025
-Null Active Customer MainFrame::OnLoginSuccess()  Sat Jun 14 14:57:04 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:13 2025
-Read productId  Sat Jun 14 14:57:13 2025
-BK02  Sat Jun 14 14:57:13 2025
-Read product details:  Sat Jun 14 14:57:13 2025
-Peer e Kamil  Sat Jun 14 14:57:13 2025
-Umera Ahmad  Sat Jun 14 14:57:13 2025
-Feroz Sons  Sat Jun 14 14:57:13 2025
-Loaded image successfully  Sat Jun 14 14:57:13 2025
-Reached EOF after reading books  Sat Jun 14 14:57:13 2025
-Finished loading books from file   Sat Jun 14 14:57:13 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:13 2025
-Opening file   Sat Jun 14 14:57:13 2025
-TextFiles/Stores/Stat_ST09.bin  Sat Jun 14 14:57:13 2025
-Reached EOF after reading   Sat Jun 14 14:57:13 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:13 2025
-Read productId  Sat Jun 14 14:57:13 2025
-BK09  Sat Jun 14 14:57:13 2025
-Read product details:  Sat Jun 14 14:57:13 2025
-Its Always the Husband  Sat Jun 14 14:57:13 2025
-Michele Campbell  Sat Jun 14 14:57:13 2025
-St. Martin’s Press  Sat Jun 14 14:57:13 2025
-Loaded image successfully  Sat Jun 14 14:57:13 2025
-Reached EOF after reading books  Sat Jun 14 14:57:13 2025
-Finished loading books from file   Sat Jun 14 14:57:13 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:13 2025
-Opening file   Sat Jun 14 14:57:13 2025
-TextFiles/Stores/Stat_ST05.bin  Sat Jun 14 14:57:13 2025
-Reached EOF after reading   Sat Jun 14 14:57:13 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:13 2025
-Read productId  Sat Jun 14 14:57:13 2025
-BK07  Sat Jun 14 14:57:13 2025
-Read product details:  Sat Jun 14 14:57:13 2025
-Never Marry a Woman with Big Feet  Sat Jun 14 14:57:13 2025
-Michael Joseph  Sat Jun 14 14:57:13 2025
-HarperCollins  Sat Jun 14 14:57:13 2025
-Loaded image successfully  Sat Jun 14 14:57:13 2025
-Reached EOF after reading books  Sat Jun 14 14:57:13 2025
-Finished loading books from file   Sat Jun 14 14:57:13 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:13 2025
-Opening file   Sat Jun 14 14:57:13 2025
-TextFiles/Stores/Stat_ST10.bin  Sat Jun 14 14:57:13 2025
-Reached EOF after reading   Sat Jun 14 14:57:13 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:13 2025
-Reached EOF after reading books  Sat Jun 14 14:57:13 2025
-Finished loading books from file   Sat Jun 14 14:57:13 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:13 2025
-Opening file   Sat Jun 14 14:57:13 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:13 2025
-ST009  Sat Jun 14 14:57:13 2025
-Read stationary product details:  Sat Jun 14 14:57:13 2025
-GoldFish ColorBox  Sat Jun 14 14:57:13 2025
-colors  Sat Jun 14 14:57:13 2025
-999  Sat Jun 14 14:57:13 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:13 2025
-Reached EOF after reading   Sat Jun 14 14:57:13 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:13 2025
-Reached EOF after reading books  Sat Jun 14 14:57:13 2025
-Finished loading books from file   Sat Jun 14 14:57:13 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:13 2025
-Opening file   Sat Jun 14 14:57:13 2025
-TextFiles/Stores/Stat_.bin  Sat Jun 14 14:57:13 2025
-Reached EOF after reading   Sat Jun 14 14:57:13 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:13 2025
-Read productId  Sat Jun 14 14:57:13 2025
-BK02  Sat Jun 14 14:57:13 2025
-Read product details:  Sat Jun 14 14:57:13 2025
-Peer e Kamil  Sat Jun 14 14:57:13 2025
-Umera Ahmad  Sat Jun 14 14:57:13 2025
-Feroz Sons  Sat Jun 14 14:57:13 2025
-Loaded image successfully  Sat Jun 14 14:57:13 2025
-Reached EOF after reading books  Sat Jun 14 14:57:13 2025
-Finished loading books from file   Sat Jun 14 14:57:13 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:13 2025
-Opening file   Sat Jun 14 14:57:13 2025
-TextFiles/Stores/Stat_ST09.bin  Sat Jun 14 14:57:13 2025
-Reached EOF after reading   Sat Jun 14 14:57:13 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:13 2025
-Read productId  Sat Jun 14 14:57:13 2025
-BK09  Sat Jun 14 14:57:13 2025
-Read product details:  Sat Jun 14 14:57:13 2025
-Its Always the Husband  Sat Jun 14 14:57:13 2025
-Michele Campbell  Sat Jun 14 14:57:13 2025
-St. Martin’s Press  Sat Jun 14 14:57:13 2025
-Loaded image successfully  Sat Jun 14 14:57:13 2025
-Reached EOF after reading books  Sat Jun 14 14:57:13 2025
-Finished loading books from file   Sat Jun 14 14:57:13 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:13 2025
-Opening file   Sat Jun 14 14:57:13 2025
-TextFiles/Stores/Stat_ST05.bin  Sat Jun 14 14:57:13 2025
-Reached EOF after reading   Sat Jun 14 14:57:13 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:13 2025
-Read productId  Sat Jun 14 14:57:13 2025
-BK07  Sat Jun 14 14:57:13 2025
-Read product details:  Sat Jun 14 14:57:13 2025
-Never Marry a Woman with Big Feet  Sat Jun 14 14:57:13 2025
-Michael Joseph  Sat Jun 14 14:57:13 2025
-HarperCollins  Sat Jun 14 14:57:13 2025
-Loaded image successfully  Sat Jun 14 14:57:13 2025
-Reached EOF after reading books  Sat Jun 14 14:57:13 2025
-Finished loading books from file   Sat Jun 14 14:57:13 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:13 2025
-Opening file   Sat Jun 14 14:57:13 2025
-TextFiles/Stores/Stat_ST10.bin  Sat Jun 14 14:57:13 2025
-Reached EOF after reading   Sat Jun 14 14:57:13 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:13 2025
-Reached EOF after reading books  Sat Jun 14 14:57:13 2025
-Finished loading books from file   Sat Jun 14 14:57:13 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:13 2025
-Opening file   Sat Jun 14 14:57:13 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:13 2025
-ST009  Sat Jun 14 14:57:13 2025
-Read stationary product details:  Sat Jun 14 14:57:13 2025
-GoldFish ColorBox  Sat Jun 14 14:57:13 2025
-colors  Sat Jun 14 14:57:13 2025
-999  Sat Jun 14 14:57:13 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:13 2025
-Reached EOF after reading   Sat Jun 14 14:57:13 2025
-Null Active Customer MainFrame::OnLoginSuccess()  Sat Jun 14 14:57:14 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:18 2025
-Reached EOF after reading books  Sat Jun 14 14:57:18 2025
-Finished loading books from file   Sat Jun 14 14:57:18 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:18 2025
-Opening file   Sat Jun 14 14:57:18 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:18 2025
-ST009  Sat Jun 14 14:57:18 2025
-Read stationary product details:  Sat Jun 14 14:57:18 2025
-GoldFish ColorBox  Sat Jun 14 14:57:18 2025
-colors  Sat Jun 14 14:57:18 2025
-999  Sat Jun 14 14:57:18 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:18 2025
-Reached EOF after reading   Sat Jun 14 14:57:18 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:18 2025
-Reached EOF after reading books  Sat Jun 14 14:57:18 2025
-Finished loading books from file   Sat Jun 14 14:57:18 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:18 2025
-Opening file   Sat Jun 14 14:57:18 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:18 2025
-ST009  Sat Jun 14 14:57:18 2025
-Read stationary product details:  Sat Jun 14 14:57:18 2025
-GoldFish ColorBox  Sat Jun 14 14:57:18 2025
-colors  Sat Jun 14 14:57:18 2025
-999  Sat Jun 14 14:57:18 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:18 2025
-Reached EOF after reading   Sat Jun 14 14:57:18 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK02  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Peer e Kamil  Sat Jun 14 14:57:31 2025
-Umera Ahmad  Sat Jun 14 14:57:31 2025
-Feroz Sons  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST09.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK09  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Its Always the Husband  Sat Jun 14 14:57:31 2025
-Michele Campbell  Sat Jun 14 14:57:31 2025
-St. Martin’s Press  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST05.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK07  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Never Marry a Woman with Big Feet  Sat Jun 14 14:57:31 2025
-Michael Joseph  Sat Jun 14 14:57:31 2025
-HarperCollins  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST10.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:31 2025
-ST009  Sat Jun 14 14:57:31 2025
-Read stationary product details:  Sat Jun 14 14:57:31 2025
-GoldFish ColorBox  Sat Jun 14 14:57:31 2025
-colors  Sat Jun 14 14:57:31 2025
-999  Sat Jun 14 14:57:31 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK02  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Peer e Kamil  Sat Jun 14 14:57:31 2025
-Umera Ahmad  Sat Jun 14 14:57:31 2025
-Feroz Sons  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST09.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK09  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Its Always the Husband  Sat Jun 14 14:57:31 2025
-Michele Campbell  Sat Jun 14 14:57:31 2025
-St. Martin’s Press  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST05.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK07  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Never Marry a Woman with Big Feet  Sat Jun 14 14:57:31 2025
-Michael Joseph  Sat Jun 14 14:57:31 2025
-HarperCollins  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST10.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:31 2025
-ST009  Sat Jun 14 14:57:31 2025
-Read stationary product details:  Sat Jun 14 14:57:31 2025
-GoldFish ColorBox  Sat Jun 14 14:57:31 2025
-colors  Sat Jun 14 14:57:31 2025
-999  Sat Jun 14 14:57:31 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK02  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Peer e Kamil  Sat Jun 14 14:57:31 2025
-Umera Ahmad  Sat Jun 14 14:57:31 2025
-Feroz Sons  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST09.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK02  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Peer e Kamil  Sat Jun 14 14:57:31 2025
-Umera Ahmad  Sat Jun 14 14:57:31 2025
-Feroz Sons  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST09.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK02  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Peer e Kamil  Sat Jun 14 14:57:31 2025
-Umera Ahmad  Sat Jun 14 14:57:31 2025
-Feroz Sons  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST09.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK09  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Its Always the Husband  Sat Jun 14 14:57:31 2025
-Michele Campbell  Sat Jun 14 14:57:31 2025
-St. Martin’s Press  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST05.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK09  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Its Always the Husband  Sat Jun 14 14:57:31 2025
-Michele Campbell  Sat Jun 14 14:57:31 2025
-St. Martin’s Press  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST05.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK09  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Its Always the Husband  Sat Jun 14 14:57:31 2025
-Michele Campbell  Sat Jun 14 14:57:31 2025
-St. Martin’s Press  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST05.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK07  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Never Marry a Woman with Big Feet  Sat Jun 14 14:57:31 2025
-Michael Joseph  Sat Jun 14 14:57:31 2025
-HarperCollins  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST10.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK07  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Never Marry a Woman with Big Feet  Sat Jun 14 14:57:31 2025
-Michael Joseph  Sat Jun 14 14:57:31 2025
-HarperCollins  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST10.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Read productId  Sat Jun 14 14:57:31 2025
-BK07  Sat Jun 14 14:57:31 2025
-Read product details:  Sat Jun 14 14:57:31 2025
-Never Marry a Woman with Big Feet  Sat Jun 14 14:57:31 2025
-Michael Joseph  Sat Jun 14 14:57:31 2025
-HarperCollins  Sat Jun 14 14:57:31 2025
-Loaded image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST10.bin  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:31 2025
-ST009  Sat Jun 14 14:57:31 2025
-Read stationary product details:  Sat Jun 14 14:57:31 2025
-GoldFish ColorBox  Sat Jun 14 14:57:31 2025
-colors  Sat Jun 14 14:57:31 2025
-999  Sat Jun 14 14:57:31 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:31 2025
-ST009  Sat Jun 14 14:57:31 2025
-Read stationary product details:  Sat Jun 14 14:57:31 2025
-GoldFish ColorBox  Sat Jun 14 14:57:31 2025
-colors  Sat Jun 14 14:57:31 2025
-999  Sat Jun 14 14:57:31 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
-Starting LoadAllBooks()  Sat Jun 14 14:57:31 2025
-Reached EOF after reading books  Sat Jun 14 14:57:31 2025
-Finished loading books from file   Sat Jun 14 14:57:31 2025
-Starting LoadAllStationary()  Sat Jun 14 14:57:31 2025
-Opening file   Sat Jun 14 14:57:31 2025
-TextFiles/Stores/Stat_ST17.bin  Sat Jun 14 14:57:31 2025
-ST009  Sat Jun 14 14:57:31 2025
-Read stationary product details:  Sat Jun 14 14:57:31 2025
-GoldFish ColorBox  Sat Jun 14 14:57:31 2025
-colors  Sat Jun 14 14:57:31 2025
-999  Sat Jun 14 14:57:31 2025
-Loaded stationary image successfully  Sat Jun 14 14:57:31 2025
-Reached EOF after reading   Sat Jun 14 14:57:31 2025
+MyApp OnInit started  Sat Jun 14 23:17:56 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK02  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK09  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK07  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK02  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK09  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK07  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK02  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK09  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK07  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK02  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK09  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK07  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK02  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK02  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK02  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK09  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK09  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK09  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK07  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK07  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Read productId  Sat Jun 14 23:18:06 2025
+BK07  Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025
+Reached EOF after reading books  Sat Jun 14 23:18:06 2025
+Reached EOF after reading   Sat Jun 14 23:18:06 2025

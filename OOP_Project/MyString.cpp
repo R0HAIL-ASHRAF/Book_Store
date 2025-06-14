@@ -25,6 +25,7 @@ MyString::MyString(const char* Arr) {
 	for (int i = 0; i < this->length; i++) {
 		this->charString[i] = Arr[i];
 	}
+	this->charString[this->length] = '\0';
 }
 MyString::MyString(const wxString& arr)
 {
@@ -58,7 +59,7 @@ MyString::MyString(int size, int _capacity) {
 MyString::MyString(const MyString& _str) {
 	this->length = _str.length;
 	this->capacity = _str.capacity;
-	this->charString = new char[_str.capacity + 1] {'\0'};
+	this->charString = new char[_str.capacity + 1];
 	for (int i = 0; i < this->length; i++) {
 		this->charString[i] = _str.charString[i];
 	}
@@ -91,7 +92,7 @@ MyString& MyString::operator=(const MyString& right) {
 	delete[] this->charString;
 	this->length = right.length;
 	this->capacity = right.capacity;
-	this->charString = new char[this->capacity + 1];
+	this->charString = new char[this->capacity + 2];
 	for (int i = 0; i < this->length; i++) {
 		this->charString[i] = right.charString[i];
 	}
@@ -122,8 +123,8 @@ bool MyString::operator == (const MyString& str) const {
 	return true;
 }
 char* MyString::ToCharArray() const {
-	char* result = new char[this->length + 1];
-	for (size_t i = 0; i < this->length; i++) {
+	char* result = new char[this->length + 2];
+	for (int i = 0; i < this->length; i++) {
 		result[i] = this->charString[i];
 	}
 	result[this->length] = '\0';
@@ -332,13 +333,16 @@ MyString operator+(MyString s1, MyString s2) {
 	return concatArr;
 }
 MyString& MyString::AppendArray(const MyString& str) {
-	int i = 0;
-	for (int j = 0; j < str.length; i++, j++) {
+	
+	for (int j = 0; j < str.length;j++) {
 		if (this->length == capacity)
 			*this = RegrowArr();
 		charString[length] = str.charString[j];
 		this->length++;
 	}
+	if (length == capacity)
+		*this = RegrowArr();
+	this->charString[this->length] = '\0';
 	return *this;
 }
 
