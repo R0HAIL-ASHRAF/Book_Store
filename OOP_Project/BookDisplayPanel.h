@@ -33,4 +33,6 @@ private:
     wxStaticBitmap* m_imagePreview;
 
     void CreateControls();
+
+
 };

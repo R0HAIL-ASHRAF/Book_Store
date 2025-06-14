@@ -8,6 +8,21 @@
 
 class SignupPanel : public wxPanel  
 {  
+private:
+    wxTextCtrl* getUserName;
+    wxTextCtrl* getFirstName;
+    wxTextCtrl* getLastName;
+    wxTextCtrl* getEmail;
+    wxTextCtrl* getDay;
+    wxTextCtrl* getMonth;
+    wxTextCtrl* getYear;
+    wxTextCtrl* getHouseNumber;
+    wxTextCtrl* getCity;
+    wxTextCtrl* getProvince;
+    wxTextCtrl* getCountry;
+    wxTextCtrl* getPassword;
+    wxTextCtrl* getConfirmPassword;
+
 public:  
     SignupPanel(wxWindow* parent);
     void AddFormField(wxSizer* sizer, const wxString& label, wxWindow* control);
@@ -16,22 +31,6 @@ public:
     Classic* getPerson() const;
     void clearTextCtrls()const;
     void IntoFile();
-private:    
-    wxTextCtrl* getUserName;  
-    wxTextCtrl* getFirstName;  
-    wxTextCtrl* getLastName;  
-    wxTextCtrl* getEmail;  
-    wxTextCtrl* getDay;  
-    wxTextCtrl* getMonth;  
-    wxTextCtrl* getYear;  
-    wxTextCtrl* getHouseNumber;  
-    wxTextCtrl* getCity;  
-    wxTextCtrl* getProvince;  
-    wxTextCtrl* getCountry;  
-    wxTextCtrl* getPassword;  
-    wxTextCtrl* getConfirmPassword;  
-    
-private://functions
 
 };  
 

@@ -42,7 +42,6 @@ public:
 	bool ValidateBook();
 	Book ReadSingleBook();
 	Book GetBookFromPanel();
-	void OnSaveProduct(wxCommandEvent& event);
 
 };
 

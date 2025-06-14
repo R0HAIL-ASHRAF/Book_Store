@@ -90,6 +90,10 @@ void DisplayOrderPanel::SetCustomer(Customer* cust)
     PopulateOrdersList();
 }
 
+DisplayOrderPanel::~DisplayOrderPanel()
+{
+}
+
 void DisplayOrderPanel::SetupContextMenu() {
     m_ordersList->Bind(wxEVT_CONTEXT_MENU, [this](wxContextMenuEvent& event){});
 }

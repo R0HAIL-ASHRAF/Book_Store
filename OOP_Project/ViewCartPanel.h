@@ -12,6 +12,7 @@
 class ViewCartPanel : public wxPanel
 {
 public:
+    
     ViewCartPanel(wxWindow* parent);
     void SetCartItems(const MyVector<Product*>& items);
     void SetPaymentInfo(const MyString& cardNumber, const MyString& cardHolderName,
@@ -21,6 +22,9 @@ public:
     Cart*& GetCart();
     void SetProductsCart(MyVector<Product*> prods);
     void OnRefreshClicked(wxCommandEvent& event);
+
+    ~ViewCartPanel();
+
 private:
     void CreateControls();
     void OnViewProduct(wxCommandEvent& event);

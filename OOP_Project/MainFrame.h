@@ -21,6 +21,7 @@ class MainFrame: public wxFrame
 {
 public:
     MainFrame(const wxString& title);
+    
     Admin* admin;
     void SwitchToViewStore();
 private:
@@ -50,7 +51,9 @@ private:
     void OnRightClickViewStore(wxCommandEvent& event);
 
     void OnRightClickViewOrder(wxCommandEvent& event);
-
+    void BindEvents();
+    void InitiallyShowLogin();
+    void AddPanelsToMainSizer();
     void OnDeleteItemProduct(wxCommandEvent& event);
 
     // btns event handlers
@@ -93,6 +96,7 @@ private:
     void SwitchToOrderProceed();
     void SwitchToOrderDisplay();
     void SwitchToViewCartPanel();
+    void SetSizeOfPanel();
     ~MainFrame();
 
     void OnAddToCartClicked(wxCommandEvent& event);

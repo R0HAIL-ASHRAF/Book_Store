@@ -76,9 +76,11 @@ void Admin::DisplayAllStoreManagers() const
 
 Admin::~Admin()
 {
-	/*for (int i = 0; i < customers.size(); i++) {
+	for (int i = 0; i < customers.size(); i++) {
 		delete customers.at(i);
-	}*/
+	}
+	customers.clear();
+	stores.clear();
 }
 
 Name Admin::GetName() const

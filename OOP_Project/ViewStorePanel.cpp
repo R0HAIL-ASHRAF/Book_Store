@@ -24,6 +24,11 @@ MyString ViewStorePanel::GetStationaryFileName()
     return storeManager->GetStore()->GetStatFileName();
 }
 
+ViewStorePanel::~ViewStorePanel()
+{
+    delete storeManager;
+}
+
 
 void ViewStorePanel::SetupUI()
 {

@@ -10,9 +10,6 @@
 
 class StationaryDisplayPanel :public wxPanel
 {
-public:
-	StationaryDisplayPanel(wxWindow* parent);
-	void SetStationaryInfo(const Stationary& stationary);
 private:
     wxStaticText* m_productIdText;
     wxStaticText* m_productNameText;
@@ -25,5 +22,10 @@ private:
     wxStaticBitmap* m_imagePreview;
 
     void CreateControls();
+
+public:
+	StationaryDisplayPanel(wxWindow* parent);
+	void SetStationaryInfo(const Stationary& stationary);
+
 };
 

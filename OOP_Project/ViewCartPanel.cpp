@@ -128,3 +128,8 @@ void ViewCartPanel::OnRefreshClicked(wxCommandEvent& event) {
     SetCartItems(m_products);
     UpdateTotal();
 }
+
+ViewCartPanel::~ViewCartPanel()
+{
+    m_products.clear();
+}

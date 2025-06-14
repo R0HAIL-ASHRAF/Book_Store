@@ -173,3 +173,8 @@ void DashboardUser::SetProducts(const MyVector<Product*>& prods)
     LoadProducts();
 
 }
+
+DashboardUser::~DashboardUser()
+{
+    m_products.clear();
+}

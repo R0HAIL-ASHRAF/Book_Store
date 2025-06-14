@@ -178,5 +178,7 @@ MyString Cart::GenerateCartID() {
 
 Cart::~Cart()
 {
+	delete payment;
+	products.clear();
 }
 

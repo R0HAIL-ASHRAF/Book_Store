@@ -12,21 +12,6 @@
 
 class AddStorePanel : public wxPanel
 {
-public:
-    AddStorePanel(wxWindow* parent);
-
-    MyString GetStoreId() const;
-    MyString GetStoreName() const;
-    Address GetStoreAddress() const;
-    void SetupUI();
-    bool ValidateStoreManagers() const;
-    Store GetStore() const;
-	StoreManager GetStoreManager()const;
-
-    MyString GetStoreId();
-    MyString GetBookFileName();
-    MyString GetStatFileName();
-
 private:
     wxTextCtrl* firstNameCtrl;
     wxTextCtrl* lastNameCtrl;
@@ -47,6 +32,23 @@ private:
     wxTextCtrl* provinceCtrl;
     wxTextCtrl* cityCtrl;
     wxTextCtrl* countryCtrl;
+
+public:
+
+    AddStorePanel(wxWindow* parent);
+
+    MyString GetStoreId() const;
+    MyString GetStoreName() const;
+    Address GetStoreAddress() const;
+    void SetupUI();
+    bool ValidateStoreManagers() const;
+    Store GetStore() const;
+	StoreManager GetStoreManager()const;
+
+    MyString GetStoreId();
+    MyString GetBookFileName();
+    MyString GetStatFileName();
+
 
    
 };

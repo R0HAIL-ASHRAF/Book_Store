@@ -30,9 +30,9 @@ private:
 	wxButton* saveBtn;
 
 	void InitUI();
-
 	void OnImageSelected(wxFileDirPickerEvent& event);
 	void OnClear(wxCommandEvent& event);
+
 public:
 	AddStationary(wxWindow* parent);
 	void Clear();

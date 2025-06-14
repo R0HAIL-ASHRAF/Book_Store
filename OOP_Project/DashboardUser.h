@@ -12,7 +12,7 @@ class DashboardUser : public wxPanel {
 public:
     DashboardUser(wxWindow* parent);
     void SetProducts(const MyVector<Product*>& prods);
-
+    ~DashboardUser();
 private:
     void CreateControls();
     void LoadProducts();

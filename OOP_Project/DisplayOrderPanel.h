@@ -16,7 +16,8 @@ public:
     DisplayOrderPanel(wxWindow* parent, Customer* customer);
     void RefreshOrders();
     void SetCustomer(Customer* cust);
-    
+    ~DisplayOrderPanel();
+
 private:
     
     wxButton* m_backBtn;

@@ -14,7 +14,7 @@ private:
         this->cap = this->cap * 2 + 1;  
         type* newArr = new type[this->cap];  
         if (!newArr) {  
-            throw bad_alloc(); // Handle memory allocation failure  
+            
         }  
         for (int i = 0; i < this->len; i++) {  
             if (i >= this->cap) {  

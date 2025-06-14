@@ -112,6 +112,7 @@ void BookDisplayPanel::CreateControls()
     Layout();
 }
 
+
 void BookDisplayPanel::SetBookInfo(const Book& book)
 {
     m_titleText->SetLabel(book.getProductName());

@@ -39,4 +39,5 @@ public:
     MyString GetAdminUserName() const;
     MyString GetAdminPassword() const;
     void OnStoreSelected(wxListEvent& event);
+    ~DashboardAdmin();
 };

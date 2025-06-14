@@ -4,7 +4,7 @@
 MainFrame::MainFrame(const wxString& title)
     : wxFrame(nullptr, wxID_ANY, title),
     admin(Admin::GetInstance(this)), 
-    prods(MyVector<Product*>())
+    prods(MyVector<Product*>()), sizeFrame{ wxSize(1250, 700) }
 {
 
     this->SetBackgroundColour(wxColour(255, 188, 217));
@@ -28,70 +28,29 @@ MainFrame::MainFrame(const wxString& title)
     m_displayOrderPanel = new DisplayOrderPanel(this, customer);
 
 	
-
-    m_addStorePanel->Hide();
-    m_bookDisplayPanel->Hide();
-    m_adminPanel->Hide();
-    m_signupPanel->Hide();
-	m_loginPanel->Show();
-
-    m_dashboardUser->Hide();
-	m_addBookPanel->Hide();
-    m_viewStorePanel->Hide();
-    m_addStationaryPanel->Hide();
-    m_stationaryDisplayPanel->Hide();
-    m_viewCartPanel->Hide();
-    m_orderPanel->Hide();
-    m_displayOrderPanel->Hide();
-
-
-
-    
-    m_mainSizer->Add(m_loginPanel, 1, wxEXPAND);
-    m_mainSizer->Add(m_dashboardUser, 1, wxEXPAND);
-    m_mainSizer->Add(m_signupPanel, 1, wxEXPAND);
-    m_mainSizer->Add(m_adminPanel, 1, wxEXPAND);
-	m_mainSizer->Add(m_addBookPanel, 1, wxEXPAND);
-    m_mainSizer->Add(m_bookDisplayPanel, 1, wxEXPAND);
-    m_mainSizer->Add(m_addStorePanel, 1, wxEXPAND);
-    m_mainSizer->Add(m_viewStorePanel, 1, wxEXPAND);
-	m_mainSizer->Add(m_addStationaryPanel, 1, wxEXPAND);
-    m_mainSizer->Add(m_stationaryDisplayPanel, 1, wxEXPAND);
-    m_mainSizer->Add(m_viewCartPanel, 1, wxEXPAND);
-    m_mainSizer->Add(m_orderPanel, 1, wxEXPAND);
-    m_mainSizer->Add(m_displayOrderPanel, 1, wxEXPAND);
-
-    sizeFrame = wxSize(1250, 700);
-    m_loginPanel->SetMinSize(sizeFrame);
-    m_dashboardUser->SetMinSize(sizeFrame);
-    m_signupPanel->SetMinSize(sizeFrame);
-    m_adminPanel->SetMinSize(sizeFrame);
-	m_addBookPanel->SetMinSize(sizeFrame);
-    m_bookDisplayPanel->SetMinSize(sizeFrame);
-    m_addStorePanel->SetMinSize(sizeFrame);
-    m_viewStorePanel->SetMinSize(sizeFrame);
-	m_addStationaryPanel->SetMinSize(sizeFrame);
-    m_stationaryDisplayPanel->SetMinSize(sizeFrame);
-    m_viewCartPanel->SetMinSize(sizeFrame);
-    m_orderPanel->SetMinSize(sizeFrame);
-    m_displayOrderPanel->SetMinSize(sizeFrame);
-
-
+    InitiallyShowLogin();
+    AddPanelsToMainSizer();
+    SetSizeOfPanel();
+    BindEvents();
 
     SetSizer(m_mainSizer);
     SetMinSize(sizeFrame);
-        
-	// binding events 
+
+}
+
+void MainFrame::BindEvents()
+{
+
     Bind(wxEVT_BUTTON, &MainFrame::OnLoginSuccess, this, ID_LoginButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnShowSignup, this, ID_SignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnSignupComplete, this, ID_SignupSubmitButton);
-    
+
     Bind(wxEVT_BUTTON, &MainFrame::SignUpLoginBtnSuccess, this, ID_LoginSignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButtonAdmin);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBook, this, ID_AddBook);
     Bind(wxEVT_BUTTON, &MainFrame::OnSaveProductStationary, this, ID_SaveBtnAddStat);
 
-	Bind(wxEVT_BUTTON, &MainFrame::OnSaveProductBook, this, ID_SaveProductButton);
+    Bind(wxEVT_BUTTON, &MainFrame::OnSaveProductBook, this, ID_SaveProductButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBook, this, ID_AddProductBtnStoreView);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBookViaViewStoreClear, this, ID_CANCEL);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBookViaViewStoreClear, this, ID_CancelBtnAddStat);
@@ -101,14 +60,10 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_BUTTON, &MainFrame::OnAddStoreManager, this, ID_AddStore);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBook, this, ID_AddBookInStore);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddStationary, this, ID_AddStationery);
-
     Bind(wxEVT_BUTTON, &MainFrame::OnBackButton, this, ID_BackViewStore);
-
-   
-   // Bind(wxEVT_BUTTON, &MainFrame::OnOrderBtnPressed, this, ID_OrderDU);
+    // Bind(wxEVT_BUTTON, &MainFrame::OnOrderBtnPressed, this, ID_OrderDU);
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutDU);
     Bind(wxEVT_BUTTON, &MainFrame::OnBackToOrderPanel, this, ID_BackDisplayOrder);
-    
     Bind(wxEVT_BUTTON, &MainFrame::SwitchToDisplayOrder, this, ID_OrderDU);
     Bind(wxEVT_BUTTON, &MainFrame::OnBackToOrderPanel, this, ID_BackButtonOP);
     Bind(wxEVT_BUTTON, &MainFrame::OnProceedCart, this, ID_ProceedCart);
@@ -120,10 +75,61 @@ MainFrame::MainFrame(const wxString& title)
     Bind(wxEVT_MENU, &MainFrame::OnRightClickDashboardAdmin, this, ID_RightClickDashboardAdmin);
     Bind(wxEVT_MENU, &MainFrame::OnRightClickViewStore, this, ID_RightClickViewStore);
     Bind(wxEVT_MENU, &MainFrame::OnRightClickViewOrder, this, ID_RightClickViewOrder);
-    
 
+}
 
-    
+void MainFrame::InitiallyShowLogin()
+{
+
+    m_addStorePanel->Hide();
+    m_bookDisplayPanel->Hide();
+    m_adminPanel->Hide();
+    m_signupPanel->Hide();
+    m_loginPanel->Show();
+    m_dashboardUser->Hide();
+    m_addBookPanel->Hide();
+    m_viewStorePanel->Hide();
+    m_addStationaryPanel->Hide();
+    m_stationaryDisplayPanel->Hide();
+    m_viewCartPanel->Hide();
+    m_orderPanel->Hide();
+    m_displayOrderPanel->Hide();
+
+}
+
+void MainFrame::AddPanelsToMainSizer()
+{
+    m_mainSizer->Add(m_loginPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_dashboardUser, 1, wxEXPAND);
+    m_mainSizer->Add(m_signupPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_adminPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_addBookPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_bookDisplayPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_addStorePanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_viewStorePanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_addStationaryPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_stationaryDisplayPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_viewCartPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_orderPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_displayOrderPanel, 1, wxEXPAND);
+}
+
+void MainFrame::SetSizeOfPanel()
+{
+    m_loginPanel->SetMinSize(sizeFrame);
+    m_dashboardUser->SetMinSize(sizeFrame);
+    m_signupPanel->SetMinSize(sizeFrame);
+    m_adminPanel->SetMinSize(sizeFrame);
+    m_addBookPanel->SetMinSize(sizeFrame);
+    m_bookDisplayPanel->SetMinSize(sizeFrame);
+    m_addStorePanel->SetMinSize(sizeFrame);
+    m_viewStorePanel->SetMinSize(sizeFrame);
+    m_addStationaryPanel->SetMinSize(sizeFrame);
+    m_stationaryDisplayPanel->SetMinSize(sizeFrame);
+    m_viewCartPanel->SetMinSize(sizeFrame);
+    m_orderPanel->SetMinSize(sizeFrame);
+    m_displayOrderPanel->SetMinSize(sizeFrame);
+
 }
 
 MainFrame::~MainFrame()
@@ -163,6 +169,7 @@ MainFrame::~MainFrame()
     Unbind(wxEVT_MENU, &MainFrame::OnRightClickViewStore, this, ID_RightClickViewStore);
     Unbind(wxEVT_MENU, &MainFrame::OnRightClickViewOrder, this, ID_RightClickViewOrder);
 
+    prods.clear();
     
 }
 

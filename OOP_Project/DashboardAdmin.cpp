@@ -211,6 +211,11 @@ void DashboardAdmin::OnStoreSelected(wxListEvent& event)
    
 }
 
+DashboardAdmin::~DashboardAdmin()
+{
+    stores.clear();
+}
+
 int DashboardAdmin::GetMenuListIndex()
 {
     return rightClickedIndex;

@@ -44,4 +44,5 @@ public:
     void SetStore(StoreManager*& store);
     MyString GetBookFileName();
     MyString GetStationaryFileName();
+    ~ViewStorePanel() override;
 };
