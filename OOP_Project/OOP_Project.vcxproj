@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e03e3f02-9c5f-431c-b091-2f752dff7a7b}</ProjectGuid>
+    <RootNamespace>OOPProject</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\wxWidgets\include;C:\wxWidgets\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\wxWidgets\lib\vc_x64_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\wxWidgets\include;C:\wxWidgets\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\wxWidgets\lib\vc_x64_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AddBook.cpp" />
+    <ClCompile Include="Address.cpp" />
+    <ClCompile Include="AddStationary.cpp" />
+    <ClCompile Include="AddStorePanel.cpp" />
+    <ClCompile Include="Admin.cpp" />
+    <ClCompile Include="AdminCVpanel.cpp" />
+    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="BookDisplayPanel.cpp" />
+    <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="CartPanel.cpp" />
+    <ClCompile Include="Classic.cpp" />
+    <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="CustomerListView.cpp" />
+    <ClCompile Include="DashboardAdmin.cpp" />
+    <ClCompile Include="DashboardUser.cpp" />
+    <ClCompile Include="Date.cpp" />
+    <ClCompile Include="DisplayOrderPanel.cpp" />
+    <ClCompile Include="HardCopy.cpp" />
+    <ClCompile Include="IDs.cpp" />
+    <ClCompile Include="log.cpp" />
+    <ClCompile Include="Login.cpp" />
+    <ClCompile Include="loginPanel.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="MyApp.cpp" />
+    <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="MyVector.cpp" />
+    <ClCompile Include="Name.cpp" />
+    <ClCompile Include="Order.cpp" />
+    <ClCompile Include="OrderPanel.cpp" />
+    <ClCompile Include="Patreon.cpp" />
+    <ClCompile Include="Payment.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Premium.cpp" />
+    <ClCompile Include="Product.cpp" />
+    <ClCompile Include="ProductListView.cpp" />
+    <ClCompile Include="SignupPanel.cpp" />
+    <ClCompile Include="SoftCopy.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Stationary.cpp" />
+    <ClCompile Include="StationaryDisplayPanel.cpp" />
+    <ClCompile Include="Store.cpp" />
+    <ClCompile Include="StoreManager.cpp" />
+    <ClCompile Include="ViewCartPanel.cpp" />
+    <ClCompile Include="ViewStorePanel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddBook.h" />
+    <ClInclude Include="Address.h" />
+    <ClInclude Include="AddStationary.h" />
+    <ClInclude Include="AddStorePanel.h" />
+    <ClInclude Include="Admin.h" />
+    <ClInclude Include="AdminCVpanel.h" />
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="BookDisplayPanel.h" />
+    <ClInclude Include="Cart.h" />
+    <ClInclude Include="CartPanel.h" />
+    <ClInclude Include="Classic.h" />
+    <ClInclude Include="Customer.h" />
+    <ClInclude Include="CustomerListView.h" />
+    <ClInclude Include="DashboardAdmin.h" />
+    <ClInclude Include="DashboardUser.h" />
+    <ClInclude Include="Date.h" />
+    <ClInclude Include="DisplayOrderPanel.h" />
+    <ClInclude Include="HardCopy.h" />
+    <ClInclude Include="IDs.h" />
+    <ClInclude Include="log.h" />
+    <ClInclude Include="Login.h" />
+    <ClInclude Include="loginPanel.h" />
+    <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="MyApp.h" />
+    <ClInclude Include="MyString.h" />
+    <ClInclude Include="MyVector.h" />
+    <ClInclude Include="Name.h" />
+    <ClInclude Include="Order.h" />
+    <ClInclude Include="OrderPanel.h" />
+    <ClInclude Include="Patreon.h" />
+    <ClInclude Include="Payment.h" />
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="Premium.h" />
+    <ClInclude Include="Product.h" />
+    <ClInclude Include="ProductListView.h" />
+    <ClInclude Include="SignupPanel.h" />
+    <ClInclude Include="SoftCopy.h" />
+    <ClInclude Include="Stationary.h" />
+    <ClInclude Include="StationaryDisplayPanel.h" />
+    <ClInclude Include="Store.h" />
+    <ClInclude Include="StoreManager.h" />
+    <ClInclude Include="ViewCartPanel.h" />
+    <ClInclude Include="ViewStorePanel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Books.bin" />
+    <None Include="Products.bin" />
+    <None Include="Users.bin" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
