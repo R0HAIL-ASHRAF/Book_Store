@@ -22,6 +22,10 @@ private:
     
     wxButton* m_backBtn;
     wxButton* m_refreshBtn;
+    wxStaticText* m_name;
+    wxStaticText* m_email;
+    wxStaticText* m_type;
+
    
     void CreateControls();
     void PopulateOrdersList();

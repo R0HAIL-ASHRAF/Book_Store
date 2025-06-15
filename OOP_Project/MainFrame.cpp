@@ -268,6 +268,8 @@ void MainFrame::OnViewProduct(wxCommandEvent& event)
 
 void MainFrame::OnViewOrder(wxCommandEvent& event)
 {
+	m_displayOrderPanel->SetCustomer(m_loginPanel->GetActiveCustomer());
+
     int index = m_displayOrderPanel->indexMenuList;
     const MyVector<Order*>& orders = m_loginPanel->GetActiveCustomer()->GetOrders();
 

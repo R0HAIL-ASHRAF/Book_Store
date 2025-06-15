@@ -17,13 +17,16 @@ void DisplayOrderPanel::CreateControls() {
     wxFlexGridSizer* infoSizer = new wxFlexGridSizer(2, 5, 15);
 
     infoSizer->Add(new wxStaticText(infoPanel, wxID_ANY, "Customer:"));
-    infoSizer->Add(new wxStaticText(infoPanel, wxID_ANY, customer->GetName().ToString()));
+    m_name = new wxStaticText(infoPanel, wxID_ANY, customer->GetName().ToString());
+    infoSizer->Add(m_name);
 
     infoSizer->Add(new wxStaticText(infoPanel, wxID_ANY, "Email:"));
-    infoSizer->Add(new wxStaticText(infoPanel, wxID_ANY, customer->GetEmail()));
+    m_email = new wxStaticText(infoPanel, wxID_ANY, customer->GetEmail());
+    infoSizer->Add(m_email);
 
     infoSizer->Add(new wxStaticText(infoPanel, wxID_ANY, "Type:"));
-    infoSizer->Add(new wxStaticText(infoPanel, wxID_ANY, customer->GetPersonType()));
+    m_type = new wxStaticText(infoPanel, wxID_ANY, customer->GetPersonType());
+    infoSizer->Add(m_type);
 
     infoPanel->SetSizer(infoSizer);
     mainSizer->Add(infoPanel, 0, wxEXPAND | wxALL, 10);
@@ -57,10 +60,13 @@ void DisplayOrderPanel::CreateControls() {
     SetupContextMenu();
 }
 
+
 void DisplayOrderPanel::PopulateOrdersList() {
    m_ordersList->DeleteAllItems();
    
    customer->ReadOrdersFromFile();
+
+
 
    MyVector<Order*> orders = customer->GetOrders();
 
@@ -86,6 +92,9 @@ void DisplayOrderPanel::SetCustomer(Customer* cust)
     if(cust == nullptr)
         return;
     customer = cust;
+    m_type->SetLabel( customer->GetPersonType());
+    m_email->SetLabel(customer->GetEmail());
+    m_name->SetLabel(customer->GetName().ToString());
     
     PopulateOrdersList();
 }
