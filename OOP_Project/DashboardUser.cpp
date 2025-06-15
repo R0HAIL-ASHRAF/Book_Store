@@ -34,7 +34,19 @@ void DashboardUser::SetupButtonSizer() {
     wxButton* logoutBtn = new wxButton(this, ID_LogoutDU, "Logout");
     wxButton* cartBtn = new wxButton(this, ID_ViewCartDU, "View Cart");
     wxButton* orderBtn = new wxButton(this, ID_OrderDU, "Orders");
-    
+
+    logoutBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    logoutBtn->SetForegroundColour(*wxWHITE);
+    logoutBtn->SetWindowStyle(wxBORDER_NONE);
+
+    cartBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    cartBtn->SetForegroundColour(*wxWHITE);
+    cartBtn->SetWindowStyle(wxBORDER_NONE);
+
+    orderBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    orderBtn->SetForegroundColour(*wxWHITE);
+    orderBtn->SetWindowStyle(wxBORDER_NONE);
+
     buttonSizer->Add(logoutBtn, 0, wxALL, 5);
     buttonSizer->Add(cartBtn, 0, wxALL, 5);
     buttonSizer->Add(orderBtn, 0, wxALL, 5);
@@ -54,7 +66,7 @@ void DashboardUser::LoadProducts() {
     productGrid->AddGrowableCol(1, 1);
     productGrid->AddGrowableCol(2, 1);
 
-    for (size_t i = 0; i < m_products.size(); i++) {
+    for (int i = 0; i < m_products.size(); i++) {
         const Product& product = *m_products.at(i);
         wxPanel* productPanel = CreateProductPanel(m_productsScroller, product);
         productGrid->Add(productPanel, 0, wxEXPAND | wxALL, 5);

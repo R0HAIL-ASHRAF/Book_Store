@@ -47,6 +47,15 @@ void DisplayOrderPanel::CreateControls() {
     m_backBtn = new wxButton(this, ID_BackDisplayOrder, "Back");
     m_refreshBtn = new wxButton(this, ID_RefreshDisplayOrder, "Refresh");
 
+    m_backBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    m_backBtn->SetForegroundColour(*wxWHITE);
+    m_backBtn->SetWindowStyle(wxBORDER_NONE);
+
+    m_backBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    m_backBtn->SetForegroundColour(*wxWHITE);
+    m_backBtn->SetWindowStyle(wxBORDER_NONE);
+
+
     buttonSizer->Add(m_backBtn, 0, wxALL, 5);
     buttonSizer->Add(m_refreshBtn, 0, wxALL, 5);
 
@@ -70,7 +79,7 @@ void DisplayOrderPanel::PopulateOrdersList() {
 
    MyVector<Order*> orders = customer->GetOrders();
 
-    for (size_t i = 0; i < orders.size(); i++) {
+    for (int i = 0; i < orders.size(); i++) {
         Order* order = orders.at(i);
 
         long index = m_ordersList->InsertItem(i, wxString::Format("%zu", i + 1));
@@ -82,6 +91,8 @@ void DisplayOrderPanel::PopulateOrdersList() {
 
         m_ordersList->SetItem(index, 3, order->GetOrderStatus());
         m_ordersList->SetItem(index, 4, order->GetShippingAddress().ToString());
+        if (i % 2)
+            m_ordersList->SetItemBackgroundColour(i, wxColour(255, 188, 217));
 
         m_ordersList->SetItemData(index, reinterpret_cast<wxUIntPtr>(order));
     }

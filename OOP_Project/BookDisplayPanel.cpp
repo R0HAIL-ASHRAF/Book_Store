@@ -101,6 +101,11 @@ void BookDisplayPanel::CreateControls()
     wxBoxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
     wxButton* backBtn = new wxButton(this, ID_BackBtnVB, "Back");
 
+
+    backBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    backBtn->SetForegroundColour(*wxWHITE);
+    backBtn->SetWindowStyle(wxBORDER_NONE);
+
     buttonSizer->AddStretchSpacer();
     buttonSizer->Add(backBtn, 0, wxALIGN_CENTER | wxBOTTOM, 10);
     buttonSizer->AddStretchSpacer();

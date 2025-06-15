@@ -46,6 +46,22 @@ void ViewCartPanel::CreateControls()
     wxButton* refreshButton = new wxButton(this, ID_RefreshCart, "Refresh");
     wxButton* proceedButton = new wxButton(this, ID_ProceedCart, "Proceed");
 
+    backButton->SetBackgroundColour(wxColour(219, 0, 107));
+    backButton->SetForegroundColour(*wxWHITE);
+    backButton->SetWindowStyle(wxBORDER_NONE);
+
+    deleteButton->SetBackgroundColour(wxColour(219, 0, 107));
+    deleteButton->SetForegroundColour(*wxWHITE);
+    deleteButton->SetWindowStyle(wxBORDER_NONE);
+
+    refreshButton->SetBackgroundColour(wxColour(219, 0, 107));
+    refreshButton->SetForegroundColour(*wxWHITE);
+    refreshButton->SetWindowStyle(wxBORDER_NONE);
+
+    proceedButton->SetBackgroundColour(wxColour(219, 0, 107));
+    proceedButton->SetForegroundColour(*wxWHITE);
+    proceedButton->SetWindowStyle(wxBORDER_NONE);
+
     buttonSizer->Add(backButton, 0, wxALL, 5);
     buttonSizer->Add(deleteButton, 0, wxALL, 5);
     buttonSizer->Add(refreshButton, 0, wxALL, 5);
@@ -64,12 +80,18 @@ void ViewCartPanel::SetCartItems(const MyVector<Product*>& items)
 {
     m_products = items;
     m_cartList->DeleteAllItems();
-
+    
+   
     for (int i = 0; i < m_products.size(); i++) {
+
         long index = m_cartList->InsertItem(i, m_products.at(i)->getProductName());
         m_cartList->SetItem(index, 1, wxString::Format("Rs %d", m_products.at(i)->getPrice()));
         m_cartList->SetItem(index, 2, m_products.at(i)->getProductCategory().ToCharArray());
         m_cartList->SetItemData(index, i);
+        if (i % 2 == 0) {
+            m_cartList->SetItemBackgroundColour(i, wxColour(255, 188, 217));
+
+        }
     }
     UpdateTotal();
 }

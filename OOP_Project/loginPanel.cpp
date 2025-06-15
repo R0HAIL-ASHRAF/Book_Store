@@ -69,7 +69,7 @@ void loginPanel::SetupUI()
    
     wxImage logoImg("assets/images/loginPage.png", wxBITMAP_TYPE_ANY);
     if (!logoImg.IsOk()) {
-        wxLogError("Failed to load logo image");
+        Logger::getInstance().writeError("Failed to load logo image");
         return;
     }
 
@@ -115,7 +115,17 @@ void loginPanel::SetupUI()
     wxBoxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
     wxButton* loginBtn = new wxButton(formPanel, ID_LoginButton, "Login");
     wxButton* signUpBtn = new wxButton(formPanel, ID_SignupButton, "Sign Up");
+
+    loginBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    loginBtn->SetForegroundColour(*wxWHITE);
+    loginBtn->SetWindowStyle(wxBORDER_NONE);
+
+    signUpBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    signUpBtn->SetForegroundColour(*wxWHITE);
+    signUpBtn->SetWindowStyle(wxBORDER_NONE);
+
     buttonSizer->Add(loginBtn,wxRIGHT);
+    buttonSizer->AddStretchSpacer(5);
     buttonSizer->Add(signUpBtn);
 
     formSizer->Add(buttonSizer, 0,wxALIGN_CENTER | wxTOP | wxBOTTOM, 15);

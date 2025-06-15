@@ -27,7 +27,8 @@ void ProductListView::RefreshList()
         SetItemPtrData(index, reinterpret_cast<wxUIntPtr>(m_products.at(i)));
 
         if (i % 2 == 0) {
-            SetItemBackgroundColour(index, wxColour(240, 240, 240));
+            SetItemBackgroundColour(i, wxColour(255, 188, 217));
+
         }
     }
 }

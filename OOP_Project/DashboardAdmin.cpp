@@ -143,7 +143,8 @@ void DashboardAdmin::CreateStoreList(wxPanel* parent)
         m_storeList->SetItemPtrData(index, reinterpret_cast<wxUIntPtr>(store));
 
         if (i % 2 == 0) {
-            m_storeList->SetItemBackgroundColour(index, wxColour(240, 240, 240));
+            m_storeList->SetItemBackgroundColour(i, wxColour(255, 188, 217));
+
         }
     }
 
@@ -165,6 +166,23 @@ void DashboardAdmin::CreateButtonPanel(wxBoxSizer* mainSizer)
     wxButton* addStoreBtn = new wxButton(buttonPanel, ID_AddStore, "Add Store");
     wxButton* logoutBtn = new wxButton(buttonPanel, ID_LogoutButtonAdmin, "Logout");
     wxButton* refreshBtn = new wxButton(buttonPanel, ID_RefreshBtnStoreManagers, "Refresh");
+
+    customersBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    customersBtn->SetForegroundColour(*wxWHITE);
+    customersBtn->SetWindowStyle(wxBORDER_NONE);
+
+    addStoreBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    addStoreBtn->SetForegroundColour(*wxWHITE);
+    addStoreBtn->SetWindowStyle(wxBORDER_NONE);
+
+    logoutBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    logoutBtn->SetForegroundColour(*wxWHITE);
+    logoutBtn->SetWindowStyle(wxBORDER_NONE);
+
+    refreshBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    refreshBtn->SetForegroundColour(*wxWHITE);
+    refreshBtn->SetWindowStyle(wxBORDER_NONE);
+
 
     buttonSizer->Add(customersBtn, 0, wxALL, 5);
     buttonSizer->Add(refreshBtn, 0, wxALL, 5);
@@ -202,7 +220,7 @@ void DashboardAdmin::OnRefreshStoreList(wxCommandEvent& event)
         m_storeList->SetItemPtrData(index, reinterpret_cast<wxUIntPtr>(store));
 
         if (i % 2 == 0)
-            m_storeList->SetItemBackgroundColour(index, wxColour(240, 240, 240));
+            m_storeList->SetItemBackgroundColour(index, wxColour(255, 188, 217));
     }
    
 }

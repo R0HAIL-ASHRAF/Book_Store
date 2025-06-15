@@ -78,6 +78,10 @@ SignupPanel::SignupPanel(wxWindow* parent)
     wxButton* signupButton = new wxButton(this, ID_SignupSubmitButton, "Create Account");
     btnSizer->Add(signupButton, 0, wxALIGN_CENTRE, 20);
 
+    signupButton->SetBackgroundColour(wxColour(219, 0, 107));
+    signupButton->SetForegroundColour(*wxWHITE);
+    signupButton->SetWindowStyle(wxBORDER_NONE);
+
     btnSizer->AddStretchSpacer(0);
     
     // back to login button

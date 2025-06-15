@@ -137,6 +137,22 @@ void OrderPanel::CreateControls()
     wxButton* cancelBtn = new wxButton(this, ID_CancelOrderOP, "Cancel");
     wxButton* placeOrderBtn = new wxButton(this, ID_PlaceOrderOP, "Place Order");
 
+    backBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    backBtn->SetForegroundColour(*wxWHITE);
+    backBtn->SetWindowStyle(wxBORDER_NONE);
+
+    refreshBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    refreshBtn->SetForegroundColour(*wxWHITE);
+    refreshBtn->SetWindowStyle(wxBORDER_NONE);
+
+    cancelBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    cancelBtn->SetForegroundColour(*wxWHITE);
+    cancelBtn->SetWindowStyle(wxBORDER_NONE);
+
+    placeOrderBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    placeOrderBtn->SetForegroundColour(*wxWHITE);
+    placeOrderBtn->SetWindowStyle(wxBORDER_NONE);
+
 
     buttonSizer->Add(backBtn, 0, wxALL, 5);
     buttonSizer->Add(refreshBtn, 0, wxALL, 5);

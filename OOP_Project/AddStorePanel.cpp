@@ -165,6 +165,7 @@ void AddStorePanel::SetupUI()
     mainSizer->Add(submitBtn, 0, wxALIGN_CENTER | wxTOP | wxBOTTOM, 10);
 
 
+
     mainSizer->Add(new wxStaticLine(this), 0, wxEXPAND | wxLEFT | wxRIGHT, 15);
     wxStaticText* productHeader = new wxStaticText(this, wxID_ANY, "Want to add products to Store!");
     productHeader->SetFont(wxFont(12, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD));
@@ -173,6 +174,19 @@ void AddStorePanel::SetupUI()
     wxBoxSizer* productBtnSizer = new wxBoxSizer(wxHORIZONTAL);
     wxButton* addBookBtn = new wxButton(this, ID_AddBookInStore, "Add Book");
     wxButton* addStationeryBtn = new wxButton(this, ID_AddStationery, "Add Stationery");
+
+    submitBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    submitBtn->SetForegroundColour(*wxWHITE);
+    submitBtn->SetWindowStyle(wxBORDER_NONE);
+
+    addBookBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    addBookBtn->SetForegroundColour(*wxWHITE);
+    addBookBtn->SetWindowStyle(wxBORDER_NONE);
+
+    addStationeryBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    addStationeryBtn->SetForegroundColour(*wxWHITE);
+    addStationeryBtn->SetWindowStyle(wxBORDER_NONE);
+
     productBtnSizer->Add(addBookBtn, 0, wxALL, 5);
     productBtnSizer->Add(addStationeryBtn, 0, wxALL, 5);
 

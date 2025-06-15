@@ -37,6 +37,11 @@ void AdminCVpanel::SetupUI()
 
     mainSizer->AddStretchSpacer();
     wxButton* backBtn = new wxButton(this, ID_LogoutButton, "back");
+
+    backBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    backBtn->SetForegroundColour(*wxWHITE);
+    backBtn->SetWindowStyle(wxBORDER_NONE);
+
     mainSizer->Add(backBtn, 0, wxALIGN_RIGHT | wxRIGHT | wxBOTTOM, 10);
 
     SetSizer(mainSizer);
@@ -56,7 +61,9 @@ void AdminCVpanel::UpdateCustomers()
         m_customersListView->SetItem(index, 6, admin->GetCustomers().at(i)->GetPersonType());
 
 
-        if (i % 2 == 0)
-            m_customersListView->SetItemBackgroundColour(index, wxColour(240, 240, 240));
+        if (i % 2 == 0) {
+            m_customersListView->SetItemBackgroundColour(i, wxColour(255, 230, 235));
+
+        }
     }
 }

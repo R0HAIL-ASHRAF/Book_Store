@@ -124,6 +124,21 @@ void AddBook::InitUI()
         wxButton* saveBtn = new wxButton(this, ID_SaveProductButton, "Save", wxDefaultPosition, wxSize(80, 30));
         wxButton* clearBtn = new wxButton(this, wxID_ANY, "Clear", wxDefaultPosition, wxSize(80, 30));
 
+        clearBtn->SetBackgroundColour(wxColour(219, 0, 107));
+        clearBtn->SetForegroundColour(*wxWHITE);
+        clearBtn->SetWindowStyle(wxBORDER_NONE);
+
+        saveBtn->SetBackgroundColour(wxColour(219, 0, 107));
+        saveBtn->SetForegroundColour(*wxWHITE);
+        saveBtn->SetWindowStyle(wxBORDER_NONE);
+
+        cancelBtn->SetBackgroundColour(wxColour(219, 0, 107));
+        cancelBtn->SetForegroundColour(*wxWHITE);
+        cancelBtn->SetWindowStyle(wxBORDER_NONE);
+
+
+
+
         buttonSizer->Add(cancelBtn, 0, wxALL, 5);
         buttonSizer->Add(saveBtn, 0, wxALL, 5);
         buttonSizer->Add(clearBtn, 0, wxALL, 5);

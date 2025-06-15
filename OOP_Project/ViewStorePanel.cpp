@@ -172,6 +172,10 @@ void ViewStorePanel::SetupUI()
         productsList->SetItem(index, 1, products.at(i)->getProductName());
         productsList->SetItem(index, 2, products.at(i)->getProductCategory());
         productsList->SetItem(index, 3, wxString::Format("%d", products.at(i)->getPrice()));
+        if (i % 2 == 0) {
+            productsList->SetItemBackgroundColour(i, wxColour(255, 188, 217));
+
+        }
     }
 
     productsSizer->Add(productsList, 1, wxEXPAND | wxALL, 10);
@@ -185,6 +189,23 @@ void ViewStorePanel::SetupUI()
     wxButton* addProductBtn = new wxButton(buttonPanel, ID_AddProductBtnStoreView, "Add Book");
     wxButton* addStatBtn = new wxButton(buttonPanel, ID_AddStatBtnStoreView, "Add Stationary");
     wxButton* backBtn = new wxButton(buttonPanel, ID_BackViewStore, "back");
+
+
+    refreshBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    refreshBtn->SetForegroundColour(*wxWHITE);
+    refreshBtn->SetWindowStyle(wxBORDER_NONE);
+
+    addProductBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    addProductBtn->SetForegroundColour(*wxWHITE);
+    addProductBtn->SetWindowStyle(wxBORDER_NONE);
+
+    addStatBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    addStatBtn->SetForegroundColour(*wxWHITE);
+    addStatBtn->SetWindowStyle(wxBORDER_NONE);
+
+    backBtn->SetBackgroundColour(wxColour(219, 0, 107));
+    backBtn->SetForegroundColour(*wxWHITE);
+    backBtn->SetWindowStyle(wxBORDER_NONE);
 
     buttonSizer->Add(refreshBtn, 0, wxALL, 5);
     buttonSizer->Add(addProductBtn, 0, wxALL, 5);
@@ -227,6 +248,10 @@ void ViewStorePanel::UpdateStoreInfo()
         productsList->SetItem(index, 1, products.at(i)->getProductName());
         productsList->SetItem(index, 2, products.at(i)->getProductCategory());
         productsList->SetItem(index, 3, wxString::Format("%d", products.at(i)->getPrice()));
+        if (i % 2 == 0) {
+            productsList->SetItemBackgroundColour(i, wxColour(255, 188, 217));
+
+        }
     }
 }
 
@@ -252,6 +277,10 @@ void ViewStorePanel::UpdateStoreOrders()
             orderList->SetItem(index, 4, admin->GetCustomers().at(i)->GetOrders().at(j)->GetOrderDate().ToString());
             orderList->SetItem(index, 5, wxString::Format("%d", admin->GetCustomers().at(i)->GetOrders().at(j)->GetCart()->GetPoducts().size()));
             k++;
+            if (k % 2 == 0) {
+                orderList->SetItemBackgroundColour(i, wxColour(255, 188, 217));
+
+            }
         }
     }
 }
