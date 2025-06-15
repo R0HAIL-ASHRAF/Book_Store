@@ -37,9 +37,12 @@ public:
     wxListCtrl* productsList;
     MyVector<Order*> orders;
     StoreManager* storeManager;
+    Order* tempOrder;
 
     void SetOrders(const MyVector<Order*>& order);
     void OnRightClickItem(wxListEvent& event);
+    void OnRighClickOrder(wxListEvent& event);
+    void MarkAsDone(wxCommandEvent& event);
     void UpdateStoreInfo();
     void UpdateStoreOrders();
 

@@ -404,14 +404,23 @@ void MainFrame::OnDeleteOrder(wxCommandEvent& event)
 {
     if (m_displayOrderPanel->indexMenuList != -1)
     {
-        
-        int confirm = wxMessageBox("Delete this order?", "Confirm Deletion", wxYES_NO | wxICON_QUESTION);
-        if (confirm == wxYES)
+        if (m_loginPanel->GetActiveCustomer()->GetOrders().at(
+            m_displayOrderPanel->indexMenuList)->GetOrderStatus() == "pending") 
         {
-            m_displayOrderPanel->m_ordersList->DeleteItem(m_displayOrderPanel->indexMenuList);
-            m_loginPanel->GetActiveCustomer()->GetOrders().delete_at(m_displayOrderPanel->indexMenuList);
-            m_loginPanel->GetActiveCustomer()->WriteOrdersToFile();
+        
 
+            int confirm = wxMessageBox("Delete this order?", "Confirm Deletion", wxYES_NO | wxICON_QUESTION);
+            if (confirm == wxYES)
+            {
+                m_displayOrderPanel->m_ordersList->DeleteItem(m_displayOrderPanel->indexMenuList);
+                m_loginPanel->GetActiveCustomer()->GetOrders().delete_at(m_displayOrderPanel->indexMenuList);
+                m_loginPanel->GetActiveCustomer()->WriteOrdersToFile();
+
+            }
+        }
+        else
+        {
+            wxLogMessage("Can't delete your Order");
         }
         m_displayOrderPanel->indexMenuList = -1;
     }
@@ -470,6 +479,8 @@ void MainFrame::OnLoginSuccess(wxCommandEvent& event)
     {
         
         Unbind(wxEVT_BUTTON, &MainFrame::OnBackButton, this, ID_BackViewStore);
+        Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_BackViewStore);
+
         Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVS);
         Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVB);
 

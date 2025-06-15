@@ -51,4 +51,5 @@ enum {
     ID_ViewCartDU,
     ID_RightClickViewOrder,
     ID_deleteOrder,
+    ID_MarkAsDone,
 };

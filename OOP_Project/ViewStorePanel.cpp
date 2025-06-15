@@ -4,7 +4,7 @@
 ViewStorePanel::ViewStorePanel(wxWindow* parent, StoreManager* storeManager)
     : wxPanel(parent, wxID_ANY), storeManager(storeManager), 
     rightClickedIndex{-1}, orders{MyVector<Order*>()}, 
-    admin{Admin::GetInstance(parent)}
+    admin{Admin::GetInstance(parent)}, tempOrder{nullptr}
 {
     SetupUI();
   
@@ -28,6 +28,7 @@ MyString ViewStorePanel::GetStationaryFileName()
 ViewStorePanel::~ViewStorePanel()
 {
     delete storeManager;
+    orders.clear();
 }
 
 
@@ -198,6 +199,7 @@ void ViewStorePanel::SetupUI()
 
     refreshBtn->Bind(wxEVT_BUTTON, &ViewStorePanel::OnRefresh, this);
     productsList->Bind(wxEVT_LIST_ITEM_RIGHT_CLICK, &ViewStorePanel::OnRightClickItem, this);
+    orderList->Bind(wxEVT_LIST_ITEM_RIGHT_CLICK, &ViewStorePanel::OnRighClickOrder, this);
 
 }
 
@@ -269,9 +271,25 @@ void ViewStorePanel::OnRightClickItem(wxListEvent& event)
     if (wxEvtHandler* parentHandler = GetParent()) {
         parentHandler->ProcessEvent(menuEvent);
     }
-    
 }
+void ViewStorePanel::OnRighClickOrder(wxListEvent& event)
+{
+    int index = event.GetIndex();
+    tempOrder = orders.at(index);
+    wxMenu menu;
+    menu.Append(ID_MarkAsDone, "Mark as done");
+    Bind(wxEVT_MENU, &ViewStorePanel::MarkAsDone, this, ID_MarkAsDone);
+    PopupMenu(&menu);
+}
+void ViewStorePanel::MarkAsDone(wxCommandEvent& event)
+{
+    int index = orderList->GetNextItem(-1, wxLIST_NEXT_ALL, wxLIST_STATE_SELECTED);
+    if (index != -1)
+    {
+        tempOrder->SetStatus("delivered");
+    }
 
+}
 void ViewStorePanel::OnDeleteItem(wxCommandEvent& event)
 {
     if (rightClickedIndex != -1)
