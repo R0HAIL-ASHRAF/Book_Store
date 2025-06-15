@@ -3,7 +3,8 @@
 
 ViewStorePanel::ViewStorePanel(wxWindow* parent, StoreManager* storeManager)
     : wxPanel(parent, wxID_ANY), storeManager(storeManager), 
-    rightClickedIndex{-1}
+    rightClickedIndex{-1}, orders{MyVector<Order*>()}, 
+    admin{Admin::GetInstance(parent)}
 {
     SetupUI();
   
@@ -44,6 +45,13 @@ void ViewStorePanel::SetupUI()
     header->SetForegroundColour(wxColour(50, 100, 180));
     scrollSizer->Add(header, 0, wxALIGN_CENTER | wxTOP | wxBOTTOM, 15);
 
+    wxStaticBox* megaStoreBox = new wxStaticBox(scrolledWindow, wxID_ANY, "");
+    wxStaticBoxSizer* megaStoreSizer = new wxStaticBoxSizer(megaStoreBox, wxVERTICAL);
+
+
+
+    // store box
+
     wxStaticBox* storeBox = new wxStaticBox(scrolledWindow, wxID_ANY, "Store Information");
     wxStaticBoxSizer* storeSizer = new wxStaticBoxSizer(storeBox, wxVERTICAL);
 
@@ -56,7 +64,6 @@ void ViewStorePanel::SetupUI()
 
     storeIdText = new wxStaticText(scrolledWindow, wxID_ANY, storeManager->GetStore()->GetStoreId());
     storeGrid->Add(storeIdText, 1, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
-
 
     wxStaticText* storeNameLabel = new wxStaticText(scrolledWindow, wxID_ANY, "Store Name:");
     storeNameLabel->SetFont(storeNameLabel->GetFont().Bold());
@@ -80,7 +87,9 @@ void ViewStorePanel::SetupUI()
     storeGrid->Add(productCountText, 1, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
 
     storeSizer->Add(storeGrid, 0, wxEXPAND | wxALL, 10);
-    scrollSizer->Add(storeSizer, 0, wxEXPAND | wxLEFT | wxRIGHT | wxBOTTOM, 15);
+
+
+    // manager box 
 
     wxStaticBox* managerBox = new wxStaticBox(scrolledWindow, wxID_ANY, "Manager Details");
     wxStaticBoxSizer* managerSizer = new wxStaticBoxSizer(managerBox, wxVERTICAL);
@@ -109,15 +118,37 @@ void ViewStorePanel::SetupUI()
     usernameText = new wxStaticText(scrolledWindow, wxID_ANY, storeManager->getUserName());
     managerGrid->Add(usernameText, 1, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
 
-    wxStaticText* passwordLabel = new wxStaticText(scrolledWindow, wxID_ANY, "Password:");
-    passwordLabel->SetFont(passwordLabel->GetFont().Bold());
-    managerGrid->Add(passwordLabel, 0, wxALIGN_CENTER_VERTICAL | wxLEFT, 5);
-
-    passwordText = new wxStaticText(scrolledWindow, wxID_ANY, storeManager->getPassword());
-    managerGrid->Add(passwordText, 1, wxALIGN_CENTER_VERTICAL | wxRIGHT, 5);
+    
 
     managerSizer->Add(managerGrid, 0, wxEXPAND | wxALL, 10);
-    scrollSizer->Add(managerSizer, 0, wxEXPAND | wxLEFT | wxRIGHT | wxBOTTOM, 15);
+    megaStoreSizer->Add(storeSizer, 1, wxEXPAND);
+    megaStoreSizer->Add(managerSizer, 1, wxEXPAND);
+
+    
+    // order box
+
+    wxStaticBox* orderBox = new wxStaticBox(scrolledWindow, wxID_ANY, "Orders");
+    wxStaticBoxSizer* orderBoxSizer = new wxStaticBoxSizer(orderBox, wxVERTICAL);
+
+    orderList = new wxListCtrl(scrolledWindow, wxID_ANY, wxDefaultPosition,
+        wxSize(400, 200), wxLC_REPORT | wxLC_SINGLE_SEL | wxLC_HRULES | wxLC_VRULES);
+
+    orderList->AppendColumn("No.", wxLIST_FORMAT_CENTER, 50);
+    orderList->AppendColumn("Customer Name", wxLIST_FORMAT_LEFT, 180);
+    orderList->AppendColumn("Price", wxLIST_FORMAT_CENTER, 50);
+    orderList->AppendColumn("Status", wxLIST_FORMAT_CENTER, 80);
+    orderList->AppendColumn("Date", wxLIST_FORMAT_CENTER, 80);
+    orderList->AppendColumn("No. of Products", wxLIST_FORMAT_CENTER, 120);
+
+    orderBoxSizer->Add(orderList, 1, wxEXPAND | wxALL, 10);
+
+    wxBoxSizer* rowSizer = new wxBoxSizer(wxHORIZONTAL);
+
+    rowSizer->Add(megaStoreSizer, 1, wxEXPAND | wxRIGHT, 10);
+    rowSizer->Add(orderBoxSizer, 1, wxEXPAND);
+
+    scrollSizer->Add(rowSizer, 0, wxEXPAND | wxLEFT | wxRIGHT | wxBOTTOM, 15);
+    // product box
 
     wxStaticBox* productsBox = new wxStaticBox(scrolledWindow, wxID_ANY, "Products");
     wxStaticBoxSizer* productsSizer = new wxStaticBoxSizer(productsBox, wxVERTICAL);
@@ -135,7 +166,7 @@ void ViewStorePanel::SetupUI()
     MyVector<Product*> products;
     products = storeManager->GetStore()->GetProducts();
 
-    for (size_t i = 0; i < products.size(); i++) {
+    for (int i = 0; i < products.size(); i++) {
         long index = productsList->InsertItem(i, products.at(i)->getProductID());
         productsList->SetItem(index, 1, products.at(i)->getProductName());
         productsList->SetItem(index, 2, products.at(i)->getProductCategory());
@@ -194,6 +225,32 @@ void ViewStorePanel::UpdateStoreInfo()
         productsList->SetItem(index, 1, products.at(i)->getProductName());
         productsList->SetItem(index, 2, products.at(i)->getProductCategory());
         productsList->SetItem(index, 3, wxString::Format("%d", products.at(i)->getPrice()));
+    }
+}
+
+void ViewStorePanel::SetOrders(const MyVector<Order*>& order)
+{
+    orders.clear();
+    orders = order;
+}
+
+void ViewStorePanel::UpdateStoreOrders()
+{
+    int k = 0;
+    orders.clear();
+    for (int i = 0; i < admin->GetCustomers().size(); i++) {
+
+        for (int j = 0; j < admin->GetCustomers().at(i)->GetOrders().size(); j++) {
+            orders.push(admin->GetCustomers().at(i)->GetOrders().at(j));
+
+            long index = orderList->InsertItem(i, wxString::Format("%d", k + 1));
+            orderList->SetItem(index, 1, admin->GetCustomers().at(i)->GetName().ToString());
+            orderList->SetItem(index, 2, wxString::Format("%d", admin->GetCustomers().at(i)->GetOrders().at(j)->GetTotalPrice()));
+            orderList->SetItem(index, 3, admin->GetCustomers().at(i)->GetOrders().at(j)->GetOrderStatus());
+            orderList->SetItem(index, 4, admin->GetCustomers().at(i)->GetOrders().at(j)->GetOrderDate().ToString());
+            orderList->SetItem(index, 5, wxString::Format("%d", admin->GetCustomers().at(i)->GetOrders().at(j)->GetCart()->GetPoducts().size()));
+            k++;
+        }
     }
 }
 

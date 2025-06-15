@@ -1,16 +1,17 @@
 #pragma once  
 #include <wx/wx.h>  
-#include <wx/notebook.h> 
 #include<wx/listctrl.h>
 #include "StoreManager.h"
 #include"IDs.h"
 #include"ProductListView.h"
+#include"Admin.h"
+
 
 class ViewStorePanel : public wxPanel  
 {  
 private:  
      
-
+    Admin* admin;
     wxStaticText* storeIdText;  
     wxStaticText* storeNameText;  
     wxStaticText* addressText;  
@@ -27,14 +28,20 @@ private:
     int rightClickedIndex;
 
     void SetupUI();  
-    void UpdateStoreInfo();
+    
 
-    void OnRightClickItem(wxListEvent& event);
     void OnDeleteItem(wxCommandEvent& event);
 
 public:  
+    wxListCtrl* orderList;
     wxListCtrl* productsList;
+    MyVector<Order*> orders;
     StoreManager* storeManager;
+
+    void SetOrders(const MyVector<Order*>& order);
+    void OnRightClickItem(wxListEvent& event);
+    void UpdateStoreInfo();
+    void UpdateStoreOrders();
 
     void OnRefresh(wxCommandEvent& event);
     void SetMenuListIndex(int i);

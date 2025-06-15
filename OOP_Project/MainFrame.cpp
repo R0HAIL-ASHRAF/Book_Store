@@ -227,6 +227,8 @@ void MainFrame::OnBackButtonProductUser(wxCommandEvent& event)
 
 void MainFrame::OnViewStore(wxCommandEvent& event)
 {
+    
+    m_viewStorePanel->UpdateStoreOrders();
     int index = m_adminPanel->GetMenuListIndex();
     m_viewStorePanel->SetStore(
         admin->GetStores().at(index)
@@ -466,6 +468,7 @@ void MainFrame::OnLoginSuccess(wxCommandEvent& event)
     }
     else if (admin->ValidateStoreManagers()) 
     {
+        
         Unbind(wxEVT_BUTTON, &MainFrame::OnBackButton, this, ID_BackViewStore);
         Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVS);
         Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVB);
@@ -474,7 +477,9 @@ void MainFrame::OnLoginSuccess(wxCommandEvent& event)
         m_viewStorePanel->SetStore(
             admin->GetStores().at(index)
         );
-        
+
+        m_viewStorePanel->OnRefresh(event);
+        m_viewStorePanel->UpdateStoreOrders();
         SwitchToViewStore();
     }
     else

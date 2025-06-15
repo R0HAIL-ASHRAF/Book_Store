@@ -144,6 +144,7 @@ int Order::GetTotalPrice()
 	if (cart == nullptr)
 		return 0;
 	totalPrice = cart->GetTotalPrice();
+	
 	return totalPrice;
 }
 

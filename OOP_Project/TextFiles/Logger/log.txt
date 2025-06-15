@@ -1,103 +1,40 @@
-MyApp OnInit started  Sun Jun 15 11:09:50 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK02  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK09  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK07  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK02  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK09  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK07  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK02  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK09  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK07  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK02  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK09  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK07  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK02  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK02  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK02  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK09  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK09  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK09  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK07  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK07  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Read productId  Sun Jun 15 11:10:01 2025
-BK07  Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
-Reached EOF after reading books  Sun Jun 15 11:10:01 2025
-Reached EOF after reading   Sun Jun 15 11:10:01 2025
+MyApp OnInit started  Sun Jun 15 13:16:34 2025
+Read productId  Sun Jun 15 13:16:43 2025
+BK02  Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Read productId  Sun Jun 15 13:16:43 2025
+BK09  Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Read productId  Sun Jun 15 13:16:43 2025
+BK07  Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Read productId  Sun Jun 15 13:16:43 2025
+BK02  Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Read productId  Sun Jun 15 13:16:43 2025
+BK09  Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Read productId  Sun Jun 15 13:16:43 2025
+BK07  Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Read productId  Sun Jun 15 13:16:43 2025
+BK02  Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Read productId  Sun Jun 15 13:16:43 2025
+BK02  Sun Jun 15 13:16:43 2025
+Reached EOF after reading books  Sun Jun 15 13:16:43 2025
+Reached EOF after reading   Sun Jun 15 13:16:43 2025
+Null Active Customer MainFrame::OnLoginSuccess()  Sun Jun 15 13:16:44 2025
