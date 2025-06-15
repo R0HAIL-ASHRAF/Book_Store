@@ -161,7 +161,7 @@ void DashboardAdmin::CreateButtonPanel(wxBoxSizer* mainSizer)
 
     wxBoxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
        
-    wxButton* customersBtn = new wxButton(buttonPanel, ID_ViewCustomers, "View Customers");
+    wxButton* customersBtn = new wxButton(buttonPanel, ID_ViewCustomers, "Customers");
     wxButton* addStoreBtn = new wxButton(buttonPanel, ID_AddStore, "Add Store");
     wxButton* logoutBtn = new wxButton(buttonPanel, ID_LogoutButtonAdmin, "Logout");
     wxButton* refreshBtn = new wxButton(buttonPanel, ID_RefreshBtnStoreManagers, "Refresh");
@@ -198,6 +198,7 @@ void DashboardAdmin::OnRefreshStoreList(wxCommandEvent& event)
         m_storeList->SetItem(index, 2, store->GetStoreName());
         m_storeList->SetItem(index, 3, MyString(store->GetStore()->GetProducts().size()));
         m_storeList->SetItem(index, 4, store->GetStore()->GetStoreAddress());
+
         m_storeList->SetItemPtrData(index, reinterpret_cast<wxUIntPtr>(store));
 
         if (i % 2 == 0)

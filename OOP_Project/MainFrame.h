@@ -16,6 +16,7 @@
 #include"OrderPanel.h"
 #include"log.h"
 #include"DisplayOrderPanel.h"
+#include"AdminCVpanel.h"
 
 class MainFrame: public wxFrame
 {
@@ -43,6 +44,8 @@ private:
     ViewCartPanel* m_viewCartPanel;
     OrderPanel* m_orderPanel;
     DisplayOrderPanel* m_displayOrderPanel;
+    AdminCVpanel* m_adminCVpanel;
+
 
     void OnViewStore(wxCommandEvent& event);
     void OnViewProduct(wxCommandEvent& event);
@@ -103,6 +106,7 @@ private:
     void OnViewProductPanel(wxCommandEvent& event);
     void OnPlaceOrder(wxCommandEvent& event);
     void OnBackToUser(wxCommandEvent& event);
+    void OnCustomerView(wxCommandEvent& event);
     void OnRefreshClickedCart(wxCommandEvent& event);
     void OnBackToOrderPanel(wxCommandEvent& event);
     void OnBackButtonProductUser(wxCommandEvent& event);

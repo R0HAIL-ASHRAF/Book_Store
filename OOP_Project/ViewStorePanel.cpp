@@ -199,7 +199,7 @@ void ViewStorePanel::SetupUI()
 
     refreshBtn->Bind(wxEVT_BUTTON, &ViewStorePanel::OnRefresh, this);
     productsList->Bind(wxEVT_LIST_ITEM_RIGHT_CLICK, &ViewStorePanel::OnRightClickItem, this);
-    orderList->Bind(wxEVT_LIST_ITEM_RIGHT_CLICK, &ViewStorePanel::OnRighClickOrder, this);
+    //orderList->Bind(wxEVT_LIST_ITEM_RIGHT_CLICK, &ViewStorePanel::OnRighClickOrder, this);
 
 }
 

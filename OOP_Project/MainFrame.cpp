@@ -26,6 +26,7 @@ MainFrame::MainFrame(const wxString& title)
     Customer* customer = new Customer();
     m_orderPanel = new OrderPanel(this, order);
     m_displayOrderPanel = new DisplayOrderPanel(this, customer);
+    m_adminCVpanel = new AdminCVpanel(this);
 
 	
     InitiallyShowLogin();
@@ -44,12 +45,11 @@ void MainFrame::BindEvents()
     Bind(wxEVT_BUTTON, &MainFrame::OnLoginSuccess, this, ID_LoginButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnShowSignup, this, ID_SignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnSignupComplete, this, ID_SignupSubmitButton);
-
     Bind(wxEVT_BUTTON, &MainFrame::SignUpLoginBtnSuccess, this, ID_LoginSignupButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_LogoutButtonAdmin);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBook, this, ID_AddBook);
     Bind(wxEVT_BUTTON, &MainFrame::OnSaveProductStationary, this, ID_SaveBtnAddStat);
-
+    Bind(wxEVT_BUTTON, &MainFrame::OnCustomerView, this, ID_ViewCustomers);
     Bind(wxEVT_BUTTON, &MainFrame::OnSaveProductBook, this, ID_SaveProductButton);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBook, this, ID_AddProductBtnStoreView);
     Bind(wxEVT_BUTTON, &MainFrame::OnAddBookViaViewStoreClear, this, ID_CANCEL);
@@ -76,6 +76,7 @@ void MainFrame::BindEvents()
     Bind(wxEVT_MENU, &MainFrame::OnRightClickViewStore, this, ID_RightClickViewStore);
     Bind(wxEVT_MENU, &MainFrame::OnRightClickViewOrder, this, ID_RightClickViewOrder);
 
+    
 }
 
 void MainFrame::InitiallyShowLogin()
@@ -94,6 +95,7 @@ void MainFrame::InitiallyShowLogin()
     m_viewCartPanel->Hide();
     m_orderPanel->Hide();
     m_displayOrderPanel->Hide();
+    m_adminCVpanel->Hide();
 
 }
 
@@ -112,6 +114,8 @@ void MainFrame::AddPanelsToMainSizer()
     m_mainSizer->Add(m_viewCartPanel, 1, wxEXPAND);
     m_mainSizer->Add(m_orderPanel, 1, wxEXPAND);
     m_mainSizer->Add(m_displayOrderPanel, 1, wxEXPAND);
+    m_mainSizer->Add(m_adminCVpanel, 1, wxEXPAND);
+
 }
 
 void MainFrame::SetSizeOfPanel()
@@ -129,7 +133,7 @@ void MainFrame::SetSizeOfPanel()
     m_viewCartPanel->SetMinSize(sizeFrame);
     m_orderPanel->SetMinSize(sizeFrame);
     m_displayOrderPanel->SetMinSize(sizeFrame);
-
+    m_adminCVpanel->SetMinSize(sizeFrame);
 }
 
 MainFrame::~MainFrame()
@@ -480,14 +484,11 @@ void MainFrame::OnLoginSuccess(wxCommandEvent& event)
         
         Unbind(wxEVT_BUTTON, &MainFrame::OnBackButton, this, ID_BackViewStore);
         Bind(wxEVT_BUTTON, &MainFrame::OnLogout, this, ID_BackViewStore);
-
         Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVS);
         Bind(wxEVT_BUTTON, &MainFrame::OnBackButtonProduct, this, ID_BackBtnVB);
 
         int index = admin->GetIndexOfUser();
-        m_viewStorePanel->SetStore(
-            admin->GetStores().at(index)
-        );
+        m_viewStorePanel->SetStore(admin->GetStores().at(index));
 
         m_viewStorePanel->OnRefresh(event);
         m_viewStorePanel->UpdateStoreOrders();
@@ -538,6 +539,7 @@ void MainFrame::OnSignupComplete(wxCommandEvent& event)
 
 void MainFrame::SignUpLoginBtnSuccess(wxCommandEvent& event) {
 
+    m_adminCVpanel->Hide();
     m_loginPanel->Show();
     m_signupPanel->Hide();
     m_dashboardUser->Hide();
@@ -609,6 +611,7 @@ bool MainFrame::IsStoreExists()
 
 void MainFrame::OnAddStoreManager(wxCommandEvent& event)
 {
+    m_adminCVpanel->Hide();
     m_addStationaryPanel->Hide();
     m_loginPanel->Hide();
     m_dashboardUser->Hide();
@@ -628,6 +631,7 @@ void MainFrame::SwitchToDashboard()
     m_dashboardUser->Show();
     m_adminPanel->Hide();
     m_addBookPanel->Hide();
+    m_adminCVpanel->Hide();
 
     Layout();
 }
@@ -639,7 +643,7 @@ void MainFrame::SwitchToLoginPage()
     m_loginPanel->Show();
     m_adminPanel->Hide();
     m_addBookPanel->Hide();
-
+    m_adminCVpanel->Hide();
     Layout();
 }
 void MainFrame::SwitchToDisplayBook()
@@ -653,11 +657,12 @@ void MainFrame::SwitchToDisplayBook()
     m_viewStorePanel->Hide();
     m_bookDisplayPanel->Show();
     m_stationaryDisplayPanel->Hide();
-
+    m_adminCVpanel->Hide();
     Layout();
 }
 void MainFrame::SwitchToViewStore()
 {
+    m_adminCVpanel->Hide();
     m_addBookPanel->Hide();
     m_loginPanel->Hide();
     m_dashboardUser->Hide();
@@ -677,6 +682,7 @@ void MainFrame::SwitchToSignupPage()
     m_signupPanel->Show();
     m_adminPanel->Hide();
     m_addBookPanel->Hide();
+    m_adminCVpanel->Hide();
 
 
     Layout();
@@ -695,6 +701,8 @@ void MainFrame::SwitchToAdminDashboard()
 
 void MainFrame::SwitchToDisplayStationary()
 {
+    m_adminCVpanel->Hide();
+
     m_addBookPanel->Hide();
     m_loginPanel->Hide();
     m_dashboardUser->Hide();
@@ -709,6 +717,8 @@ void MainFrame::SwitchToDisplayStationary()
 
 void MainFrame::SwitchToOrderPanel()
 {
+    m_adminCVpanel->Hide();
+
     m_addBookPanel->Hide();
     m_loginPanel->Hide();
     m_dashboardUser->Hide();
@@ -725,6 +735,8 @@ void MainFrame::SwitchToOrderPanel()
 
 void MainFrame::SwitchToDashboardUser()
 {
+    m_adminCVpanel->Hide();
+
     m_displayOrderPanel->Hide();
     m_addBookPanel->Hide();
     m_loginPanel->Hide();
@@ -741,6 +753,8 @@ void MainFrame::SwitchToDashboardUser()
 
 void MainFrame::SwtichToCartPanel()
 {
+    m_adminCVpanel->Hide();
+
     m_displayOrderPanel->Hide();
     m_addBookPanel->Hide();
     m_loginPanel->Hide();
@@ -759,6 +773,7 @@ void MainFrame::SwtichToCartPanel()
 void MainFrame::SwitchToOrderProceed()
 {
     m_orderPanel->UpdateOrderSummary();
+    m_adminCVpanel->Hide();
 
     m_displayOrderPanel->Hide();
     m_addBookPanel->Hide();
@@ -777,6 +792,8 @@ void MainFrame::SwitchToOrderProceed()
 
 void MainFrame::SwitchToOrderDisplay()
 {
+    m_adminCVpanel->Hide();
+
     m_displayOrderPanel->Hide();
     m_addBookPanel->Hide();
     m_loginPanel->Hide();
@@ -795,6 +812,8 @@ void MainFrame::SwitchToOrderDisplay()
 
 void MainFrame::SwitchToViewCartPanel()
 {
+    m_adminCVpanel->Hide();
+
     m_displayOrderPanel->Hide();
     m_addBookPanel->Hide();
     m_loginPanel->Hide();
@@ -820,6 +839,7 @@ void MainFrame::OnLogout(wxCommandEvent& event) {
     m_addBookPanel->Hide();
     m_loginPanel->Show();
     m_viewCartPanel->Hide();
+    m_adminCVpanel->Hide();
 
     Layout();
 }
@@ -828,6 +848,7 @@ void MainFrame::OnAddBook(wxCommandEvent& event) {
     
     OnSaveStoreManager(event);
     m_viewCartPanel->Hide();
+    m_adminCVpanel->Hide();
 
     m_addBookPanel->Show();
     m_loginPanel->Hide();
@@ -846,6 +867,7 @@ void MainFrame::OnAddBookViaViewStoreClear(wxCommandEvent& event) {
     m_adminPanel->Hide();
     m_viewStorePanel->Show();
     m_viewCartPanel->Hide();
+    m_adminCVpanel->Hide();
 
     Layout();
 }
@@ -857,6 +879,7 @@ void MainFrame::OnAddStationary(wxCommandEvent& event) {
 
     m_addStorePanel->Hide();
     m_addStationaryPanel->Show();
+    m_adminCVpanel->Hide();
 
     m_loginPanel->Hide();
     m_dashboardUser->Hide();
@@ -887,7 +910,7 @@ void MainFrame::SwitchToDisplayOrder(wxCommandEvent& event)
     m_adminPanel->Hide();
     m_viewStorePanel->Hide();
     m_viewCartPanel->Hide();
-
+    m_adminCVpanel->Hide();
     Layout();
 
 }
@@ -951,4 +974,22 @@ void MainFrame::OnBackToUser(wxCommandEvent& event)
     SwitchToDashboardUser();
 }
 
-
+void MainFrame::OnCustomerView(wxCommandEvent& event)
+{
+    m_displayOrderPanel->Hide();
+    m_addBookPanel->Hide();
+    m_loginPanel->Hide();
+    m_dashboardUser->Hide();
+    m_signupPanel->Hide();
+    m_adminPanel->Hide();
+    m_addStorePanel->Hide();
+    m_viewStorePanel->Hide();
+    m_bookDisplayPanel->Hide();
+    m_stationaryDisplayPanel->Hide();
+    m_orderPanel->Hide();
+    m_viewCartPanel->Hide();
+    m_displayOrderPanel->Hide();
+    m_viewCartPanel->Hide();
+    m_adminCVpanel->Show();
+    Layout();
+}

@@ -1,20 +1,22 @@
 #pragma once
 
 #include <wx/wx.h>
-#include "CustomerListView.h"
 #include"Admin.h"
 #include"IDs.h"
+#include <wx/listctrl.h>
+
 
 class AdminCVpanel :public wxPanel
 {
 private:
-	wxStaticText* m_welcomeLabel;
-	wxButton* m_logoutButton;
-	CustomerListView* m_customerListView;
+	Admin* admin;
+	wxStaticText* m_headLabel;
+	wxListView* m_customersListView;
 
-	void SetupUI(wxWindow* parent);
+	void SetupUI();
+	
 public:
 	AdminCVpanel(wxWindow* parent);
-
+	void UpdateCustomers();
 };
 
