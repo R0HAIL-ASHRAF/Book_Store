@@ -82,7 +82,7 @@ void DisplayOrderPanel::PopulateOrdersList() {
     for (int i = 0; i < orders.size(); i++) {
         Order* order = orders.at(i);
 
-        long index = m_ordersList->InsertItem(i, wxString::Format("%zu", i + 1));
+        long index = m_ordersList->InsertItem(i, wxString::Format("%d", i + 1));
 
         m_ordersList->SetItem(index, 1, order->GetOrderDate().ToString());
 

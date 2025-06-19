@@ -201,7 +201,7 @@ void AddBook::OnImageSelected(wxFileDirPickerEvent& event)
 
         m_imagePreview->SetBitmap(wxBitmap(*scaledImage));
         m_imagePath = MyString(path);
-        Refresh();
+        Refresh(); // Refreshes the UI
     }
     else {
         wxMessageBox("Failed to load image!", "Error", wxOK | wxICON_ERROR);
@@ -325,11 +325,9 @@ Book AddBook::ReadSingleBook()
     
     std::ifstream fin("Products.bin", std::ios::binary);
     if (!fin.is_open()) {
-        wxLogError("Failed to open Products.bin(AddBook.cpp)");
+        Logger::getInstance().writeError("Failed to open Products.bin(AddBook.cpp)");
         return Book(); 
     }
-
-    
 
     productId.ReadFromStream(fin);
     productName.ReadFromStream(fin);
@@ -350,7 +348,7 @@ Book AddBook::ReadSingleBook()
     size_t imgSize = 0;
     fin.read(reinterpret_cast<char*>(&imgSize), sizeof(imgSize));
     if (!fin.good() || fin.eof()) {
-        wxLogError("Returned Early");
+        Logger::getInstance().writeError("Returned Early");
         return book;
     }
 
@@ -358,7 +356,7 @@ Book AddBook::ReadSingleBook()
         std::vector<unsigned char> buffer(imgSize);
         fin.read(reinterpret_cast<char*>(buffer.data()), imgSize);
         if (!fin.good()) {
-            wxLogError("Failed to read image data from Products.bin(AddBook.cpp)");
+            Logger::getInstance().writeError("Failed to read image data from Products.bin(AddBook.cpp)");
             return book;
         }
         wxMemoryInputStream memStream(buffer.data(), imgSize);

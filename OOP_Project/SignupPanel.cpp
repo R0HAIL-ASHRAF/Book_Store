@@ -82,11 +82,15 @@ SignupPanel::SignupPanel(wxWindow* parent)
     signupButton->SetForegroundColour(*wxWHITE);
     signupButton->SetWindowStyle(wxBORDER_NONE);
 
-    btnSizer->AddStretchSpacer(0);
+    btnSizer->AddStretchSpacer(5);
     
     // back to login button
     wxButton* loginButton = new wxButton(this, ID_LoginSignupButton, "Login");
     btnSizer->Add(loginButton, 1, wxALIGN_CENTRE, 15);
+
+    loginButton->SetBackgroundColour(wxColour(219, 0, 107));
+    loginButton->SetForegroundColour(*wxWHITE);
+    loginButton->SetWindowStyle(wxBORDER_NONE);
 
     formContainer->Add(btnSizer, 1, wxALIGN_CENTER,20);
    

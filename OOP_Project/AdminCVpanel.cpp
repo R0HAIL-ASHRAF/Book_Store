@@ -62,7 +62,7 @@ void AdminCVpanel::UpdateCustomers()
 
 
         if (i % 2 == 0) {
-            m_customersListView->SetItemBackgroundColour(i, wxColour(255, 230, 235));
+            m_customersListView->SetItemBackgroundColour(i, wxColour(255, 188, 217));
 
         }
     }

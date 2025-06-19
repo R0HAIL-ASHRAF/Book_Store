@@ -47,6 +47,5 @@ MyString Name::ToString() const
 	MyString name = firstName;
 	name.AppendArray(" ");
 	name.AppendArray(lastName);
-	name.AppendArray('\0');
 	return name;
 }

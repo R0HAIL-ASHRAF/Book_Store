@@ -200,6 +200,7 @@ void DashboardAdmin::OnRefreshStoreList(wxCommandEvent& event)
    
     m_storeList->DeleteAllItems();
     admin->GetStores().clear();
+    if(admin)
     admin->ReadStoreManagersFromFile();
 
     stores.clear();
